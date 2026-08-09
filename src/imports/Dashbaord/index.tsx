@@ -1,5 +1,177 @@
+import { createContext, useContext, useEffect, useRef, useState } from "react";
 import svgPaths from "./svg-j8ue68fght";
 import imgImageAnthony from "./e80369b0bde9bc36bf18f9bf130673329ab18cff.png";
+
+// ---------------------------------------------------------------------------
+// Dashboard data model: realistic mock data per date-range selection.
+// Selecting a range in the header dropdown updates every KPI, the funnel,
+// and the revenue breakdown chart via DashboardDataContext below.
+// ---------------------------------------------------------------------------
+
+type RangeKey = "24h" | "7d" | "30d" | "90d" | "year" | "custom";
+
+interface RangeOption {
+  key: RangeKey;
+  label: string;
+}
+
+const RANGE_OPTIONS: RangeOption[] = [
+  { key: "24h", label: "Last 24 Hours" },
+  { key: "7d", label: "Last 7 Days" },
+  { key: "30d", label: "Last 30 Days" },
+  { key: "90d", label: "Last 90 Days" },
+  { key: "year", label: "This Year" },
+  { key: "custom", label: "Custom Range" },
+];
+
+interface FunnelStage {
+  pct: number;
+}
+
+interface RevenueBar {
+  value: string;
+  height: number; // px, drives the bar's rendered height
+}
+
+interface RangeData {
+  retention: string;
+  retentionBadge: string;
+  revenue: string;
+  revenueGrowth: string;
+  dau: string;
+  dauGrowth: string;
+  avgSession: string;
+  dropOff: string;
+  funnel: [FunnelStage, FunnelStage, FunnelStage, FunnelStage, FunnelStage];
+  revenueBars: [RevenueBar, RevenueBar, RevenueBar, RevenueBar, RevenueBar];
+}
+
+const DATA_BY_RANGE: Record<RangeKey, RangeData> = {
+  "24h": {
+    retention: "45.2%",
+    retentionBadge: "+3.4% This 24h",
+    revenue: "$84,200",
+    revenueGrowth: "12%",
+    dau: "430",
+    dauGrowth: "12%",
+    avgSession: "13m 42s",
+    dropOff: "14.6%",
+    funnel: [{ pct: 100 }, { pct: 78 }, { pct: 62 }, { pct: 45 }, { pct: 38 }],
+    revenueBars: [
+      { value: "24.6K", height: 168 },
+      { value: "21.7K", height: 147.84 },
+      { value: "18.2K", height: 124.32 },
+      { value: "14.6K", height: 99.12 },
+      { value: "10.3K", height: 70.56 },
+    ],
+  },
+  "7d": {
+    retention: "48.7%",
+    retentionBadge: "+2.1% This week",
+    revenue: "$126,800",
+    revenueGrowth: "18%",
+    dau: "1,240",
+    dauGrowth: "9%",
+    avgSession: "14m 05s",
+    dropOff: "13.1%",
+    funnel: [{ pct: 100 }, { pct: 81 }, { pct: 65 }, { pct: 49 }, { pct: 41 }],
+    revenueBars: [
+      { value: "38.9K", height: 168 },
+      { value: "33.1K", height: 143 },
+      { value: "27.4K", height: 118.5 },
+      { value: "21.8K", height: 94.2 },
+      { value: "15.2K", height: 65.7 },
+    ],
+  },
+  "30d": {
+    retention: "51.3%",
+    retentionBadge: "+5.8% This month",
+    revenue: "$382,400",
+    revenueGrowth: "24%",
+    dau: "3,840",
+    dauGrowth: "15%",
+    avgSession: "15m 18s",
+    dropOff: "11.4%",
+    funnel: [{ pct: 100 }, { pct: 84 }, { pct: 69 }, { pct: 53 }, { pct: 44 }],
+    revenueBars: [
+      { value: "142K", height: 168 },
+      { value: "118K", height: 139.7 },
+      { value: "96.4K", height: 114 },
+      { value: "74.1K", height: 87.6 },
+      { value: "52.8K", height: 62.4 },
+    ],
+  },
+  "90d": {
+    retention: "53.8%",
+    retentionBadge: "+8.2% This quarter",
+    revenue: "$1.08M",
+    revenueGrowth: "31%",
+    dau: "5,420",
+    dauGrowth: "22%",
+    avgSession: "16m 47s",
+    dropOff: "10.2%",
+    funnel: [{ pct: 100 }, { pct: 87 }, { pct: 73 }, { pct: 58 }, { pct: 49 }],
+    revenueBars: [
+      { value: "398K", height: 168 },
+      { value: "329K", height: 138.9 },
+      { value: "271K", height: 114.5 },
+      { value: "204K", height: 86.1 },
+      { value: "146K", height: 61.6 },
+    ],
+  },
+  year: {
+    retention: "56.1%",
+    retentionBadge: "+11.6% This year",
+    revenue: "$3.94M",
+    revenueGrowth: "42%",
+    dau: "7,910",
+    dauGrowth: "29%",
+    avgSession: "17m 32s",
+    dropOff: "9.1%",
+    funnel: [{ pct: 100 }, { pct: 89 }, { pct: 76 }, { pct: 62 }, { pct: 53 }],
+    revenueBars: [
+      { value: "1.46M", height: 168 },
+      { value: "1.18M", height: 135.7 },
+      { value: "962K", height: 110.6 },
+      { value: "718K", height: 82.6 },
+      { value: "511K", height: 58.8 },
+    ],
+  },
+  custom: {
+    retention: "45.2%",
+    retentionBadge: "Custom range",
+    revenue: "$84,200",
+    revenueGrowth: "12%",
+    dau: "430",
+    dauGrowth: "12%",
+    avgSession: "13m 42s",
+    dropOff: "14.6%",
+    funnel: [{ pct: 100 }, { pct: 78 }, { pct: 62 }, { pct: 45 }, { pct: 38 }],
+    revenueBars: [
+      { value: "24.6K", height: 168 },
+      { value: "21.7K", height: 147.84 },
+      { value: "18.2K", height: 124.32 },
+      { value: "14.6K", height: 99.12 },
+      { value: "10.3K", height: 70.56 },
+    ],
+  },
+};
+
+interface DashboardDataContextValue {
+  range: RangeKey;
+  setRange: (r: RangeKey) => void;
+  data: RangeData;
+}
+
+const DashboardDataContext = createContext<DashboardDataContextValue | null>(null);
+
+function useDashboardData(): DashboardDataContextValue {
+  const ctx = useContext(DashboardDataContext);
+  if (!ctx) {
+    throw new Error("useDashboardData must be used within DashboardDataContext.Provider");
+  }
+  return ctx;
+}
 
 function Svg() {
   return (
@@ -82,12 +254,16 @@ function Svg1() {
 
 function ItemLink() {
   return (
-    <div className="bg-[#e0d8f3] relative rounded-[10px] shrink-0 w-full" data-name="Item → Link">
+    <button
+      type="button"
+      className="bg-[#e0d8f3] relative rounded-[10px] shrink-0 w-full cursor-pointer transition-colors duration-150 hover:bg-[#d5c9ef] text-left"
+      data-name="Item → Link"
+    >
       <div className="flex flex-row items-center gap-[12px] px-[12px] py-[10px] size-full">
         <Svg1 />
         <p className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold not-italic text-[#623ec4] text-[16px] whitespace-nowrap">Dashboard</p>
       </div>
-    </div>
+    </button>
   );
 }
 
@@ -96,10 +272,10 @@ function Image9Vectorized() {
     <div className="h-[18.988px] relative shrink-0 w-[19.379px]" data-name="image 9 [Vectorized]">
       <svg className="absolute block inset-0 size-full" fill="none" height="33.9067" preserveAspectRatio="none" viewBox="0 0 34.6058 33.9067" width="34.6058">
         <g id="image 9 [Vectorized]">
-          <path d={svgPaths.p11293e00} fill="#1E293B" id="Vector" />
-          <path d={svgPaths.p3452cc00} fill="#1E293B" id="Vector_2" />
-          <path d={svgPaths.p1d0052a0} fill="#1E293B" id="Vector_3" />
-          <path d={svgPaths.p3e6c4c80} fill="#1E293B" id="Vector_4" />
+          <path d={svgPaths.p11293e00} fill="currentColor" id="Vector" />
+          <path d={svgPaths.p3452cc00} fill="currentColor" id="Vector_2" />
+          <path d={svgPaths.p1d0052a0} fill="currentColor" id="Vector_3" />
+          <path d={svgPaths.p3e6c4c80} fill="currentColor" id="Vector_4" />
         </g>
       </svg>
     </div>
@@ -108,12 +284,16 @@ function Image9Vectorized() {
 
 function ItemLink1() {
   return (
-    <div className="relative rounded-[10px] shrink-0 w-full" data-name="Item → Link">
+    <button
+      type="button"
+      className="relative rounded-[10px] shrink-0 w-full cursor-pointer text-left text-[#1e293b] transition-colors duration-150 hover:bg-[#f4f2fb] hover:text-[#623ec4]"
+      data-name="Item → Link"
+    >
       <div className="flex flex-row items-center gap-[12px] px-[12px] py-[10px] size-full">
         <Image9Vectorized />
-        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal not-italic text-[#1e293b] text-[16px] whitespace-nowrap">Retentions</p>
+        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal not-italic text-[16px] whitespace-nowrap">Retentions</p>
       </div>
-    </div>
+    </button>
   );
 }
 
@@ -122,10 +302,10 @@ function Image3Vectorized() {
     <div className="relative shrink-0 size-[19px]" data-name="image 3 [Vectorized]">
       <svg className="absolute block inset-0 size-full" fill="none" height="27.7187" preserveAspectRatio="none" viewBox="0 0 29.5666 27.7187" width="29.5666">
         <g clipPath="url(#clip0_0_121)" id="image 3 [Vectorized]">
-          <path d={svgPaths.p1183f100} fill="#1E293B" id="Vector" />
-          <path d={svgPaths.p108d7880} fill="#1E293B" id="Vector_2" />
-          <path d={svgPaths.p3e386e00} fill="#1E293B" id="Vector_3" />
-          <path d={svgPaths.p2a6a200} fill="#1E293B" id="Vector_4" />
+          <path d={svgPaths.p1183f100} fill="currentColor" id="Vector" />
+          <path d={svgPaths.p108d7880} fill="currentColor" id="Vector_2" />
+          <path d={svgPaths.p3e386e00} fill="currentColor" id="Vector_3" />
+          <path d={svgPaths.p2a6a200} fill="currentColor" id="Vector_4" />
         </g>
         <defs>
           <clipPath id="clip0_0_121">
@@ -139,12 +319,16 @@ function Image3Vectorized() {
 
 function ItemLink2() {
   return (
-    <div className="relative rounded-[10px] shrink-0 w-full" data-name="Item → Link">
+    <button
+      type="button"
+      className="relative rounded-[10px] shrink-0 w-full cursor-pointer text-left text-[#1e293b] transition-colors duration-150 hover:bg-[#f4f2fb] hover:text-[#623ec4]"
+      data-name="Item → Link"
+    >
       <div className="flex flex-row items-center gap-[12px] px-[12px] py-[10px] size-full">
         <Image3Vectorized />
-        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal not-italic text-[#1e293b] text-[16px] whitespace-nowrap">Players</p>
+        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal not-italic text-[16px] whitespace-nowrap">Players</p>
       </div>
-    </div>
+    </button>
   );
 }
 
@@ -153,7 +337,7 @@ function Image4Vectorized() {
     <div className="h-[19.556px] relative shrink-0 w-[20.208px]" data-name="image 4 [Vectorized]">
       <svg className="absolute block inset-0 size-full" fill="none" height="34.9222" preserveAspectRatio="none" viewBox="0 0 36.0862 34.9222" width="36.0862">
         <g id="image 4 [Vectorized]">
-          <path d={svgPaths.p2c147f00} fill="#1E293B" id="Vector" />
+          <path d={svgPaths.p2c147f00} fill="currentColor" id="Vector" />
         </g>
       </svg>
     </div>
@@ -162,12 +346,16 @@ function Image4Vectorized() {
 
 function ItemLink3() {
   return (
-    <div className="relative rounded-[10px] shrink-0 w-full" data-name="Item → Link">
+    <button
+      type="button"
+      className="relative rounded-[10px] shrink-0 w-full cursor-pointer text-left text-[#1e293b] transition-colors duration-150 hover:bg-[#f4f2fb] hover:text-[#623ec4]"
+      data-name="Item → Link"
+    >
       <div className="flex flex-row items-center gap-[12px] px-[12px] py-[10px] size-full">
         <Image4Vectorized />
-        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal not-italic text-[#1e293b] text-[16px] whitespace-nowrap">Features</p>
+        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal not-italic text-[16px] whitespace-nowrap">Features</p>
       </div>
-    </div>
+    </button>
   );
 }
 
@@ -176,8 +364,8 @@ function Image5Vectorized() {
     <div className="h-[19.652px] relative shrink-0 w-[20.804px]" data-name="image 5 [Vectorized]">
       <svg className="absolute block inset-0 size-full" fill="none" height="35.0934" preserveAspectRatio="none" viewBox="0 0 37.1497 35.0934" width="37.1497">
         <g id="image 5 [Vectorized]">
-          <path d={svgPaths.p373d6700} fill="#263750" id="Vector" />
-          <path d={svgPaths.pd082500} fill="#263750" id="Vector_2" />
+          <path d={svgPaths.p373d6700} fill="currentColor" id="Vector" />
+          <path d={svgPaths.pd082500} fill="currentColor" id="Vector_2" />
         </g>
       </svg>
     </div>
@@ -186,12 +374,16 @@ function Image5Vectorized() {
 
 function ItemLink4() {
   return (
-    <div className="relative rounded-[10px] shrink-0 w-full" data-name="Item → Link">
+    <button
+      type="button"
+      className="relative rounded-[10px] shrink-0 w-full cursor-pointer text-left text-[#1e293b] transition-colors duration-150 hover:bg-[#f4f2fb] hover:text-[#623ec4]"
+      data-name="Item → Link"
+    >
       <div className="flex flex-row items-center gap-[12px] px-[12px] py-[10px] size-full">
         <Image5Vectorized />
-        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal not-italic text-[#1e293b] text-[16px] whitespace-nowrap">Revenue</p>
+        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal not-italic text-[16px] whitespace-nowrap">Revenue</p>
       </div>
-    </div>
+    </button>
   );
 }
 
@@ -200,7 +392,7 @@ function Image6Vectorized() {
     <div className="h-[20.39px] relative shrink-0 w-[20.076px]" data-name="image 6 [Vectorized]">
       <svg className="absolute block inset-0 size-full" fill="none" height="36.41" preserveAspectRatio="none" viewBox="0 0 35.8498 36.41" width="35.8498">
         <g id="image 6 [Vectorized]">
-          <path d={svgPaths.p3cb6f080} fill="#253751" id="Vector" />
+          <path d={svgPaths.p3cb6f080} fill="currentColor" id="Vector" />
         </g>
       </svg>
     </div>
@@ -209,12 +401,16 @@ function Image6Vectorized() {
 
 function ItemLink5() {
   return (
-    <div className="relative rounded-[10px] shrink-0 w-full" data-name="Item → Link">
+    <button
+      type="button"
+      className="relative rounded-[10px] shrink-0 w-full cursor-pointer text-left text-[#1e293b] transition-colors duration-150 hover:bg-[#f4f2fb] hover:text-[#623ec4]"
+      data-name="Item → Link"
+    >
       <div className="flex flex-row items-center gap-[12px] px-[12px] py-[10px] size-full">
         <Image6Vectorized />
-        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal not-italic text-[#1e293b] text-[16px] whitespace-nowrap">{`Bugs & Issues`}</p>
+        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal not-italic text-[16px] whitespace-nowrap">{`Bugs & Issues`}</p>
       </div>
-    </div>
+    </button>
   );
 }
 
@@ -326,13 +522,13 @@ function IconMargin() {
 
 function Frame2() {
   return (
-    <div className="relative shrink-0 w-full">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[13.44px] items-center px-[17.92px] relative size-full">
+    <button type="button" className="relative shrink-0 w-full cursor-pointer text-left transition-colors duration-150 hover:bg-[#f4f2fb] rounded-[10px]">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[13.44px] items-center px-[17.92px] py-[8px] relative size-full">
         <ImageAnthony />
         <Container4 />
         <IconMargin />
       </div>
-    </div>
+    </button>
   );
 }
 
@@ -402,15 +598,85 @@ function Svg2() {
   );
 }
 
-function Button() {
+function DateRangeDropdown() {
+  const { range, setRange } = useDashboardData();
+  const [open, setOpen] = useState(false);
+  const rootRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handlePointerDown(e: MouseEvent) {
+      if (rootRef.current && !rootRef.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    }
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") setOpen(false);
+    }
+    document.addEventListener("mousedown", handlePointerDown);
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("mousedown", handlePointerDown);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
+  const activeLabel = RANGE_OPTIONS.find((o) => o.key === range)?.label ?? "Last 24 Hours";
+
   return (
-    <div className="bg-white content-stretch flex gap-[8.371px] items-center justify-center px-[11.86px] py-[7.674px] relative rounded-[8.371px] shrink-0" data-name="Button">
-      <div aria-hidden className="absolute border-[#e2e8f0] border-[0.698px] border-solid inset-0 pointer-events-none rounded-[8.371px]" />
-      <Image24Vectorized />
-      <div className="[word-break:break-word] flex flex-col font-['Inter:Medium',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#1e293b] text-[16px] text-center whitespace-nowrap">
-        <p className="leading-[16.743px]">Last 24 Hours</p>
-      </div>
-      <Svg2 />
+    <div className="relative shrink-0" ref={rootRef} data-name="Container">
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-haspopup="listbox"
+        aria-expanded={open}
+        className="bg-white content-stretch flex gap-[8.371px] items-center justify-center px-[11.86px] py-[7.674px] relative rounded-[8.371px] shrink-0 cursor-pointer transition-colors duration-150 hover:bg-[#f8f7ff]"
+        data-name="Button"
+      >
+        <div aria-hidden className="absolute border-[#e2e8f0] border-[0.698px] border-solid inset-0 pointer-events-none rounded-[8.371px]" />
+        <Image24Vectorized />
+        <div className="[word-break:break-word] flex flex-col font-['Inter:Medium',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#1e293b] text-[16px] text-center whitespace-nowrap">
+          <p className="leading-[16.743px]">{activeLabel}</p>
+        </div>
+        <div className={`relative shrink-0 size-[11.162px] transition-transform duration-150 ${open ? "rotate-180" : ""}`} data-name="SVG">
+          <svg className="absolute block inset-0 size-full" fill="none" height="19.9326" preserveAspectRatio="none" viewBox="0 0 19.9326 19.9326" width="19.9326">
+            <g id="SVG">
+              <path d={svgPaths.p2a90bd40} id="Vector" stroke="#1E293B" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66105" />
+            </g>
+          </svg>
+        </div>
+      </button>
+      {open && (
+        <div
+          role="listbox"
+          className="absolute right-0 top-[calc(100%+8px)] z-50 w-[200px] bg-white rounded-[10px] border border-[#e2e8f0] shadow-[0px_8px_24px_rgba(15,23,42,0.12)] py-[6px] origin-top-right animate-[dropdownOpen_150ms_ease-out]"
+        >
+          {RANGE_OPTIONS.map((opt) => {
+            const selected = opt.key === range;
+            return (
+              <button
+                key={opt.key}
+                type="button"
+                role="option"
+                aria-selected={selected}
+                onClick={() => {
+                  setRange(opt.key);
+                  setOpen(false);
+                }}
+                className={`w-full flex items-center justify-between gap-[8px] px-[14px] py-[9px] text-left text-[16px] font-['Inter:Regular',sans-serif] transition-colors duration-150 cursor-pointer ${
+                  selected ? "text-[#623ec4] font-medium bg-[#f5f3ff]" : "text-[#1e293b] hover:bg-[#f8fafc]"
+                }`}
+              >
+                <span className="whitespace-nowrap">{opt.label}</span>
+                {selected && (
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="shrink-0">
+                    <path d="M2.5 7.2L5.5 10.2L11.5 3.8" stroke="#623ec4" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                )}
+              </button>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }
@@ -418,7 +684,7 @@ function Button() {
 function Container8() {
   return (
     <div className="content-stretch flex flex-col items-center justify-center relative shrink-0" data-name="Container">
-      <Button />
+      <DateRangeDropdown />
     </div>
   );
 }
@@ -441,14 +707,16 @@ function Frame1() {
 
 function Image7Vectorized() {
   return (
-    <div className="h-[19.43px] relative shrink-0 w-[20.34px]" data-name="image 7 [Vectorized]">
-      <svg className="absolute block inset-0 size-full" fill="none" height="34.696" preserveAspectRatio="none" viewBox="0 0 36.3224 34.696" width="36.3224">
-        <g id="image 7 [Vectorized]">
-          <path d={svgPaths.p35882b80} fill="#293751" id="Vector" />
-          <path d={svgPaths.p3dc82180} fill="#293751" id="Vector_2" />
-        </g>
-      </svg>
-    </div>
+    <button type="button" className="h-[38px] w-[38px] flex items-center justify-center relative shrink-0 rounded-[11.405px] cursor-pointer transition-colors duration-150 hover:bg-[#f1f5f9]" data-name="image 7 [Vectorized]">
+      <div className="h-[19.43px] relative shrink-0 w-[20.34px]">
+        <svg className="absolute block inset-0 size-full" fill="none" height="34.696" preserveAspectRatio="none" viewBox="0 0 36.3224 34.696" width="36.3224">
+          <g id="image 7 [Vectorized]">
+            <path d={svgPaths.p35882b80} fill="#293751" id="Vector" />
+            <path d={svgPaths.p3dc82180} fill="#293751" id="Vector_2" />
+          </g>
+        </svg>
+      </div>
+    </button>
   );
 }
 
@@ -467,9 +735,9 @@ function Icon1() {
 
 function IconBox() {
   return (
-    <div className="bg-white content-stretch flex items-center justify-center relative rounded-[11.405px] shrink-0 size-[38.017px]" data-name="IconBox">
+    <button type="button" className="bg-white content-stretch flex items-center justify-center relative rounded-[11.405px] shrink-0 size-[38.017px] cursor-pointer transition-colors duration-150 hover:bg-[#f1f5f9]" data-name="IconBox">
       <Icon1 />
-    </div>
+    </button>
   );
 }
 
@@ -488,11 +756,11 @@ function Icon2() {
 
 function IconBox1() {
   return (
-    <div className="bg-white relative rounded-[11.405px] shrink-0 size-[38.017px]" data-name="IconBox">
+    <button type="button" className="bg-white relative rounded-[11.405px] shrink-0 size-[38.017px] cursor-pointer transition-colors duration-150 hover:bg-[#f1f5f9]" data-name="IconBox">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-center relative size-full">
         <Icon2 />
       </div>
-    </div>
+    </button>
   );
 }
 
@@ -604,10 +872,11 @@ function Container12() {
 }
 
 function Background1() {
+  const { data } = useDashboardData();
   return (
     <div className="bg-[#fae07a] content-stretch flex gap-[6px] items-center px-[10px] py-[4px] relative rounded-[8px] shrink-0" data-name="Background">
       <Container12 />
-      <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium not-italic relative shrink-0 text-[#2d2100] text-[16px] tracking-[0.094px] whitespace-nowrap">+3.4% This 24h</p>
+      <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium not-italic relative shrink-0 text-[#2d2100] text-[16px] tracking-[0.094px] whitespace-nowrap">{data.retentionBadge}</p>
     </div>
   );
 }
@@ -622,10 +891,11 @@ function Container11() {
 }
 
 function Frame() {
+  const { data } = useDashboardData();
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0">
-      <div className="[word-break:break-word] flex flex-col font-['Inter:Bold',sans-serif] font-bold h-[92px] justify-center leading-[0] not-italic relative shrink-0 text-[84px] text-white tracking-[-1.25px] w-[255px]">
-        <p className="leading-[37px]">45.2%</p>
+      <div className="[word-break:break-word] flex flex-col font-['Inter:Bold',sans-serif] font-bold h-[92px] justify-center leading-[0] not-italic relative shrink-0 text-[84px] text-white tracking-[-1.25px] w-[255px] transition-opacity duration-200">
+        <p className="leading-[37px]">{data.retention}</p>
       </div>
     </div>
   );
@@ -644,7 +914,7 @@ function Frame5() {
 
 function LargeHeroCard() {
   return (
-    <div className="content-stretch flex flex-col aspect-[53/34] min-h-[172px] items-start justify-between overflow-clip pb-[12px] pt-[10px] px-[16px] relative rounded-[10px] shadow-[0px_6.69px_8.362px_-1.673px_rgba(0,0,0,0.1),0px_2.676px_3.345px_-2.007px_rgba(0,0,0,0.1)] flex-[295.819_1_0] min-w-0" style={{ backgroundImage: "linear-gradient(142.07828029689713deg, rgb(111, 75, 255) 0%, rgb(86, 41, 230) 100%)" }} data-name="Large Hero Card">
+    <div className="content-stretch flex flex-col aspect-[53/34] min-h-[172px] items-start justify-between overflow-clip pb-[12px] pt-[10px] px-[16px] relative rounded-[10px] shadow-[0px_6.69px_8.362px_-1.673px_rgba(0,0,0,0.1),0px_2.676px_3.345px_-2.007px_rgba(0,0,0,0.1)] flex-[295.819_1_0] min-w-0 transition-shadow duration-200 hover:shadow-[0px_10px_20px_-2px_rgba(86,41,230,0.35),0px_4px_8px_-2px_rgba(86,41,230,0.2)] cursor-default" style={{ backgroundImage: "linear-gradient(142.07828029689713deg, rgb(111, 75, 255) 0%, rgb(86, 41, 230) 100%)" }} data-name="Large Hero Card">
       <SparklineVisualizationPlaceholder />
       <Container11 />
       <Frame5 />
@@ -709,10 +979,11 @@ function Text3() {
 }
 
 function Container16() {
+  const { data } = useDashboardData();
   return (
     <div className="relative shrink-0" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[2.295px] items-start overflow-clip relative rounded-[inherit] size-full">
-        <p className="[word-break:break-word] font-['Inter:Bold',sans-serif] font-bold leading-[18.573px] not-italic relative shrink-0 text-[#111827] text-[22.952px] tracking-[-0.507px] whitespace-nowrap">$84,200</p>
+        <p className="[word-break:break-word] font-['Inter:Bold',sans-serif] font-bold leading-[18.573px] not-italic relative shrink-0 text-[#111827] text-[22.952px] tracking-[-0.507px] whitespace-nowrap transition-opacity duration-200">{data.revenue}</p>
         <Text3 />
       </div>
     </div>
@@ -721,7 +992,7 @@ function Container16() {
 
 function StatCard() {
   return (
-    <div className="bg-white drop-shadow-[0px_0.767px_3.07px_rgba(0,0,0,0.06)] flex-[1_0_0] min-w-px relative rounded-[10.745px]" data-name="StatCard">
+    <div className="bg-white drop-shadow-[0px_0.767px_3.07px_rgba(0,0,0,0.06)] flex-[1_0_0] min-w-px relative rounded-[10.745px] transition-shadow duration-200 hover:shadow-[0px_6px_16px_-2px_rgba(15,23,42,0.12)] cursor-default" data-name="StatCard">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[14px] items-start pb-[16px] pt-[16px] px-[16px] relative size-full">
         <Container15 />
         <Container16 />
@@ -798,10 +1069,11 @@ function Text5() {
 }
 
 function Container18() {
+  const { data } = useDashboardData();
   return (
     <div className="relative shrink-0" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[2.295px] items-start relative size-full">
-        <p className="[word-break:break-word] font-['Inter:Bold',sans-serif] font-bold leading-[18.573px] not-italic relative shrink-0 text-[#111827] text-[22.952px] tracking-[-0.507px] whitespace-nowrap">430</p>
+        <p className="[word-break:break-word] font-['Inter:Bold',sans-serif] font-bold leading-[18.573px] not-italic relative shrink-0 text-[#111827] text-[22.952px] tracking-[-0.507px] whitespace-nowrap transition-opacity duration-200">{data.dau}</p>
         <Text5 />
       </div>
     </div>
@@ -810,7 +1082,7 @@ function Container18() {
 
 function StatCard1() {
   return (
-    <div className="bg-white col-2 drop-shadow-[0px_0.767px_3.07px_rgba(0,0,0,0.06)] justify-self-stretch relative rounded-[10.745px] row-1 shrink-0 self-stretch" data-name="StatCard">
+    <div className="bg-white col-2 drop-shadow-[0px_0.767px_3.07px_rgba(0,0,0,0.06)] justify-self-stretch relative rounded-[10.745px] row-1 shrink-0 self-stretch transition-shadow duration-200 hover:shadow-[0px_6px_16px_-2px_rgba(15,23,42,0.12)] cursor-default" data-name="StatCard">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[14px] items-start pb-[16px] pt-[16px] px-[16px] relative size-full">
         <Container17 />
         <Container18 />
@@ -877,10 +1149,11 @@ function Text7() {
 }
 
 function Container20() {
+  const { data } = useDashboardData();
   return (
     <div className="relative shrink-0" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[2.295px] items-start relative size-full">
-        <p className="[word-break:break-word] font-['Inter:Bold',sans-serif] font-bold leading-[18.573px] not-italic relative shrink-0 text-[#111827] text-[22.952px] tracking-[-0.507px] whitespace-nowrap">13m 42s</p>
+        <p className="[word-break:break-word] font-['Inter:Bold',sans-serif] font-bold leading-[18.573px] not-italic relative shrink-0 text-[#111827] text-[22.952px] tracking-[-0.507px] whitespace-nowrap transition-opacity duration-200">{data.avgSession}</p>
         <Text7 />
       </div>
     </div>
@@ -889,7 +1162,7 @@ function Container20() {
 
 function StatCard2() {
   return (
-    <div className="bg-white col-1 drop-shadow-[0px_0.767px_3.07px_rgba(0,0,0,0.06)] justify-self-stretch relative rounded-[10.745px] row-2 shrink-0 self-stretch" data-name="StatCard">
+    <div className="bg-white col-1 drop-shadow-[0px_0.767px_3.07px_rgba(0,0,0,0.06)] justify-self-stretch relative rounded-[10.745px] row-2 shrink-0 self-stretch transition-shadow duration-200 hover:shadow-[0px_6px_16px_-2px_rgba(15,23,42,0.12)] cursor-default" data-name="StatCard">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[14px] items-start pb-[16px] pt-[16px] px-[16px] relative size-full">
         <Container19 />
         <Container20 />
@@ -956,10 +1229,11 @@ function Text9() {
 }
 
 function Container22() {
+  const { data } = useDashboardData();
   return (
     <div className="relative shrink-0" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[2.295px] items-start relative size-full">
-        <p className="[word-break:break-word] font-['Inter:Bold',sans-serif] font-bold leading-[18.573px] not-italic relative shrink-0 text-[#111827] text-[22.952px] tracking-[-0.507px] whitespace-nowrap">14.6%</p>
+        <p className="[word-break:break-word] font-['Inter:Bold',sans-serif] font-bold leading-[18.573px] not-italic relative shrink-0 text-[#111827] text-[22.952px] tracking-[-0.507px] whitespace-nowrap transition-opacity duration-200">{data.dropOff}</p>
         <Text9 />
       </div>
     </div>
@@ -968,7 +1242,7 @@ function Container22() {
 
 function StatCard3() {
   return (
-    <div className="bg-white col-2 drop-shadow-[0px_0.767px_3.07px_rgba(0,0,0,0.06)] justify-self-stretch relative rounded-[10.745px] row-2 self-stretch shrink-0" data-name="StatCard">
+    <div className="bg-white col-2 drop-shadow-[0px_0.767px_3.07px_rgba(0,0,0,0.06)] justify-self-stretch relative rounded-[10.745px] row-2 self-stretch shrink-0 transition-shadow duration-200 hover:shadow-[0px_6px_16px_-2px_rgba(15,23,42,0.12)] cursor-default" data-name="StatCard">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[14px] items-start pb-[16px] pt-[16px] px-[16px] relative size-full">
         <Container21 />
         <Container22 />
@@ -1042,18 +1316,22 @@ function Container26() {
 }
 
 function Text10() {
+  const { data } = useDashboardData();
   return (
-    <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold not-italic text-white text-[16px] tracking-[-0.096px] whitespace-nowrap">100%</p>
+    <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold not-italic text-white text-[16px] tracking-[-0.096px] whitespace-nowrap">{data.funnel[0].pct}%</p>
   );
 }
 
 function Container28() {
+  const { data } = useDashboardData();
+  const pct = data.funnel[0].pct;
   return (
-    <div className="bg-gradient-to-r from-[#7060ec] h-[40px] relative rounded-[10px] shrink-0 to-[#9487f7]" style={{ width: '100%' }} data-name="Container">
-      <div className="flex flex-row items-center justify-end size-full">
-        <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-end pr-[14px] relative size-full">
-          <Text10 />
-        </div>
+    <div className="group/bar bg-gradient-to-r from-[#7060ec] h-[40px] relative rounded-[10px] shrink-0 to-[#9487f7] transition-[width,filter] duration-300 ease-out hover:brightness-105 cursor-default" style={{ width: `${pct}%` }} data-name="Container">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-end pr-[14px] relative size-full">
+        <Text10 />
+      </div>
+      <div className="pointer-events-none absolute -top-[38px] right-0 opacity-0 group-hover/bar:opacity-100 transition-opacity duration-150 bg-[#1e293b] text-white text-[13px] font-medium rounded-[6px] px-[8px] py-[4px] whitespace-nowrap shadow-[0px_4px_12px_rgba(0,0,0,0.15)]">
+        {pct}% • Sign Up
       </div>
     </div>
   );
@@ -1137,16 +1415,22 @@ function Container31() {
 }
 
 function Text11() {
+  const { data } = useDashboardData();
   return (
-    <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold not-italic text-white text-[16px] tracking-[-0.096px] whitespace-nowrap">78%</p>
+    <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold not-italic text-white text-[16px] tracking-[-0.096px] whitespace-nowrap">{data.funnel[1].pct}%</p>
   );
 }
 
 function Container35() {
+  const { data } = useDashboardData();
+  const pct = data.funnel[1].pct;
   return (
-    <div className="bg-gradient-to-r from-[#7e6ff4] h-[40px] relative rounded-[10px] shrink-0 to-[#a89cf9]" style={{ width: '78%' }} data-name="Container">
+    <div className="group/bar bg-gradient-to-r from-[#7e6ff4] h-[40px] relative rounded-[10px] shrink-0 to-[#a89cf9] transition-[width,filter] duration-300 ease-out hover:brightness-105 cursor-default" style={{ width: `${pct}%` }} data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-end pr-[14px] relative size-full">
         <Text11 />
+      </div>
+      <div className="pointer-events-none absolute -top-[38px] right-0 opacity-0 group-hover/bar:opacity-100 transition-opacity duration-150 bg-[#1e293b] text-white text-[13px] font-medium rounded-[6px] px-[8px] py-[4px] whitespace-nowrap shadow-[0px_4px_12px_rgba(0,0,0,0.15)]">
+        {pct}% • Tutorial Completed
       </div>
     </div>
   );
@@ -1209,16 +1493,22 @@ function Container38() {
 }
 
 function Text12() {
+  const { data } = useDashboardData();
   return (
-    <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold not-italic text-white text-[16px] tracking-[-0.096px] whitespace-nowrap">62%</p>
+    <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold not-italic text-white text-[16px] tracking-[-0.096px] whitespace-nowrap">{data.funnel[2].pct}%</p>
   );
 }
 
 function Container40() {
+  const { data } = useDashboardData();
+  const pct = data.funnel[2].pct;
   return (
-    <div className="bg-gradient-to-r from-[#9487f7] h-[40px] relative rounded-[10px] shrink-0 to-[#bcb4fb]" style={{ width: '62%' }} data-name="Container">
+    <div className="group/bar bg-gradient-to-r from-[#9487f7] h-[40px] relative rounded-[10px] shrink-0 to-[#bcb4fb] transition-[width,filter] duration-300 ease-out hover:brightness-105 cursor-default" style={{ width: `${pct}%` }} data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-end pr-[14px] relative size-full">
         <Text12 />
+      </div>
+      <div className="pointer-events-none absolute -top-[38px] right-0 opacity-0 group-hover/bar:opacity-100 transition-opacity duration-150 bg-[#1e293b] text-white text-[13px] font-medium rounded-[6px] px-[8px] py-[4px] whitespace-nowrap shadow-[0px_4px_12px_rgba(0,0,0,0.15)]">
+        {pct}% • First Match
       </div>
     </div>
   );
@@ -1309,16 +1599,22 @@ function Container43() {
 }
 
 function Text13() {
+  const { data } = useDashboardData();
   return (
-    <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold not-italic text-[#7060ec] text-[16px] tracking-[-0.096px] whitespace-nowrap">45%</p>
+    <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold not-italic text-[#7060ec] text-[16px] tracking-[-0.096px] whitespace-nowrap">{data.funnel[3].pct}%</p>
   );
 }
 
 function Container47() {
+  const { data } = useDashboardData();
+  const pct = data.funnel[3].pct;
   return (
-    <div className="bg-gradient-to-r from-[#bcb4fb] h-[40px] relative rounded-[10px] shrink-0 to-[#d4cffd]" style={{ width: '45%' }} data-name="Container">
+    <div className="group/bar bg-gradient-to-r from-[#bcb4fb] h-[40px] relative rounded-[10px] shrink-0 to-[#d4cffd] transition-[width,filter] duration-300 ease-out hover:brightness-105 cursor-default" style={{ width: `${pct}%` }} data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-end pr-[14px] relative size-full">
         <Text13 />
+      </div>
+      <div className="pointer-events-none absolute -top-[38px] right-0 opacity-0 group-hover/bar:opacity-100 transition-opacity duration-150 bg-[#1e293b] text-white text-[13px] font-medium rounded-[6px] px-[8px] py-[4px] whitespace-nowrap shadow-[0px_4px_12px_rgba(0,0,0,0.15)]">
+        {pct}% • Next Day Return
       </div>
     </div>
   );
@@ -1402,16 +1698,22 @@ function Container50() {
 }
 
 function Text14() {
+  const { data } = useDashboardData();
   return (
-    <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold not-italic text-[#8b6200] text-[16px] tracking-[-0.096px] whitespace-nowrap">38%</p>
+    <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold not-italic text-[#8b6200] text-[16px] tracking-[-0.096px] whitespace-nowrap">{data.funnel[4].pct}%</p>
   );
 }
 
 function Container54() {
+  const { data } = useDashboardData();
+  const pct = data.funnel[4].pct;
   return (
-    <div className="bg-gradient-to-r from-[#f5c53a] h-[40px] relative rounded-[10px] shrink-0 to-[#f8d96b]" style={{ width: '38%' }} data-name="Container">
+    <div className="group/bar bg-gradient-to-r from-[#f5c53a] h-[40px] relative rounded-[10px] shrink-0 to-[#f8d96b] transition-[width,filter] duration-300 ease-out hover:brightness-105 cursor-default" style={{ width: `${pct}%` }} data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-end pr-[14px] relative size-full">
         <Text14 />
+      </div>
+      <div className="pointer-events-none absolute -top-[38px] right-0 opacity-0 group-hover/bar:opacity-100 transition-opacity duration-150 bg-[#1e293b] text-white text-[13px] font-medium rounded-[6px] px-[8px] py-[4px] whitespace-nowrap shadow-[0px_4px_12px_rgba(0,0,0,0.15)]">
+        {pct}% • First Purchase
       </div>
     </div>
   );
@@ -1469,17 +1771,20 @@ function PlayerFunnelPerformance() {
 }
 
 function Text15() {
+  const { data } = useDashboardData();
   return (
     <div className="relative shrink-0 flex items-center justify-center w-full" data-name="Text">
-      <p className="[word-break:break-word] font-['Inter:Bold',sans-serif] font-bold leading-[20px] not-italic text-[#7b6cf5] text-[16px] whitespace-nowrap relative shrink-0">24.6K</p>
+      <p className="[word-break:break-word] font-['Inter:Bold',sans-serif] font-bold leading-[20px] not-italic text-[#7b6cf5] text-[16px] whitespace-nowrap relative shrink-0 transition-opacity duration-200">{data.revenueBars[0].value}</p>
     </div>
   );
 }
 
 function Icon8() {
+  const { data } = useDashboardData();
+  const barHeight = data.revenueBars[0].height;
   return (
-    <div className="h-[168px] relative shrink-0 w-[53.2px]" data-name="Icon">
-      <svg className="absolute block inset-0 size-full" fill="none" height="300" preserveAspectRatio="none" viewBox="0 0 95 300" width="95">
+    <div className="group/revbar relative shrink-0 w-[53.2px] transition-[height] duration-300 ease-out cursor-default" style={{ height: `${barHeight}px` }} data-name="Icon">
+      <svg className="absolute block inset-0 size-full transition-[filter] duration-150 group-hover/revbar:brightness-110" fill="none" preserveAspectRatio="none" viewBox="0 0 95 300">
         <g clipPath="url(#clip0_0_84)" id="Icon">
           <path d={svgPaths.p2b8ed000} fill="url(#paint0_linear_0_84)" id="Vector" />
         </g>
@@ -1493,6 +1798,9 @@ function Icon8() {
           </clipPath>
         </defs>
       </svg>
+      <div className="pointer-events-none absolute -top-[36px] left-1/2 -translate-x-1/2 opacity-0 group-hover/revbar:opacity-100 transition-opacity duration-150 bg-[#1e293b] text-white text-[13px] font-medium rounded-[6px] px-[8px] py-[4px] whitespace-nowrap shadow-[0px_4px_12px_rgba(0,0,0,0.15)] z-10">
+        Battle Pass: {data.revenueBars[0].value}
+      </div>
     </div>
   );
 }
@@ -1518,17 +1826,20 @@ function Container55() {
 }
 
 function Text17() {
+  const { data } = useDashboardData();
   return (
     <div className="relative shrink-0 flex items-center justify-center w-full" data-name="Text">
-      <p className="[word-break:break-word] font-['Inter:Bold',sans-serif] font-bold leading-[20px] not-italic text-[#7b6cf5] text-[16px] whitespace-nowrap relative shrink-0">21.7K</p>
+      <p className="[word-break:break-word] font-['Inter:Bold',sans-serif] font-bold leading-[20px] not-italic text-[#7b6cf5] text-[16px] whitespace-nowrap relative shrink-0 transition-opacity duration-200">{data.revenueBars[1].value}</p>
     </div>
   );
 }
 
 function Icon9() {
+  const { data } = useDashboardData();
+  const barHeight = data.revenueBars[1].height;
   return (
-    <div className="h-[147.84px] relative shrink-0 w-[53.2px]" data-name="Icon">
-      <svg className="absolute block inset-0 size-full" fill="none" height="264" preserveAspectRatio="none" viewBox="0 0 95 264" width="95">
+    <div className="group/revbar relative shrink-0 w-[53.2px] transition-[height] duration-300 ease-out cursor-default" style={{ height: `${barHeight}px` }} data-name="Icon">
+      <svg className="absolute block inset-0 size-full transition-[filter] duration-150 group-hover/revbar:brightness-110" fill="none" preserveAspectRatio="none" viewBox="0 0 95 264">
         <g clipPath="url(#clip0_0_119)" id="Icon">
           <path d={svgPaths.p380200} fill="url(#paint0_linear_0_119)" id="Vector" />
         </g>
@@ -1542,6 +1853,9 @@ function Icon9() {
           </clipPath>
         </defs>
       </svg>
+      <div className="pointer-events-none absolute -top-[36px] left-1/2 -translate-x-1/2 opacity-0 group-hover/revbar:opacity-100 transition-opacity duration-150 bg-[#1e293b] text-white text-[13px] font-medium rounded-[6px] px-[8px] py-[4px] whitespace-nowrap shadow-[0px_4px_12px_rgba(0,0,0,0.15)] z-10">
+        Bundles: {data.revenueBars[1].value}
+      </div>
     </div>
   );
 }
@@ -1567,17 +1881,20 @@ function Container56() {
 }
 
 function Text19() {
+  const { data } = useDashboardData();
   return (
     <div className="relative shrink-0 flex items-center justify-center w-full" data-name="Text">
-      <p className="[word-break:break-word] font-['Inter:Bold',sans-serif] font-bold leading-[20px] not-italic text-[#8575f6] text-[16px] whitespace-nowrap relative shrink-0">18.2K</p>
+      <p className="[word-break:break-word] font-['Inter:Bold',sans-serif] font-bold leading-[20px] not-italic text-[#8575f6] text-[16px] whitespace-nowrap relative shrink-0 transition-opacity duration-200">{data.revenueBars[2].value}</p>
     </div>
   );
 }
 
 function Icon10() {
+  const { data } = useDashboardData();
+  const barHeight = data.revenueBars[2].height;
   return (
-    <div className="h-[124.32px] relative shrink-0 w-[53.2px]" data-name="Icon">
-      <svg className="absolute block inset-0 size-full" fill="none" height="222" preserveAspectRatio="none" viewBox="0 0 95 222" width="95">
+    <div className="group/revbar relative shrink-0 w-[53.2px] transition-[height] duration-300 ease-out cursor-default" style={{ height: `${barHeight}px` }} data-name="Icon">
+      <svg className="absolute block inset-0 size-full transition-[filter] duration-150 group-hover/revbar:brightness-110" fill="none" preserveAspectRatio="none" viewBox="0 0 95 222">
         <g clipPath="url(#clip0_0_129)" id="Icon">
           <path d={svgPaths.p3fade6c0} fill="url(#paint0_linear_0_129)" id="Vector" />
         </g>
@@ -1591,6 +1908,9 @@ function Icon10() {
           </clipPath>
         </defs>
       </svg>
+      <div className="pointer-events-none absolute -top-[36px] left-1/2 -translate-x-1/2 opacity-0 group-hover/revbar:opacity-100 transition-opacity duration-150 bg-[#1e293b] text-white text-[13px] font-medium rounded-[6px] px-[8px] py-[4px] whitespace-nowrap shadow-[0px_4px_12px_rgba(0,0,0,0.15)] z-10">
+        Skins: {data.revenueBars[2].value}
+      </div>
     </div>
   );
 }
@@ -1616,17 +1936,20 @@ function Container57() {
 }
 
 function Text21() {
+  const { data } = useDashboardData();
   return (
     <div className="relative shrink-0 flex items-center justify-center w-full" data-name="Text">
-      <p className="[word-break:break-word] font-['Inter:Bold',sans-serif] font-bold leading-[20px] not-italic text-[#7b6cf5] text-[16px] whitespace-nowrap relative shrink-0">14.6K</p>
+      <p className="[word-break:break-word] font-['Inter:Bold',sans-serif] font-bold leading-[20px] not-italic text-[#7b6cf5] text-[16px] whitespace-nowrap relative shrink-0 transition-opacity duration-200">{data.revenueBars[3].value}</p>
     </div>
   );
 }
 
 function Icon11() {
+  const { data } = useDashboardData();
+  const barHeight = data.revenueBars[3].height;
   return (
-    <div className="h-[99.12px] relative shrink-0 w-[53.2px]" data-name="Icon">
-      <svg className="absolute block inset-0 size-full" fill="none" height="177" preserveAspectRatio="none" viewBox="0 0 95 177" width="95">
+    <div className="group/revbar relative shrink-0 w-[53.2px] transition-[height] duration-300 ease-out cursor-default" style={{ height: `${barHeight}px` }} data-name="Icon">
+      <svg className="absolute block inset-0 size-full transition-[filter] duration-150 group-hover/revbar:brightness-110" fill="none" preserveAspectRatio="none" viewBox="0 0 95 177">
         <g clipPath="url(#clip0_0_22)" id="Icon">
           <path d={svgPaths.p14476580} fill="url(#paint0_linear_0_22)" id="Vector" />
         </g>
@@ -1640,6 +1963,9 @@ function Icon11() {
           </clipPath>
         </defs>
       </svg>
+      <div className="pointer-events-none absolute -top-[36px] left-1/2 -translate-x-1/2 opacity-0 group-hover/revbar:opacity-100 transition-opacity duration-150 bg-[#1e293b] text-white text-[13px] font-medium rounded-[6px] px-[8px] py-[4px] whitespace-nowrap shadow-[0px_4px_12px_rgba(0,0,0,0.15)] z-10">
+        Season Pass: {data.revenueBars[3].value}
+      </div>
     </div>
   );
 }
@@ -1665,17 +1991,20 @@ function Container58() {
 }
 
 function Text23() {
+  const { data } = useDashboardData();
   return (
     <div className="relative shrink-0 flex items-center justify-center w-full" data-name="Text">
-      <p className="[word-break:break-word] font-['Inter:Bold',sans-serif] font-bold leading-[20px] not-italic text-[#8b6200] text-[16px] whitespace-nowrap relative shrink-0">10.3K</p>
+      <p className="[word-break:break-word] font-['Inter:Bold',sans-serif] font-bold leading-[20px] not-italic text-[#8b6200] text-[16px] whitespace-nowrap relative shrink-0 transition-opacity duration-200">{data.revenueBars[4].value}</p>
     </div>
   );
 }
 
 function Icon12() {
+  const { data } = useDashboardData();
+  const barHeight = data.revenueBars[4].height;
   return (
-    <div className="h-[70.56px] relative shrink-0 w-[53.2px]" data-name="Icon">
-      <svg className="absolute block inset-0 size-full" fill="none" height="126" preserveAspectRatio="none" viewBox="0 0 95 126" width="95">
+    <div className="group/revbar relative shrink-0 w-[53.2px] transition-[height] duration-300 ease-out cursor-default" style={{ height: `${barHeight}px` }} data-name="Icon">
+      <svg className="absolute block inset-0 size-full transition-[filter] duration-150 group-hover/revbar:brightness-110" fill="none" preserveAspectRatio="none" viewBox="0 0 95 126">
         <g clipPath="url(#clip0_0_16)" id="Icon">
           <path d={svgPaths.p982ad00} fill="url(#paint0_linear_0_16)" id="Vector" />
         </g>
@@ -1689,6 +2018,9 @@ function Icon12() {
           </clipPath>
         </defs>
       </svg>
+      <div className="pointer-events-none absolute -top-[36px] left-1/2 -translate-x-1/2 opacity-0 group-hover/revbar:opacity-100 transition-opacity duration-150 bg-[#1e293b] text-white text-[13px] font-medium rounded-[6px] px-[8px] py-[4px] whitespace-nowrap shadow-[0px_4px_12px_rgba(0,0,0,0.15)] z-10">
+        Coins: {data.revenueBars[4].value}
+      </div>
     </div>
   );
 }
@@ -1790,9 +2122,9 @@ function Container62() {
 
 function Text26() {
   return (
-    <div className="relative shrink-0 flex items-start w-full" data-name="Text">
-      <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[22px] not-italic text-[#7b6cf5] text-[16px] whitespace-nowrap relative shrink-0">View all</p>
-    </div>
+    <button type="button" className="relative shrink-0 flex items-start w-full cursor-pointer text-left">
+      <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[22px] not-italic text-[#7b6cf5] text-[16px] whitespace-nowrap relative shrink-0 transition-colors duration-150 hover:text-[#4c2e9e] underline-offset-2 hover:underline">View all</p>
+    </button>
   );
 }
 
@@ -1821,7 +2153,7 @@ function Text27() {
 
 function TableRow() {
   return (
-    <div className="grid grid-cols-[minmax(0,1fr)_60px_68px_68px] gap-x-[16px] items-center py-[11px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
+    <div className="grid grid-cols-[minmax(0,1fr)_60px_68px_68px] gap-x-[16px] items-center py-[11px] border-b border-[#f3f4f6] w-full -mx-[20px] px-[20px] transition-colors duration-150 hover:bg-[#f8fafc]" data-name="Table Row">
       <div className="flex gap-[10px] items-center min-w-0">
         <Container64 />
         <Text27 />
@@ -1847,7 +2179,7 @@ function Text28() {
 
 function TableRow1() {
   return (
-    <div className="grid grid-cols-[minmax(0,1fr)_60px_68px_68px] gap-x-[16px] items-center py-[11px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
+    <div className="grid grid-cols-[minmax(0,1fr)_60px_68px_68px] gap-x-[16px] items-center py-[11px] border-b border-[#f3f4f6] w-full -mx-[20px] px-[20px] transition-colors duration-150 hover:bg-[#f8fafc]" data-name="Table Row">
       <div className="flex gap-[10px] items-center min-w-0">
         <Container65 />
         <Text28 />
@@ -1873,7 +2205,7 @@ function Text29() {
 
 function TableRow2() {
   return (
-    <div className="grid grid-cols-[minmax(0,1fr)_60px_68px_68px] gap-x-[16px] items-center py-[11px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
+    <div className="grid grid-cols-[minmax(0,1fr)_60px_68px_68px] gap-x-[16px] items-center py-[11px] border-b border-[#f3f4f6] w-full -mx-[20px] px-[20px] transition-colors duration-150 hover:bg-[#f8fafc]" data-name="Table Row">
       <div className="flex gap-[10px] items-center min-w-0">
         <Container66 />
         <Text29 />
@@ -1899,7 +2231,7 @@ function Text30() {
 
 function TableRow3() {
   return (
-    <div className="grid grid-cols-[minmax(0,1fr)_60px_68px_68px] gap-x-[16px] items-center py-[11px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
+    <div className="grid grid-cols-[minmax(0,1fr)_60px_68px_68px] gap-x-[16px] items-center py-[11px] border-b border-[#f3f4f6] w-full -mx-[20px] px-[20px] transition-colors duration-150 hover:bg-[#f8fafc]" data-name="Table Row">
       <div className="flex gap-[10px] items-center min-w-0">
         <Container67 />
         <Text30 />
@@ -1925,7 +2257,7 @@ function Text31() {
 
 function TableRow4() {
   return (
-    <div className="grid grid-cols-[minmax(0,1fr)_60px_68px_68px] gap-x-[16px] items-center py-[11px] w-full" data-name="Table Row">
+    <div className="grid grid-cols-[minmax(0,1fr)_60px_68px_68px] gap-x-[16px] items-center py-[11px] w-full -mx-[20px] px-[20px] transition-colors duration-150 hover:bg-[#f8fafc]" data-name="Table Row">
       <div className="flex gap-[10px] items-center min-w-0">
         <Container68 />
         <Text31 />
@@ -1973,7 +2305,7 @@ function TableMargin() {
 
 function Container60() {
   return (
-    <div className="bg-white drop-shadow-[0px_1.655px_6.618px_rgba(0,0,0,0.06)] flex-[317.333_1_0] min-w-0 relative rounded-[13.237px]" data-name="Container">
+    <div className="bg-white drop-shadow-[0px_1.655px_6.618px_rgba(0,0,0,0.06)] flex-[317.333_1_0] min-w-0 relative rounded-[13.237px] transition-shadow duration-200 hover:shadow-[0px_8px_20px_-4px_rgba(15,23,42,0.14)] cursor-default" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start gap-[14px] px-[20px] py-[16px] relative size-full">
         <Container61 />
         <TableMargin />
@@ -2025,9 +2357,9 @@ function Container71() {
 
 function Text33() {
   return (
-    <div className="relative shrink-0 flex items-start w-full" data-name="Text">
-      <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[22px] not-italic text-[#7b6cf5] text-[16px] whitespace-nowrap relative shrink-0">View all</p>
-    </div>
+    <button type="button" className="relative shrink-0 flex items-start w-full cursor-pointer text-left">
+      <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[22px] not-italic text-[#7b6cf5] text-[16px] whitespace-nowrap relative shrink-0 transition-colors duration-150 hover:text-[#4c2e9e] underline-offset-2 hover:underline">View all</p>
+    </button>
   );
 }
 
@@ -2075,7 +2407,7 @@ function Container73() {
 
 function TableRow5() {
   return (
-    <div className="grid grid-cols-[minmax(0,1fr)_56px_68px_44px] gap-x-[16px] items-center py-[11px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
+    <div className="grid grid-cols-[minmax(0,1fr)_56px_68px_44px] gap-x-[16px] items-center py-[11px] border-b border-[#f3f4f6] w-full -mx-[20px] px-[20px] transition-colors duration-150 hover:bg-[#f8fafc]" data-name="Table Row">
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#374151] text-[16px] whitespace-nowrap">Daily Challenges</p>
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#6b7280] text-[16px] text-right whitespace-nowrap">45.2K</p>
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#6b7280] text-[16px] text-right whitespace-nowrap">85%</p>
@@ -2117,7 +2449,7 @@ function Container75() {
 
 function TableRow6() {
   return (
-    <div className="grid grid-cols-[minmax(0,1fr)_56px_68px_44px] gap-x-[16px] items-center py-[11px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
+    <div className="grid grid-cols-[minmax(0,1fr)_56px_68px_44px] gap-x-[16px] items-center py-[11px] border-b border-[#f3f4f6] w-full -mx-[20px] px-[20px] transition-colors duration-150 hover:bg-[#f8fafc]" data-name="Table Row">
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#374151] text-[16px] whitespace-nowrap">Battle Pass</p>
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#6b7280] text-[16px] text-right whitespace-nowrap">38.1K</p>
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#6b7280] text-[16px] text-right whitespace-nowrap">12%</p>
@@ -2159,7 +2491,7 @@ function Container77() {
 
 function TableRow7() {
   return (
-    <div className="grid grid-cols-[minmax(0,1fr)_56px_68px_44px] gap-x-[16px] items-center py-[11px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
+    <div className="grid grid-cols-[minmax(0,1fr)_56px_68px_44px] gap-x-[16px] items-center py-[11px] border-b border-[#f3f4f6] w-full -mx-[20px] px-[20px] transition-colors duration-150 hover:bg-[#f8fafc]" data-name="Table Row">
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#374151] text-[16px] whitespace-nowrap">Ranked Mode</p>
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#6b7280] text-[16px] text-right whitespace-nowrap">22.4K</p>
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#6b7280] text-[16px] text-right whitespace-nowrap">43%</p>
@@ -2201,7 +2533,7 @@ function Container79() {
 
 function TableRow8() {
   return (
-    <div className="grid grid-cols-[minmax(0,1fr)_56px_68px_44px] gap-x-[16px] items-center py-[11px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
+    <div className="grid grid-cols-[minmax(0,1fr)_56px_68px_44px] gap-x-[16px] items-center py-[11px] border-b border-[#f3f4f6] w-full -mx-[20px] px-[20px] transition-colors duration-150 hover:bg-[#f8fafc]" data-name="Table Row">
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#374151] text-[16px] whitespace-nowrap">Voice Chat</p>
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#6b7280] text-[16px] text-right whitespace-nowrap">18.3K</p>
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#6b7280] text-[16px] text-right whitespace-nowrap">88%</p>
@@ -2243,7 +2575,7 @@ function Container81() {
 
 function TableRow9() {
   return (
-    <div className="grid grid-cols-[minmax(0,1fr)_56px_68px_44px] gap-x-[16px] items-center py-[11px] w-full" data-name="Table Row">
+    <div className="grid grid-cols-[minmax(0,1fr)_56px_68px_44px] gap-x-[16px] items-center py-[11px] w-full -mx-[20px] px-[20px] transition-colors duration-150 hover:bg-[#f8fafc]" data-name="Table Row">
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#374151] text-[16px] whitespace-nowrap">Clan System</p>
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#6b7280] text-[16px] text-right whitespace-nowrap">18.3K</p>
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#6b7280] text-[16px] text-right whitespace-nowrap">44%</p>
@@ -2288,7 +2620,7 @@ function TableMargin1() {
 
 function Container69() {
   return (
-    <div className="bg-white drop-shadow-[0px_1.655px_6.618px_rgba(0,0,0,0.06)] flex-[317.333_1_0] min-w-0 relative rounded-[13.237px]" data-name="Container">
+    <div className="bg-white drop-shadow-[0px_1.655px_6.618px_rgba(0,0,0,0.06)] flex-[317.333_1_0] min-w-0 relative rounded-[13.237px] transition-shadow duration-200 hover:shadow-[0px_8px_20px_-4px_rgba(15,23,42,0.14)] cursor-default" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start gap-[14px] px-[20px] py-[16px] relative size-full">
         <Container70 />
         <TableMargin1 />
@@ -2341,9 +2673,9 @@ function Container85() {
 
 function Text35() {
   return (
-    <div className="relative shrink-0 flex items-start w-full" data-name="Text">
-      <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[22px] not-italic text-[#7b6cf5] text-[16px] whitespace-nowrap relative shrink-0">View all</p>
-    </div>
+    <button type="button" className="relative shrink-0 flex items-start w-full cursor-pointer text-left">
+      <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[22px] not-italic text-[#7b6cf5] text-[16px] whitespace-nowrap relative shrink-0 transition-colors duration-150 hover:text-[#4c2e9e] underline-offset-2 hover:underline">View all</p>
+    </button>
   );
 }
 
@@ -2415,14 +2747,25 @@ function Container91() {
 }
 
 function Container88() {
+  const [expanded, setExpanded] = useState(false);
   return (
     <div className="relative shrink-0 w-full" data-name="Container">
       <div aria-hidden className="absolute border-[#f3f4f6] border-b-[0.735px] border-solid inset-0 pointer-events-none" />
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[12px] items-center pb-[11px] pt-[10px] relative size-full">
+      <button
+        type="button"
+        onClick={() => setExpanded((v) => !v)}
+        aria-expanded={expanded}
+        className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[12px] items-center pb-[11px] pt-[10px] relative size-full -mx-[20px] px-[20px] w-[calc(100%+40px)] cursor-pointer text-left transition-colors duration-150 hover:bg-[#f8fafc]"
+      >
         <Container89 />
         <Container90 />
         <Container91 />
-      </div>
+      </button>
+      {expanded && (
+        <div className="pb-[12px] pr-[8px] pl-[44px] -mt-[2px]">
+          <p className="text-[14px] leading-[20px] text-[#6b7280]">Day-7 retention rose to 45.2%, up from 41.8% last period. Biggest gains came from the Tutorial → First Match step.</p>
+        </div>
+      )}
     </div>
   );
 }
@@ -2485,14 +2828,25 @@ function Container96() {
 }
 
 function Container93() {
+  const [expanded, setExpanded] = useState(false);
   return (
     <div className="relative shrink-0 w-full" data-name="Container">
       <div aria-hidden className="absolute border-[#f3f4f6] border-b-[0.735px] border-solid inset-0 pointer-events-none" />
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[12px] items-center pb-[11px] pt-[10px] relative size-full">
+      <button
+        type="button"
+        onClick={() => setExpanded((v) => !v)}
+        aria-expanded={expanded}
+        className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[12px] items-center pb-[11px] pt-[10px] relative size-full -mx-[20px] px-[20px] w-[calc(100%+40px)] cursor-pointer text-left transition-colors duration-150 hover:bg-[#f8fafc]"
+      >
         <Container94 />
         <Container95 />
         <Container96 />
-      </div>
+      </button>
+      {expanded && (
+        <div className="pb-[12px] pr-[8px] pl-[44px] -mt-[2px]">
+          <p className="text-[14px] leading-[20px] text-[#6b7280]">Drop-off after First Match rose to 14.6%. Matchmaking wait times on Android look like the likely cause — worth a closer look.</p>
+        </div>
+      )}
     </div>
   );
 }
@@ -2554,14 +2908,25 @@ function Container101() {
 }
 
 function Container98() {
+  const [expanded, setExpanded] = useState(false);
   return (
-    <div className="relative shrink-0" data-name="Container">
+    <div className="relative shrink-0 w-full" data-name="Container">
       <div aria-hidden className="absolute border-[#f3f4f6] border-b-[0.735px] border-solid inset-0 pointer-events-none" />
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[12px] items-center pb-[11px] pt-[10px] relative size-full">
+      <button
+        type="button"
+        onClick={() => setExpanded((v) => !v)}
+        aria-expanded={expanded}
+        className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[12px] items-center pb-[11px] pt-[10px] relative size-full -mx-[20px] px-[20px] w-[calc(100%+40px)] cursor-pointer text-left transition-colors duration-150 hover:bg-[#f8fafc]"
+      >
         <Container99 />
         <Container100 />
         <Container101 />
-      </div>
+      </button>
+      {expanded && (
+        <div className="pb-[12px] pr-[8px] pl-[44px] -mt-[2px]">
+          <p className="text-[14px] leading-[20px] text-[#6b7280]">Voice Chat sessions fell 6% week-over-week, coinciding with the new mute-by-default setting shipped last release.</p>
+        </div>
+      )}
     </div>
   );
 }
@@ -2623,14 +2988,25 @@ function Container106() {
 }
 
 function Container103() {
+  const [expanded, setExpanded] = useState(false);
   return (
     <div className="relative shrink-0 w-full" data-name="Container">
       <div aria-hidden className="absolute border-[#f3f4f6] border-b-[0.735px] border-solid inset-0 pointer-events-none" />
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[12px] items-center pb-[11px] pt-[10px] relative size-full">
+      <button
+        type="button"
+        onClick={() => setExpanded((v) => !v)}
+        aria-expanded={expanded}
+        className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[12px] items-center pb-[11px] pt-[10px] relative size-full -mx-[20px] px-[20px] w-[calc(100%+40px)] cursor-pointer text-left transition-colors duration-150 hover:bg-[#f8fafc]"
+      >
         <Container104 />
         <Container105 />
         <Container106 />
-      </div>
+      </button>
+      {expanded && (
+        <div className="pb-[12px] pr-[8px] pl-[44px] -mt-[2px]">
+          <p className="text-[14px] leading-[20px] text-[#6b7280]">Season 12 is now live for all players. Early engagement is up 18% versus Season 11’s launch day.</p>
+        </div>
+      )}
     </div>
   );
 }
@@ -2692,13 +3068,24 @@ function Container111() {
 }
 
 function Container108() {
+  const [expanded, setExpanded] = useState(false);
   return (
     <div className="relative shrink-0 w-full" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[12px] items-center py-[11px] relative size-full">
+      <button
+        type="button"
+        onClick={() => setExpanded((v) => !v)}
+        aria-expanded={expanded}
+        className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[12px] items-center pb-[11px] pt-[10px] relative size-full -mx-[20px] px-[20px] w-[calc(100%+40px)] cursor-pointer text-left transition-colors duration-150 hover:bg-[#f8fafc]"
+      >
         <Container109 />
         <Container110 />
         <Container111 />
-      </div>
+      </button>
+      {expanded && (
+        <div className="pb-[12px] pr-[8px] pl-[44px] -mt-[2px]">
+          <p className="text-[14px] leading-[20px] text-[#6b7280]">Season 12 rollout completed across all regions. No incidents reported during launch.</p>
+        </div>
+      )}
     </div>
   );
 }
@@ -2719,7 +3106,7 @@ function Container87() {
 
 function Container83() {
   return (
-    <div className="bg-white drop-shadow-[0px_1.655px_6.618px_rgba(0,0,0,0.06)] flex-[317.333_1_0] min-w-0 relative rounded-[13.237px]" data-name="Container">
+    <div className="bg-white drop-shadow-[0px_1.655px_6.618px_rgba(0,0,0,0.06)] flex-[317.333_1_0] min-w-0 relative rounded-[13.237px] transition-shadow duration-200 hover:shadow-[0px_8px_20px_-4px_rgba(15,23,42,0.14)] cursor-default" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start gap-[14px] px-[20px] py-[16px] relative size-full">
         <Container84 />
         <Container87 />
@@ -2749,11 +3136,22 @@ function MainContentArea() {
   );
 }
 
-export default function Dashbaord() {
+function DashbaordInner() {
   return (
     <div className="content-stretch flex items-stretch relative size-full h-screen overflow-hidden" style={{ backgroundImage: "linear-gradient(90deg, rgb(248, 249, 251) 0%, rgb(248, 249, 251) 100%), linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 100%)" }} data-name="Dashbaord">
       <AsideSidebar />
       <MainContentArea />
     </div>
+  );
+}
+
+export default function Dashbaord() {
+  const [range, setRange] = useState<RangeKey>("24h");
+  const data = DATA_BY_RANGE[range];
+
+  return (
+    <DashboardDataContext.Provider value={{ range, setRange, data }}>
+      <DashbaordInner />
+    </DashboardDataContext.Provider>
   );
 }
