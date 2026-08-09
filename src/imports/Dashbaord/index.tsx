@@ -691,8 +691,11 @@ function Text2() {
 function Badge() {
   return (
     <div className="bg-[#dcfce7] relative rounded-[15.35px] shrink-0" data-name="Badge">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center px-[5.372px] py-[1.535px] relative size-full">
-        <p className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[22px] not-italic relative shrink-0 text-[#16a34a] text-[16px] whitespace-nowrap">↑ 12%</p>
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center gap-[4px] px-[10px] py-[4px] relative">
+        <svg className="shrink-0" width="12" height="12" viewBox="0 0 12 12" fill="none">
+          <path d="M6 10V2M6 2L2.5 5.5M6 2L9.5 5.5" stroke="#16a34a" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+        <p className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[22px] not-italic relative shrink-0 text-[#16a34a] text-[16px] whitespace-nowrap">12%</p>
       </div>
     </div>
   );
@@ -755,23 +758,19 @@ function Container14() {
 function Group3() {
   return (
     <div className="absolute inset-0">
-      <div className="flex-none h-[hypot(-4.51529cqw,83.3967cqh)] rotate-[2.82deg] skew-x-[-7.98deg] w-[hypot(95.4847cqw,16.6033cqh)]">
-        <div className="relative size-full" data-name="Group">
-          <svg className="absolute block inset-0 size-full" fill="none" height="78.0643" preserveAspectRatio="none" viewBox="0 0 309.919 78.0643" width="309.919">
-            <g id="Group">
-              <path d={svgPaths.p1584e000} fill="url(#paint0_linear_0_78)" fillOpacity="0.6" id="Vector" />
-              <path d={svgPaths.p3288db80} fill="#6032DC" id="Vector_2" />
-            </g>
-            <defs>
-              <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_0_78" x1="0.00933154" x2="4.35055" y1="25.5909" y2="77.9605">
-                <stop stopColor="#7B6CF5" stopOpacity="0.55" />
-                <stop offset="0.5" stopColor="#9D8FF9" stopOpacity="0.22" />
-                <stop offset="1" stopColor="#C4BCFC" stopOpacity="0" />
-              </linearGradient>
-            </defs>
-          </svg>
-        </div>
-      </div>
+      <svg className="absolute block inset-0 size-full" fill="none" height="78.0643" preserveAspectRatio="none" viewBox="0 0 309.919 78.0643" width="309.919">
+        <g id="Group">
+          <path d={svgPaths.p1584e000} fill="url(#paint0_linear_0_78)" fillOpacity="0.6" id="Vector" />
+          <path d={svgPaths.p3288db80} fill="#6032DC" id="Vector_2" />
+        </g>
+        <defs>
+          <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_0_78" x1="0.00933154" x2="4.35055" y1="25.5909" y2="77.9605">
+            <stop stopColor="#7B6CF5" stopOpacity="0.55" />
+            <stop offset="0.5" stopColor="#9D8FF9" stopOpacity="0.22" />
+            <stop offset="1" stopColor="#C4BCFC" stopOpacity="0" />
+          </linearGradient>
+        </defs>
+      </svg>
     </div>
   );
 }
@@ -795,8 +794,11 @@ function Text4() {
 function Badge1() {
   return (
     <div className="bg-[#dcfce7] relative rounded-[15.35px] shrink-0" data-name="Badge">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center px-[5.372px] py-[1.535px] relative size-full">
-        <p className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[22px] not-italic relative shrink-0 text-[#16a34a] text-[16px] whitespace-nowrap">↑ 12%</p>
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center gap-[4px] px-[10px] py-[4px] relative">
+        <svg className="shrink-0" width="12" height="12" viewBox="0 0 12 12" fill="none">
+          <path d="M6 10V2M6 2L2.5 5.5M6 2L9.5 5.5" stroke="#16a34a" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+        <p className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[22px] not-italic relative shrink-0 text-[#16a34a] text-[16px] whitespace-nowrap">12%</p>
       </div>
     </div>
   );
@@ -849,23 +851,19 @@ function StatCard1() {
 function Group5() {
   return (
     <div className="absolute inset-0">
-      <div className="flex-none h-[hypot(-4.57968cqw,80.3924cqh)] rotate-[3.12deg] skew-x-[-8.99deg] w-[hypot(95.4203cqw,19.6076cqh)]">
-        <div className="relative size-full" data-name="Group">
-          <svg className="absolute block inset-0 size-full" fill="none" height="76.2532" preserveAspectRatio="none" viewBox="0 0 333.786 76.2532" width="333.786">
-            <g id="Group">
-              <path d={svgPaths.p1b29a480} fill="url(#paint0_linear_0_63)" fillOpacity="0.6" id="Vector" />
-              <path d={svgPaths.p17c76f00} fill="#6032DC" id="Vector_2" />
-            </g>
-            <defs>
-              <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_0_63" x1="10.4124" x2="11.4439" y1="4.66496" y2="76.0879">
-                <stop stopColor="#7B6CF5" stopOpacity="0.55" />
-                <stop offset="0.5" stopColor="#9D8FF9" stopOpacity="0.22" />
-                <stop offset="1" stopColor="#C4BCFC" stopOpacity="0" />
-              </linearGradient>
-            </defs>
-          </svg>
-        </div>
-      </div>
+      <svg className="absolute block inset-0 size-full" fill="none" height="76.2532" preserveAspectRatio="none" viewBox="0 0 333.786 76.2532" width="333.786">
+        <g id="Group">
+          <path d={svgPaths.p1b29a480} fill="url(#paint0_linear_0_63)" fillOpacity="0.6" id="Vector" />
+          <path d={svgPaths.p17c76f00} fill="#6032DC" id="Vector_2" />
+        </g>
+        <defs>
+          <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_0_63" x1="10.4124" x2="11.4439" y1="4.66496" y2="76.0879">
+            <stop stopColor="#7B6CF5" stopOpacity="0.55" />
+            <stop offset="0.5" stopColor="#9D8FF9" stopOpacity="0.22" />
+            <stop offset="1" stopColor="#C4BCFC" stopOpacity="0" />
+          </linearGradient>
+        </defs>
+      </svg>
     </div>
   );
 }
@@ -932,23 +930,19 @@ function StatCard2() {
 function Group7() {
   return (
     <div className="absolute inset-0">
-      <div className="flex-none h-[hypot(-4.45896cqw,79.9476cqh)] rotate-[3.15deg] skew-x-[-8.87deg] w-[hypot(95.541cqw,20.0524cqh)]">
-        <div className="relative size-full" data-name="Group">
-          <svg className="absolute block inset-0 size-full" fill="none" height="74.8087" preserveAspectRatio="none" viewBox="0 0 334.217 74.8087" width="334.217">
-            <g id="Group">
-              <path d={svgPaths.p1aa61700} fill="url(#paint0_linear_0_37)" fillOpacity="0.6" id="Vector" />
-              <path d={svgPaths.p45f7b00} fill="#6032DC" id="Vector_2" />
-            </g>
-            <defs>
-              <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_0_37" x1="10.9905" x2="11.858" y1="3.92555" y2="74.6633">
-                <stop stopColor="#7B6CF5" stopOpacity="0.55" />
-                <stop offset="0.5" stopColor="#9D8FF9" stopOpacity="0.22" />
-                <stop offset="1" stopColor="#C4BCFC" stopOpacity="0" />
-              </linearGradient>
-            </defs>
-          </svg>
-        </div>
-      </div>
+      <svg className="absolute block inset-0 size-full" fill="none" height="74.8087" preserveAspectRatio="none" viewBox="0 0 334.217 74.8087" width="334.217">
+        <g id="Group">
+          <path d={svgPaths.p1aa61700} fill="url(#paint0_linear_0_37)" fillOpacity="0.6" id="Vector" />
+          <path d={svgPaths.p45f7b00} fill="#6032DC" id="Vector_2" />
+        </g>
+        <defs>
+          <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_0_37" x1="10.9905" x2="11.858" y1="3.92555" y2="74.6633">
+            <stop stopColor="#7B6CF5" stopOpacity="0.55" />
+            <stop offset="0.5" stopColor="#9D8FF9" stopOpacity="0.22" />
+            <stop offset="1" stopColor="#C4BCFC" stopOpacity="0" />
+          </linearGradient>
+        </defs>
+      </svg>
     </div>
   );
 }
