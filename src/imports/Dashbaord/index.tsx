@@ -338,7 +338,7 @@ function Frame2() {
 
 function AsideSidebar() {
   return (
-    <div className="bg-[#fafafa] content-stretch flex flex-col items-start relative shrink-0 w-[240px] max-w-[240px] h-full overflow-y-auto overflow-x-hidden" data-name="Aside - Sidebar">
+    <div className="bg-[#fafafa] content-stretch flex flex-col items-start relative shrink-0 w-[264px] max-w-[264px] h-full overflow-y-auto overflow-x-hidden" data-name="Aside - Sidebar">
       <Container />
       <NavMargin />
       <TopNav />
@@ -644,7 +644,7 @@ function Frame5() {
 
 function LargeHeroCard() {
   return (
-    <div className="content-stretch flex flex-col min-h-[190px] items-start justify-between overflow-clip pb-[24px] pt-[14px] px-[14px] relative rounded-[10px] shadow-[0px_6.69px_8.362px_-1.673px_rgba(0,0,0,0.1),0px_2.676px_3.345px_-2.007px_rgba(0,0,0,0.1)] flex-[295.819_1_0] min-w-0" style={{ backgroundImage: "linear-gradient(142.07828029689713deg, rgb(111, 75, 255) 0%, rgb(86, 41, 230) 100%)" }} data-name="Large Hero Card">
+    <div className="content-stretch flex flex-col min-h-[168px] items-start justify-between overflow-clip pb-[20px] pt-[16px] px-[16px] relative rounded-[10px] shadow-[0px_6.69px_8.362px_-1.673px_rgba(0,0,0,0.1),0px_2.676px_3.345px_-2.007px_rgba(0,0,0,0.1)] flex-[295.819_1_0] min-w-0" style={{ backgroundImage: "linear-gradient(142.07828029689713deg, rgb(111, 75, 255) 0%, rgb(86, 41, 230) 100%)" }} data-name="Large Hero Card">
       <SparklineVisualizationPlaceholder />
       <Container11 />
       <Frame5 />
@@ -1008,7 +1008,7 @@ function StatCard3() {
 
 function Container13() {
   return (
-    <div className="grid grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[repeat(2,fit-content(100%))] gap-[14px] px-[23.334px] relative flex-[514.118_1_0] min-w-0" data-name="Container">
+    <div className="grid grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[repeat(2,fit-content(100%))] gap-[16px] relative flex-[514.118_1_0] min-w-0" data-name="Container">
       <Container14 />
       <StatCard1 />
       <StatCard2 />
@@ -1019,7 +1019,7 @@ function Container13() {
 
 function SectionKpiRow() {
   return (
-    <div className="content-start flex flex-wrap gap-[11.162px_11.162px] items-start relative shrink-0 w-full" data-name="Section - KPI Row">
+    <div className="content-start flex flex-wrap gap-[28px_28px] items-start relative shrink-0 w-full" data-name="Section - KPI Row">
       <LargeHeroCard />
       <Container13 />
     </div>
@@ -1766,7 +1766,7 @@ function RevenueBreakdown() {
 
 function MiddleSection() {
   return (
-    <div className="content-stretch flex gap-[43.12px] items-start relative shrink-0 w-full" data-name="Middle Section">
+    <div className="content-stretch flex gap-[24px] items-start relative shrink-0 w-full" data-name="Middle Section">
       <PlayerFunnelPerformance />
       <RevenueBreakdown />
     </div>
@@ -2758,7 +2758,7 @@ function Container83() {
 
 function DashboardBottom() {
   return (
-    <div className="content-stretch flex gap-[17.92px] items-start relative shrink-0 w-full" data-name="DashboardBottom">
+    <div className="content-stretch flex gap-[24px] items-start relative shrink-0 w-full" data-name="DashboardBottom">
       <Container60 />
       <Container69 />
       <Container83 />
@@ -2768,7 +2768,7 @@ function DashboardBottom() {
 
 function MainContentArea() {
   return (
-    <div className="bg-white content-stretch flex flex-col gap-[22.324px] h-full min-h-0 min-w-0 flex-1 items-start overflow-y-auto p-[27.905px] relative" data-name="Main Content Area">
+    <div className="bg-white content-stretch flex flex-col gap-[36px] h-full min-h-0 min-w-0 flex-1 items-start overflow-y-auto p-[44px] relative" data-name="Main Content Area">
       <HeaderSection />
       <SectionKpiRow />
       <MiddleSection />
