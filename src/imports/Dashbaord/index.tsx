@@ -281,7 +281,7 @@ function Container3() {
 
 function TopNav() {
   return (
-    <div className="bg-white drop-shadow-[0px_1.901px_7.604px_rgba(0,0,0,0.06)] relative rounded-[19.009px] shrink-0 w-[300.357px]" data-name="TopNav">
+    <div className="bg-white drop-shadow-[0px_1.901px_7.604px_rgba(0,0,0,0.06)] relative rounded-[19.009px] shrink-0 w-full" data-name="TopNav">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start justify-center px-[19.009px] py-[9.504px] relative size-full">
         <Container3 />
       </div>
@@ -350,7 +350,7 @@ function IconMargin() {
 
 function Frame2() {
   return (
-    <div className="relative shrink-0 w-[178.64px]">
+    <div className="relative shrink-0 w-full">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[13.44px] items-center px-[17.92px] relative size-full">
         <ImageAnthony />
         <Container4 />
@@ -362,7 +362,7 @@ function Frame2() {
 
 function AsideSidebar() {
   return (
-    <div className="bg-[#fafafa] content-stretch flex flex-col items-start relative shrink-0 w-[178.596px] h-full overflow-y-auto" data-name="Aside - Sidebar">
+    <div className="bg-[#fafafa] content-stretch flex flex-col items-start relative shrink-0 w-[178.596px] max-w-[178.596px] h-full overflow-y-auto overflow-x-hidden" data-name="Aside - Sidebar">
       <Container />
       <NavMargin />
       <TopNav />
