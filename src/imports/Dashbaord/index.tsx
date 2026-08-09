@@ -29,8 +29,8 @@ function Background() {
 function Heading() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Heading 1">
-      <div className="[word-break:break-word] flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center leading-[0] not-italic relative shrink-0 text-[#1e293b] text-[16px] whitespace-nowrap">
-        <p className="leading-[17.441px]">Pulse</p>
+      <div className="[word-break:break-word] flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center leading-[0] not-italic relative shrink-0 text-[#1e293b] text-[22.4px] whitespace-nowrap">
+        <p className="leading-[24.4px]">Pulse</p>
       </div>
     </div>
   );
