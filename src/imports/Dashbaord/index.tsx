@@ -561,7 +561,7 @@ function Frame4() {
 
 function HeaderSection() {
   return (
-    <div className="content-stretch flex items-start justify-between relative shrink-0 w-[820.96px]" data-name="Header Section">
+    <div className="content-stretch flex items-start justify-between relative shrink-0 w-full" data-name="Header Section">
       <Container5 />
       <Frame4 />
     </div>
@@ -670,7 +670,7 @@ function Frame5() {
 
 function LargeHeroCard() {
   return (
-    <div className="content-stretch flex flex-col h-[180.023px] items-start justify-between overflow-clip pb-[50.845px] pt-[10.704px] px-[10.704px] relative rounded-[7.501px] shadow-[0px_6.69px_8.362px_-1.673px_rgba(0,0,0,0.1),0px_2.676px_3.345px_-2.007px_rgba(0,0,0,0.1)] shrink-0 w-[295.819px]" style={{ backgroundImage: "linear-gradient(142.07828029689713deg, rgb(111, 75, 255) 0%, rgb(86, 41, 230) 100%)" }} data-name="Large Hero Card">
+    <div className="content-stretch flex flex-col h-[180.023px] items-start justify-between overflow-clip pb-[50.845px] pt-[10.704px] px-[10.704px] relative rounded-[7.501px] shadow-[0px_6.69px_8.362px_-1.673px_rgba(0,0,0,0.1),0px_2.676px_3.345px_-2.007px_rgba(0,0,0,0.1)] flex-[295.819_1_0] min-w-0" style={{ backgroundImage: "linear-gradient(142.07828029689713deg, rgb(111, 75, 255) 0%, rgb(86, 41, 230) 100%)" }} data-name="Large Hero Card">
       <SparklineVisualizationPlaceholder />
       <Container11 />
       <Frame5 />
@@ -1048,7 +1048,7 @@ function StatCard3() {
 
 function Container13() {
   return (
-    <div className="grid grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[repeat(2,fit-content(100%))] px-[23.334px] relative shrink-0 w-[514.118px]" data-name="Container">
+    <div className="grid grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[repeat(2,fit-content(100%))] px-[23.334px] relative flex-[514.118_1_0] min-w-0" data-name="Container">
       <Container14 />
       <StatCard1 />
       <StatCard2 />
@@ -1143,7 +1143,7 @@ function Container27() {
 
 function Container24() {
   return (
-    <div className="h-[35.569px] relative shrink-0 w-[246.019px]" data-name="Container">
+    <div className="h-[35.569px] relative shrink-0 w-full" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[7.41px] items-center relative size-full">
         <Container25 />
         <Container26 />
@@ -1240,7 +1240,7 @@ function Container34() {
 
 function Container29() {
   return (
-    <div className="h-[35.569px] relative shrink-0 w-[246.019px]" data-name="Container">
+    <div className="h-[35.569px] relative shrink-0 w-full" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[7.41px] items-center relative size-full">
         <Container30 />
         <Container31 />
@@ -1316,7 +1316,7 @@ function Container39() {
 
 function Container36() {
   return (
-    <div className="h-[35.569px] relative shrink-0 w-[246.019px]" data-name="Container">
+    <div className="h-[35.569px] relative shrink-0 w-full" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[7.41px] items-center relative size-full">
         <Container37 />
         <Container38 />
@@ -1420,7 +1420,7 @@ function Container46() {
 
 function Container41() {
   return (
-    <div className="h-[35.569px] relative shrink-0 w-[246.019px]" data-name="Container">
+    <div className="h-[35.569px] relative shrink-0 w-full" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[7.41px] items-center relative size-full">
         <Container42 />
         <Container43 />
@@ -1517,7 +1517,7 @@ function Container53() {
 
 function Container48() {
   return (
-    <div className="h-[35.569px] relative shrink-0 w-[246.019px]" data-name="Container">
+    <div className="h-[35.569px] relative shrink-0 w-full" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[7.41px] items-center relative size-full">
         <Container49 />
         <Container50 />
@@ -1541,7 +1541,7 @@ function Container23() {
 
 function ContainerMargin() {
   return (
-    <div className="content-stretch flex flex-col items-start pt-[13.338px] relative shrink-0 w-[225.875px]" data-name="Container (margin)">
+    <div className="content-stretch flex flex-col items-start pt-[13.338px] relative shrink-0 w-full" data-name="Container (margin)">
       <Container23 />
     </div>
   );
@@ -1549,7 +1549,7 @@ function ContainerMargin() {
 
 function PlayerFunnelPerformance() {
   return (
-    <div className="bg-white content-stretch flex flex-col gap-[17.92px] items-start py-[17.92px] relative rounded-[11.162px] shrink-0 w-[289.52px]" data-name="Player Funnel Performance">
+    <div className="bg-white content-stretch flex flex-col gap-[17.92px] items-start py-[17.92px] relative rounded-[11.162px] flex-[289.52_1_0] min-w-0" data-name="Player Funnel Performance">
       <Heading2 />
       <ContainerMargin />
     </div>
@@ -1823,7 +1823,7 @@ function Container59() {
 
 function FlatBarChart() {
   return (
-    <div className="content-stretch flex gap-[28px] items-end px-[13.44px] py-[8.96px] relative shrink-0" data-name="FlatBarChart">
+    <div className="content-stretch flex gap-[28px] items-end justify-center px-[13.44px] py-[8.96px] relative shrink-0 w-full" data-name="FlatBarChart">
       <Container55 />
       <Container56 />
       <Container57 />
@@ -1835,7 +1835,7 @@ function FlatBarChart() {
 
 function RevenueBreakdown() {
   return (
-    <div className="bg-white content-stretch flex flex-col h-[281.734px] items-start justify-between pt-[17.92px] px-[19.541px] relative rounded-[13.028px] shrink-0" data-name="Revenue Breakdown">
+    <div className="bg-white content-stretch flex flex-col h-[281.734px] items-start justify-between pt-[17.92px] px-[19.541px] relative rounded-[13.028px] flex-[508_1_0] min-w-0" data-name="Revenue Breakdown">
       <div className="[word-break:break-word] flex flex-col font-['Inter:Medium',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#1e293b] text-[15.68px] whitespace-nowrap">
         <p className="leading-[22.798px]">Revenue Breakdown</p>
       </div>
@@ -1846,7 +1846,7 @@ function RevenueBreakdown() {
 
 function MiddleSection() {
   return (
-    <div className="content-stretch flex gap-[43.12px] items-start relative shrink-0 w-[841.12px]" data-name="Middle Section">
+    <div className="content-stretch flex gap-[43.12px] items-start relative shrink-0 w-full" data-name="Middle Section">
       <PlayerFunnelPerformance />
       <RevenueBreakdown />
     </div>
@@ -2149,7 +2149,7 @@ function TableMargin() {
 
 function Container60() {
   return (
-    <div className="bg-white drop-shadow-[0px_1.655px_6.618px_rgba(0,0,0,0.06)] flex-[317.333_0_0] min-w-px relative rounded-[13.237px]" data-name="Container">
+    <div className="bg-white drop-shadow-[0px_1.655px_6.618px_rgba(0,0,0,0.06)] flex-[317.333_1_0] min-w-0 relative rounded-[13.237px]" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start px-[16.546px] py-[14.891px] relative size-full">
         <Container61 />
         <TableMargin />
@@ -2492,7 +2492,7 @@ function TableMargin1() {
 
 function Container69() {
   return (
-    <div className="bg-white drop-shadow-[0px_1.655px_6.618px_rgba(0,0,0,0.06)] flex-[317.333_0_0] min-w-px relative rounded-[13.237px]" data-name="Container">
+    <div className="bg-white drop-shadow-[0px_1.655px_6.618px_rgba(0,0,0,0.06)] flex-[317.333_1_0] min-w-0 relative rounded-[13.237px]" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start px-[16.546px] py-[14.891px] relative size-full">
         <Container70 />
         <TableMargin1 />
@@ -2937,7 +2937,7 @@ function Container87() {
 
 function Container83() {
   return (
-    <div className="bg-white drop-shadow-[0px_1.655px_6.618px_rgba(0,0,0,0.06)] flex-[317.333_0_0] min-w-px relative rounded-[13.237px]" data-name="Container">
+    <div className="bg-white drop-shadow-[0px_1.655px_6.618px_rgba(0,0,0,0.06)] flex-[317.333_1_0] min-w-0 relative rounded-[13.237px]" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start px-[16.546px] py-[14.891px] relative size-full">
         <Container84 />
         <Container87 />
@@ -2948,7 +2948,7 @@ function Container83() {
 
 function DashboardBottom() {
   return (
-    <div className="content-stretch flex gap-[17.92px] items-start relative shrink-0 w-[810.741px]" data-name="DashboardBottom">
+    <div className="content-stretch flex gap-[17.92px] items-start relative shrink-0 w-full" data-name="DashboardBottom">
       <Container60 />
       <Container69 />
       <Container83 />
@@ -2958,7 +2958,7 @@ function DashboardBottom() {
 
 function MainContentArea() {
   return (
-    <div className="bg-white content-stretch flex flex-col gap-[22.324px] h-full min-h-0 items-start overflow-y-auto p-[27.905px] relative shrink-0" data-name="Main Content Area">
+    <div className="bg-white content-stretch flex flex-col gap-[22.324px] h-full min-h-0 min-w-0 flex-1 items-start overflow-y-auto p-[27.905px] relative" data-name="Main Content Area">
       <HeaderSection />
       <SectionKpiRow />
       <MiddleSection />
@@ -2967,16 +2967,11 @@ function MainContentArea() {
   );
 }
 
-function IconMargin1() {
-  return <div className="flex-[1_0_0] h-[172.48px] min-w-px relative" data-name="Icon (margin)" />;
-}
-
 export default function Dashbaord() {
   return (
     <div className="content-stretch flex items-stretch relative size-full h-screen overflow-hidden" style={{ backgroundImage: "linear-gradient(90deg, rgb(248, 249, 251) 0%, rgb(248, 249, 251) 100%), linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 100%)" }} data-name="Dashbaord">
       <AsideSidebar />
       <MainContentArea />
-      <IconMargin1 />
     </div>
   );
 }
