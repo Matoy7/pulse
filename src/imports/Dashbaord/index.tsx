@@ -1001,8 +1001,8 @@ function SectionKpiRow() {
 function Heading2() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Heading 3">
-      <div className="[word-break:break-word] flex flex-col font-['Inter:Medium',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#1e293b] text-[16px] w-[292.32px]">
-        <p className="leading-[19.534px]">Player Funnel Performance</p>
+      <div className="[word-break:break-word] flex flex-col font-['Inter:Medium',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#1e293b] text-[16px] w-full">
+        <p className="leading-[24px]">Player Funnel Performance</p>
       </div>
     </div>
   );
@@ -1071,7 +1071,7 @@ function Container27() {
 
 function Container24() {
   return (
-    <div className="min-h-[40px] relative shrink-0 w-full" data-name="Container">
+    <div className="h-[48px] relative shrink-0 w-full" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[12px] items-center relative size-full">
         <Container25 />
         <Container26 />
@@ -1164,7 +1164,7 @@ function Container34() {
 
 function Container29() {
   return (
-    <div className="min-h-[40px] relative shrink-0 w-full" data-name="Container">
+    <div className="h-[48px] relative shrink-0 w-full" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[12px] items-center relative size-full">
         <Container30 />
         <Container31 />
@@ -1236,7 +1236,7 @@ function Container39() {
 
 function Container36() {
   return (
-    <div className="min-h-[40px] relative shrink-0 w-full" data-name="Container">
+    <div className="h-[48px] relative shrink-0 w-full" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[12px] items-center relative size-full">
         <Container37 />
         <Container38 />
@@ -1336,7 +1336,7 @@ function Container46() {
 
 function Container41() {
   return (
-    <div className="min-h-[40px] relative shrink-0 w-full" data-name="Container">
+    <div className="h-[48px] relative shrink-0 w-full" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[12px] items-center relative size-full">
         <Container42 />
         <Container43 />
@@ -1429,7 +1429,7 @@ function Container53() {
 
 function Container48() {
   return (
-    <div className="min-h-[40px] relative shrink-0 w-full" data-name="Container">
+    <div className="h-[48px] relative shrink-0 w-full" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[12px] items-center relative size-full">
         <Container49 />
         <Container50 />
@@ -1470,7 +1470,7 @@ function PlayerFunnelPerformance() {
 
 function Text15() {
   return (
-    <div className="relative shrink-0 flex items-start w-full" data-name="Text">
+    <div className="relative shrink-0 flex items-center justify-center w-full" data-name="Text">
       <p className="[word-break:break-word] font-['Inter:Bold',sans-serif] font-bold leading-[20px] not-italic text-[#7b6cf5] text-[16px] whitespace-nowrap relative shrink-0">24.6K</p>
     </div>
   );
@@ -1500,14 +1500,14 @@ function Icon8() {
 function Text16() {
   return (
     <div className="relative shrink-0 flex items-center justify-center w-full" data-name="Text">
-      <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[20px] not-italic text-[#1e293b] text-[16px] text-center whitespace-nowrap relative shrink-0">Battle Pass</p>
+      <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[20px] not-italic text-[#1e293b] text-[16px] text-center w-full">Battle Pass</p>
     </div>
   );
 }
 
 function Container55() {
   return (
-    <div className="relative shrink-0 min-w-[53.2px]" data-name="Container">
+    <div className="relative shrink-0 w-full min-w-0" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[8px] items-center relative size-full">
         <Text15 />
         <Icon8 />
@@ -1519,7 +1519,7 @@ function Container55() {
 
 function Text17() {
   return (
-    <div className="relative shrink-0 flex items-start w-full" data-name="Text">
+    <div className="relative shrink-0 flex items-center justify-center w-full" data-name="Text">
       <p className="[word-break:break-word] font-['Inter:Bold',sans-serif] font-bold leading-[20px] not-italic text-[#7b6cf5] text-[16px] whitespace-nowrap relative shrink-0">21.7K</p>
     </div>
   );
@@ -1549,14 +1549,14 @@ function Icon9() {
 function Text18() {
   return (
     <div className="relative shrink-0 flex items-center justify-center w-full" data-name="Text">
-      <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[20px] not-italic text-[#1e293b] text-[16px] text-center whitespace-nowrap relative shrink-0">Bundles</p>
+      <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[20px] not-italic text-[#1e293b] text-[16px] text-center w-full">Bundles</p>
     </div>
   );
 }
 
 function Container56() {
   return (
-    <div className="relative shrink-0 min-w-[53.2px]" data-name="Container">
+    <div className="relative shrink-0 w-full min-w-0" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[8px] items-center relative size-full">
         <Text17 />
         <Icon9 />
@@ -1568,7 +1568,7 @@ function Container56() {
 
 function Text19() {
   return (
-    <div className="relative shrink-0 flex items-start w-full" data-name="Text">
+    <div className="relative shrink-0 flex items-center justify-center w-full" data-name="Text">
       <p className="[word-break:break-word] font-['Inter:Bold',sans-serif] font-bold leading-[20px] not-italic text-[#8575f6] text-[16px] whitespace-nowrap relative shrink-0">18.2K</p>
     </div>
   );
@@ -1598,14 +1598,14 @@ function Icon10() {
 function Text20() {
   return (
     <div className="relative shrink-0 flex items-center justify-center w-full" data-name="Text">
-      <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[20px] not-italic text-[#1e293b] text-[16px] text-center whitespace-nowrap relative shrink-0">Skins</p>
+      <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[20px] not-italic text-[#1e293b] text-[16px] text-center w-full">Skins</p>
     </div>
   );
 }
 
 function Container57() {
   return (
-    <div className="relative shrink-0 min-w-[53.2px]" data-name="Container">
+    <div className="relative shrink-0 w-full min-w-0" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[8px] items-center relative size-full">
         <Text19 />
         <Icon10 />
@@ -1617,7 +1617,7 @@ function Container57() {
 
 function Text21() {
   return (
-    <div className="relative shrink-0 flex items-start w-full" data-name="Text">
+    <div className="relative shrink-0 flex items-center justify-center w-full" data-name="Text">
       <p className="[word-break:break-word] font-['Inter:Bold',sans-serif] font-bold leading-[20px] not-italic text-[#7b6cf5] text-[16px] whitespace-nowrap relative shrink-0">14.6K</p>
     </div>
   );
@@ -1647,14 +1647,14 @@ function Icon11() {
 function Text22() {
   return (
     <div className="relative shrink-0 flex items-center justify-center w-full" data-name="Text">
-      <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[20px] not-italic text-[#1e293b] text-[16px] text-center whitespace-nowrap relative shrink-0">Season Pass</p>
+      <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[20px] not-italic text-[#1e293b] text-[16px] text-center w-full">Season Pass</p>
     </div>
   );
 }
 
 function Container58() {
   return (
-    <div className="relative shrink-0 min-w-[53.2px]" data-name="Container">
+    <div className="relative shrink-0 w-full min-w-0" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[8px] items-center relative size-full">
         <Text21 />
         <Icon11 />
@@ -1666,7 +1666,7 @@ function Container58() {
 
 function Text23() {
   return (
-    <div className="relative shrink-0 flex items-start w-full" data-name="Text">
+    <div className="relative shrink-0 flex items-center justify-center w-full" data-name="Text">
       <p className="[word-break:break-word] font-['Inter:Bold',sans-serif] font-bold leading-[20px] not-italic text-[#8b6200] text-[16px] whitespace-nowrap relative shrink-0">10.3K</p>
     </div>
   );
@@ -1696,14 +1696,14 @@ function Icon12() {
 function Text24() {
   return (
     <div className="relative shrink-0 flex items-center justify-center w-full" data-name="Text">
-      <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[20px] not-italic text-[#1e293b] text-[16px] text-center whitespace-nowrap relative shrink-0">Coins</p>
+      <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[20px] not-italic text-[#1e293b] text-[16px] text-center w-full">Coins</p>
     </div>
   );
 }
 
 function Container59() {
   return (
-    <div className="relative shrink-0 min-w-[53.2px]" data-name="Container">
+    <div className="relative shrink-0 w-full min-w-0" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[8px] items-center relative size-full">
         <Text23 />
         <Icon12 />
@@ -1715,7 +1715,7 @@ function Container59() {
 
 function FlatBarChart() {
   return (
-    <div className="content-stretch flex gap-[36px] items-end justify-center px-[20px] py-[16px] relative shrink-0 w-full" data-name="FlatBarChart">
+    <div className="grid grid-cols-[repeat(5,minmax(0,1fr))] gap-x-[16px] items-end px-[20px] py-[16px] relative shrink-0 w-full" data-name="FlatBarChart">
       <Container55 />
       <Container56 />
       <Container57 />
@@ -1728,8 +1728,8 @@ function FlatBarChart() {
 function RevenueBreakdown() {
   return (
     <div className="bg-white content-stretch flex flex-col gap-[24px] items-start px-[20px] py-[20px] relative rounded-[13.028px] flex-[508_1_0] min-w-0" data-name="Revenue Breakdown">
-      <div className="[word-break:break-word] flex flex-col font-['Inter:Medium',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#1e293b] text-[16px] whitespace-nowrap">
-        <p className="leading-[22.798px]">Revenue Breakdown</p>
+      <div className="[word-break:break-word] flex flex-col font-['Inter:Medium',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#1e293b] text-[16px] w-full">
+        <p className="leading-[24px]">Revenue Breakdown</p>
       </div>
       <FlatBarChart />
     </div>
