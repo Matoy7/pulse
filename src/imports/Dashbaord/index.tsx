@@ -1814,14 +1814,14 @@ function Container64() {
 function Text27() {
   return (
     <div className="relative flex items-start w-full min-w-0" data-name="Text">
-      <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[22px] not-italic text-[#374151] text-[16px] truncate min-w-0">Battle Pass</p>
+      <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[22px] not-italic text-[#374151] text-[16px] whitespace-nowrap">Battle Pass</p>
     </div>
   );
 }
 
 function TableRow() {
   return (
-    <div className="grid grid-cols-[minmax(0,1fr)_80px_92px_92px] gap-x-[24px] items-center py-[16px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
+    <div className="grid grid-cols-[minmax(0,1fr)_60px_68px_68px] gap-x-[16px] items-center py-[11px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
       <div className="flex gap-[10px] items-center min-w-0">
         <Container64 />
         <Text27 />
@@ -1840,14 +1840,14 @@ function Container65() {
 function Text28() {
   return (
     <div className="relative flex items-start w-full min-w-0" data-name="Text">
-      <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[22px] not-italic text-[#374151] text-[16px] truncate min-w-0">Store</p>
+      <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[22px] not-italic text-[#374151] text-[16px] whitespace-nowrap">Store</p>
     </div>
   );
 }
 
 function TableRow1() {
   return (
-    <div className="grid grid-cols-[minmax(0,1fr)_80px_92px_92px] gap-x-[24px] items-center py-[16px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
+    <div className="grid grid-cols-[minmax(0,1fr)_60px_68px_68px] gap-x-[16px] items-center py-[11px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
       <div className="flex gap-[10px] items-center min-w-0">
         <Container65 />
         <Text28 />
@@ -1866,14 +1866,14 @@ function Container66() {
 function Text29() {
   return (
     <div className="relative flex items-start w-full min-w-0" data-name="Text">
-      <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[22px] not-italic text-[#374151] text-[16px] truncate min-w-0">Profile</p>
+      <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[22px] not-italic text-[#374151] text-[16px] whitespace-nowrap">Profile</p>
     </div>
   );
 }
 
 function TableRow2() {
   return (
-    <div className="grid grid-cols-[minmax(0,1fr)_80px_92px_92px] gap-x-[24px] items-center py-[16px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
+    <div className="grid grid-cols-[minmax(0,1fr)_60px_68px_68px] gap-x-[16px] items-center py-[11px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
       <div className="flex gap-[10px] items-center min-w-0">
         <Container66 />
         <Text29 />
@@ -1892,14 +1892,14 @@ function Container67() {
 function Text30() {
   return (
     <div className="relative flex items-start w-full min-w-0" data-name="Text">
-      <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[22px] not-italic text-[#374151] text-[16px] truncate min-w-0">Lobby</p>
+      <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[22px] not-italic text-[#374151] text-[16px] whitespace-nowrap">Lobby</p>
     </div>
   );
 }
 
 function TableRow3() {
   return (
-    <div className="grid grid-cols-[minmax(0,1fr)_80px_92px_92px] gap-x-[24px] items-center py-[16px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
+    <div className="grid grid-cols-[minmax(0,1fr)_60px_68px_68px] gap-x-[16px] items-center py-[11px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
       <div className="flex gap-[10px] items-center min-w-0">
         <Container67 />
         <Text30 />
@@ -1918,14 +1918,14 @@ function Container68() {
 function Text31() {
   return (
     <div className="relative flex items-start w-full min-w-0" data-name="Text">
-      <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[22px] not-italic text-[#374151] text-[16px] truncate min-w-0">Home</p>
+      <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[22px] not-italic text-[#374151] text-[16px] whitespace-nowrap">Home</p>
     </div>
   );
 }
 
 function TableRow4() {
   return (
-    <div className="grid grid-cols-[minmax(0,1fr)_80px_92px_92px] gap-x-[24px] items-center py-[16px] w-full" data-name="Table Row">
+    <div className="grid grid-cols-[minmax(0,1fr)_60px_68px_68px] gap-x-[16px] items-center py-[11px] w-full" data-name="Table Row">
       <div className="flex gap-[10px] items-center min-w-0">
         <Container68 />
         <Text31 />
@@ -1939,7 +1939,7 @@ function TableRow4() {
 
 function PopularScreensHeaderRow() {
   return (
-    <div className="grid grid-cols-[minmax(0,1fr)_80px_92px_92px] gap-x-[24px] items-center pb-[14px] border-b border-[#f3f4f6] w-full" data-name="Header Row">
+    <div className="grid grid-cols-[minmax(0,1fr)_60px_68px_68px] gap-x-[16px] items-center pb-[10px] border-b border-[#f3f4f6] w-full" data-name="Header Row">
       <p className="font-['Inter:Medium',sans-serif] font-medium not-italic text-[#9ca3af] text-[16px] tracking-[0.347px] uppercase whitespace-nowrap">Screen</p>
       <p className="font-['Inter:Medium',sans-serif] font-medium not-italic text-[#9ca3af] text-[16px] text-right tracking-[0.347px] uppercase whitespace-nowrap">Views</p>
       <p className="font-['Inter:Medium',sans-serif] font-medium not-italic text-[#9ca3af] text-[16px] text-right tracking-[0.347px] uppercase whitespace-nowrap">Avg Time</p>
@@ -1974,7 +1974,7 @@ function TableMargin() {
 function Container60() {
   return (
     <div className="bg-white drop-shadow-[0px_1.655px_6.618px_rgba(0,0,0,0.06)] flex-[317.333_1_0] min-w-0 relative rounded-[13.237px]" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start gap-[20px] px-[20px] py-[20px] relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start gap-[14px] px-[20px] py-[16px] relative size-full">
         <Container61 />
         <TableMargin />
       </div>
@@ -2075,8 +2075,8 @@ function Container73() {
 
 function TableRow5() {
   return (
-    <div className="grid grid-cols-[minmax(0,1fr)_72px_92px_60px] gap-x-[24px] items-center py-[16px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
-      <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#374151] text-[16px] truncate min-w-0">Daily Challenges</p>
+    <div className="grid grid-cols-[minmax(0,1fr)_56px_68px_44px] gap-x-[16px] items-center py-[11px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
+      <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#374151] text-[16px] whitespace-nowrap">Daily Challenges</p>
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#6b7280] text-[16px] text-right whitespace-nowrap">45.2K</p>
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#6b7280] text-[16px] text-right whitespace-nowrap">85%</p>
       <Container73 />
@@ -2117,8 +2117,8 @@ function Container75() {
 
 function TableRow6() {
   return (
-    <div className="grid grid-cols-[minmax(0,1fr)_72px_92px_60px] gap-x-[24px] items-center py-[16px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
-      <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#374151] text-[16px] truncate min-w-0">Battle Pass</p>
+    <div className="grid grid-cols-[minmax(0,1fr)_56px_68px_44px] gap-x-[16px] items-center py-[11px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
+      <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#374151] text-[16px] whitespace-nowrap">Battle Pass</p>
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#6b7280] text-[16px] text-right whitespace-nowrap">38.1K</p>
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#6b7280] text-[16px] text-right whitespace-nowrap">12%</p>
       <Container75 />
@@ -2159,8 +2159,8 @@ function Container77() {
 
 function TableRow7() {
   return (
-    <div className="grid grid-cols-[minmax(0,1fr)_72px_92px_60px] gap-x-[24px] items-center py-[16px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
-      <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#374151] text-[16px] truncate min-w-0">Ranked Mode</p>
+    <div className="grid grid-cols-[minmax(0,1fr)_56px_68px_44px] gap-x-[16px] items-center py-[11px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
+      <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#374151] text-[16px] whitespace-nowrap">Ranked Mode</p>
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#6b7280] text-[16px] text-right whitespace-nowrap">22.4K</p>
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#6b7280] text-[16px] text-right whitespace-nowrap">43%</p>
       <Container77 />
@@ -2201,8 +2201,8 @@ function Container79() {
 
 function TableRow8() {
   return (
-    <div className="grid grid-cols-[minmax(0,1fr)_72px_92px_60px] gap-x-[24px] items-center py-[16px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
-      <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#374151] text-[16px] truncate min-w-0">Voice Chat</p>
+    <div className="grid grid-cols-[minmax(0,1fr)_56px_68px_44px] gap-x-[16px] items-center py-[11px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
+      <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#374151] text-[16px] whitespace-nowrap">Voice Chat</p>
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#6b7280] text-[16px] text-right whitespace-nowrap">18.3K</p>
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#6b7280] text-[16px] text-right whitespace-nowrap">88%</p>
       <Container79 />
@@ -2243,8 +2243,8 @@ function Container81() {
 
 function TableRow9() {
   return (
-    <div className="grid grid-cols-[minmax(0,1fr)_72px_92px_60px] gap-x-[24px] items-center py-[16px] w-full" data-name="Table Row">
-      <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#374151] text-[16px] truncate min-w-0">Clan System</p>
+    <div className="grid grid-cols-[minmax(0,1fr)_56px_68px_44px] gap-x-[16px] items-center py-[11px] w-full" data-name="Table Row">
+      <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#374151] text-[16px] whitespace-nowrap">Clan System</p>
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#6b7280] text-[16px] text-right whitespace-nowrap">18.3K</p>
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#6b7280] text-[16px] text-right whitespace-nowrap">44%</p>
       <Container81 />
@@ -2254,7 +2254,7 @@ function TableRow9() {
 
 function FeatureAdoptionHeaderRow() {
   return (
-    <div className="grid grid-cols-[minmax(0,1fr)_72px_92px_60px] gap-x-[24px] items-center pb-[14px] border-b border-[#f3f4f6] w-full" data-name="Header Row">
+    <div className="grid grid-cols-[minmax(0,1fr)_56px_68px_44px] gap-x-[16px] items-center pb-[10px] border-b border-[#f3f4f6] w-full" data-name="Header Row">
       <p className="font-['Inter:Medium',sans-serif] font-medium not-italic text-[#9ca3af] text-[16px] tracking-[0.347px] uppercase whitespace-nowrap">Feature</p>
       <p className="font-['Inter:Medium',sans-serif] font-medium not-italic text-[#9ca3af] text-[16px] text-right tracking-[0.347px] uppercase whitespace-nowrap">Users</p>
       <p className="font-['Inter:Medium',sans-serif] font-medium not-italic text-[#9ca3af] text-[16px] text-right tracking-[0.347px] uppercase whitespace-nowrap">Adoption</p>
@@ -2289,7 +2289,7 @@ function TableMargin1() {
 function Container69() {
   return (
     <div className="bg-white drop-shadow-[0px_1.655px_6.618px_rgba(0,0,0,0.06)] flex-[317.333_1_0] min-w-0 relative rounded-[13.237px]" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start gap-[20px] px-[20px] py-[20px] relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start gap-[14px] px-[20px] py-[16px] relative size-full">
         <Container70 />
         <TableMargin1 />
       </div>
@@ -2385,7 +2385,7 @@ function Container90() {
   return (
     <div className="flex-1 min-w-0 relative" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
-        <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[22px] not-italic relative text-[#374151] text-[16px] truncate min-w-0 w-full">Retention improved</p>
+        <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[22px] not-italic relative text-[#374151] text-[16px] min-w-0 w-full">Retention improved</p>
       </div>
     </div>
   );
@@ -2418,7 +2418,7 @@ function Container88() {
   return (
     <div className="relative shrink-0 w-full" data-name="Container">
       <div aria-hidden className="absolute border-[#f3f4f6] border-b-[0.735px] border-solid inset-0 pointer-events-none" />
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[16px] items-center pb-[16px] pt-[14px] relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[12px] items-center pb-[11px] pt-[10px] relative size-full">
         <Container89 />
         <Container90 />
         <Container91 />
@@ -2455,7 +2455,7 @@ function Container95() {
   return (
     <div className="flex-1 min-w-0 relative" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
-        <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[22px] not-italic relative text-[#374151] text-[16px] truncate min-w-0 w-full">Drop Off increased</p>
+        <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[22px] not-italic relative text-[#374151] text-[16px] min-w-0 w-full">Drop Off increased</p>
       </div>
     </div>
   );
@@ -2488,7 +2488,7 @@ function Container93() {
   return (
     <div className="relative shrink-0 w-full" data-name="Container">
       <div aria-hidden className="absolute border-[#f3f4f6] border-b-[0.735px] border-solid inset-0 pointer-events-none" />
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[16px] items-center pb-[16px] pt-[14px] relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[12px] items-center pb-[11px] pt-[10px] relative size-full">
         <Container94 />
         <Container95 />
         <Container96 />
@@ -2524,7 +2524,7 @@ function Container100() {
   return (
     <div className="relative shrink-0 flex-1 min-w-0" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
-        <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[22px] not-italic relative text-[#374151] text-[16px] truncate min-w-0 w-full">Voice Chat usage decreased</p>
+        <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[22px] not-italic relative text-[#374151] text-[16px] min-w-0 w-full">Voice Chat usage decreased</p>
       </div>
     </div>
   );
@@ -2557,7 +2557,7 @@ function Container98() {
   return (
     <div className="relative shrink-0" data-name="Container">
       <div aria-hidden className="absolute border-[#f3f4f6] border-b-[0.735px] border-solid inset-0 pointer-events-none" />
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[16px] items-center pb-[16px] pt-[14px] relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[12px] items-center pb-[11px] pt-[10px] relative size-full">
         <Container99 />
         <Container100 />
         <Container101 />
@@ -2593,7 +2593,7 @@ function Container105() {
   return (
     <div className="flex-1 min-w-0 relative" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
-        <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[22px] not-italic relative text-[#374151] text-[16px] truncate min-w-0 w-full">New season launched</p>
+        <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[22px] not-italic relative text-[#374151] text-[16px] min-w-0 w-full">New season launched</p>
       </div>
     </div>
   );
@@ -2626,7 +2626,7 @@ function Container103() {
   return (
     <div className="relative shrink-0 w-full" data-name="Container">
       <div aria-hidden className="absolute border-[#f3f4f6] border-b-[0.735px] border-solid inset-0 pointer-events-none" />
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[16px] items-center pb-[16px] pt-[14px] relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[12px] items-center pb-[11px] pt-[10px] relative size-full">
         <Container104 />
         <Container105 />
         <Container106 />
@@ -2662,7 +2662,7 @@ function Container110() {
   return (
     <div className="flex-1 min-w-0 relative" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
-        <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[22px] not-italic relative text-[#374151] text-[16px] truncate min-w-0 w-full">New season launched</p>
+        <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[22px] not-italic relative text-[#374151] text-[16px] min-w-0 w-full">New season launched</p>
       </div>
     </div>
   );
@@ -2694,7 +2694,7 @@ function Container111() {
 function Container108() {
   return (
     <div className="relative shrink-0 w-full" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[16px] items-center py-[14px] relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[12px] items-center py-[11px] relative size-full">
         <Container109 />
         <Container110 />
         <Container111 />
@@ -2720,7 +2720,7 @@ function Container87() {
 function Container83() {
   return (
     <div className="bg-white drop-shadow-[0px_1.655px_6.618px_rgba(0,0,0,0.06)] flex-[317.333_1_0] min-w-0 relative rounded-[13.237px]" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start gap-[20px] px-[20px] py-[20px] relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start gap-[14px] px-[20px] py-[16px] relative size-full">
         <Container84 />
         <Container87 />
       </div>
