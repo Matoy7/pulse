@@ -654,7 +654,7 @@ function LargeHeroCard() {
 
 function Group1() {
   return (
-    <div className="absolute inset-[72.09%_13.17%_-16.64%_3.14%]" data-name="Group">
+    <div className="absolute inset-0">
       <svg className="absolute block inset-0 size-full" fill="none" height="74.631" preserveAspectRatio="none" viewBox="0 0 349.286 74.631" width="349.286">
         <g id="Group">
           <path d={svgPaths.p91d4770} fill="url(#paint0_linear_0_43)" fillOpacity="0.6" id="Vector" />
@@ -674,7 +674,7 @@ function Group1() {
 
 function Group() {
   return (
-    <div className="absolute contents inset-[72.09%_13.17%_-16.64%_3.14%]" data-name="Group">
+    <div className="relative w-full h-[46px] overflow-hidden rounded-[6px] shrink-0" data-name="Group">
       <Group1 />
     </div>
   );
@@ -732,11 +732,11 @@ function Container16() {
 
 function StatCard() {
   return (
-    <div className="bg-white drop-shadow-[0px_0.767px_3.07px_rgba(0,0,0,0.06)] flex-[1_0_0] h-full min-w-px relative rounded-[10.745px]" data-name="StatCard">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[8px] items-start pb-[12px] pt-[14px] px-[14px] relative size-full">
-        <Group />
+    <div className="bg-white drop-shadow-[0px_0.767px_3.07px_rgba(0,0,0,0.06)] flex-[1_0_0] min-w-px relative rounded-[10.745px]" data-name="StatCard">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[14px] items-start pb-[16px] pt-[16px] px-[16px] relative size-full">
         <Container15 />
         <Container16 />
+        <Group />
       </div>
     </div>
   );
@@ -754,7 +754,7 @@ function Container14() {
 
 function Group3() {
   return (
-    <div className="absolute flex inset-[63.14%_18.12%_-18.02%_4.21%] items-center justify-center" style={{ containerType: "size" }}>
+    <div className="absolute inset-0">
       <div className="flex-none h-[hypot(-4.51529cqw,83.3967cqh)] rotate-[2.82deg] skew-x-[-7.98deg] w-[hypot(95.4847cqw,16.6033cqh)]">
         <div className="relative size-full" data-name="Group">
           <svg className="absolute block inset-0 size-full" fill="none" height="78.0643" preserveAspectRatio="none" viewBox="0 0 309.919 78.0643" width="309.919">
@@ -778,7 +778,7 @@ function Group3() {
 
 function Group2() {
   return (
-    <div className="absolute contents inset-[54%_18.12%_-27.17%_4.21%]" style={{ containerType: "size" }} data-name="Group">
+    <div className="relative w-full h-[46px] overflow-hidden rounded-[6px] shrink-0" data-name="Group">
       <Group3 />
     </div>
   );
@@ -837,10 +837,10 @@ function Container18() {
 function StatCard1() {
   return (
     <div className="bg-white col-2 drop-shadow-[0px_0.767px_3.07px_rgba(0,0,0,0.06)] justify-self-stretch relative rounded-[10.745px] row-1 shrink-0 self-stretch" data-name="StatCard">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[8px] items-start pb-[12px] pt-[14px] px-[14px] relative size-full">
-        <Group2 />
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[14px] items-start pb-[16px] pt-[16px] px-[16px] relative size-full">
         <Container17 />
         <Container18 />
+        <Group2 />
       </div>
     </div>
   );
@@ -848,7 +848,7 @@ function StatCard1() {
 
 function Group5() {
   return (
-    <div className="absolute flex inset-[68.86%_14.73%_-24.21%_1.58%] items-center justify-center" style={{ containerType: "size" }}>
+    <div className="absolute inset-0">
       <div className="flex-none h-[hypot(-4.57968cqw,80.3924cqh)] rotate-[3.12deg] skew-x-[-8.99deg] w-[hypot(95.4203cqw,19.6076cqh)]">
         <div className="relative size-full" data-name="Group">
           <svg className="absolute block inset-0 size-full" fill="none" height="76.2532" preserveAspectRatio="none" viewBox="0 0 333.786 76.2532" width="333.786">
@@ -872,7 +872,7 @@ function Group5() {
 
 function Group4() {
   return (
-    <div className="absolute contents inset-[68.86%_14.73%_-24.21%_1.58%]" data-name="Group">
+    <div className="relative w-full h-[46px] overflow-hidden rounded-[6px] shrink-0" data-name="Group">
       <Group5 />
     </div>
   );
@@ -920,10 +920,10 @@ function Container20() {
 function StatCard2() {
   return (
     <div className="bg-white col-1 drop-shadow-[0px_0.767px_3.07px_rgba(0,0,0,0.06)] justify-self-stretch relative rounded-[10.745px] row-2 shrink-0 self-stretch" data-name="StatCard">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[8px] items-start pb-[12px] pt-[14px] px-[14px] relative size-full">
-        <Group4 />
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[14px] items-start pb-[16px] pt-[16px] px-[16px] relative size-full">
         <Container19 />
         <Container20 />
+        <Group4 />
       </div>
     </div>
   );
@@ -931,7 +931,7 @@ function StatCard2() {
 
 function Group7() {
   return (
-    <div className="absolute flex inset-[69.88%_14.73%_-24.51%_1.58%] items-center justify-center" style={{ containerType: "size" }}>
+    <div className="absolute inset-0">
       <div className="flex-none h-[hypot(-4.45896cqw,79.9476cqh)] rotate-[3.15deg] skew-x-[-8.87deg] w-[hypot(95.541cqw,20.0524cqh)]">
         <div className="relative size-full" data-name="Group">
           <svg className="absolute block inset-0 size-full" fill="none" height="74.8087" preserveAspectRatio="none" viewBox="0 0 334.217 74.8087" width="334.217">
@@ -955,7 +955,7 @@ function Group7() {
 
 function Group6() {
   return (
-    <div className="absolute contents inset-[69.88%_14.73%_-24.51%_1.58%]" data-name="Group">
+    <div className="relative w-full h-[46px] overflow-hidden rounded-[6px] shrink-0" data-name="Group">
       <Group7 />
     </div>
   );
@@ -1003,10 +1003,10 @@ function Container22() {
 function StatCard3() {
   return (
     <div className="bg-white col-2 drop-shadow-[0px_0.767px_3.07px_rgba(0,0,0,0.06)] justify-self-stretch relative rounded-[10.745px] row-2 self-stretch shrink-0" data-name="StatCard">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[8px] items-start pb-[12px] pt-[14px] px-[14px] relative size-full">
-        <Group6 />
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[14px] items-start pb-[16px] pt-[16px] px-[16px] relative size-full">
         <Container21 />
         <Container22 />
+        <Group6 />
       </div>
     </div>
   );
@@ -1014,7 +1014,7 @@ function StatCard3() {
 
 function Container13() {
   return (
-    <div className="grid grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[repeat(2,fit-content(100%))] px-[23.334px] relative flex-[514.118_1_0] min-w-0" data-name="Container">
+    <div className="grid grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[repeat(2,fit-content(100%))] gap-[14px] px-[23.334px] relative flex-[514.118_1_0] min-w-0" data-name="Container">
       <Container14 />
       <StatCard1 />
       <StatCard2 />
@@ -1814,7 +1814,7 @@ function Text25() {
 function Container62() {
   return (
     <div className="relative shrink-0" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[6.618px] items-center relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[12px] items-center relative size-full">
         <Container63 />
         <Text25 />
       </div>
@@ -1833,7 +1833,7 @@ function Text26() {
 function Container61() {
   return (
     <div className="relative shrink-0 w-full" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-between relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-between gap-[16px] relative size-full">
         <Container62 />
         <Text26 />
       </div>
@@ -1855,7 +1855,7 @@ function Text27() {
 
 function TableRow() {
   return (
-    <div className="grid grid-cols-[1fr_72px_84px_84px] gap-x-[16px] items-center py-[10px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
+    <div className="grid grid-cols-[1fr_80px_92px_92px] gap-x-[24px] items-center py-[16px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
       <div className="flex gap-[10px] items-center min-w-0">
         <Container64 />
         <Text27 />
@@ -1881,7 +1881,7 @@ function Text28() {
 
 function TableRow1() {
   return (
-    <div className="grid grid-cols-[1fr_72px_84px_84px] gap-x-[16px] items-center py-[10px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
+    <div className="grid grid-cols-[1fr_80px_92px_92px] gap-x-[24px] items-center py-[16px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
       <div className="flex gap-[10px] items-center min-w-0">
         <Container65 />
         <Text28 />
@@ -1907,7 +1907,7 @@ function Text29() {
 
 function TableRow2() {
   return (
-    <div className="grid grid-cols-[1fr_72px_84px_84px] gap-x-[16px] items-center py-[10px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
+    <div className="grid grid-cols-[1fr_80px_92px_92px] gap-x-[24px] items-center py-[16px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
       <div className="flex gap-[10px] items-center min-w-0">
         <Container66 />
         <Text29 />
@@ -1933,7 +1933,7 @@ function Text30() {
 
 function TableRow3() {
   return (
-    <div className="grid grid-cols-[1fr_72px_84px_84px] gap-x-[16px] items-center py-[10px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
+    <div className="grid grid-cols-[1fr_80px_92px_92px] gap-x-[24px] items-center py-[16px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
       <div className="flex gap-[10px] items-center min-w-0">
         <Container67 />
         <Text30 />
@@ -1959,7 +1959,7 @@ function Text31() {
 
 function TableRow4() {
   return (
-    <div className="grid grid-cols-[1fr_72px_84px_84px] gap-x-[16px] items-center py-[10px] w-full" data-name="Table Row">
+    <div className="grid grid-cols-[1fr_80px_92px_92px] gap-x-[24px] items-center py-[16px] w-full" data-name="Table Row">
       <div className="flex gap-[10px] items-center min-w-0">
         <Container68 />
         <Text31 />
@@ -1973,7 +1973,7 @@ function TableRow4() {
 
 function PopularScreensHeaderRow() {
   return (
-    <div className="grid grid-cols-[1fr_72px_84px_84px] gap-x-[16px] items-center pb-[10px] border-b border-[#f3f4f6] w-full" data-name="Header Row">
+    <div className="grid grid-cols-[1fr_80px_92px_92px] gap-x-[24px] items-center pb-[14px] border-b border-[#f3f4f6] w-full" data-name="Header Row">
       <p className="font-['Inter:Medium',sans-serif] font-medium not-italic text-[#9ca3af] text-[16px] tracking-[0.347px] uppercase whitespace-nowrap">Screen</p>
       <p className="font-['Inter:Medium',sans-serif] font-medium not-italic text-[#9ca3af] text-[16px] text-right tracking-[0.347px] uppercase whitespace-nowrap">Views</p>
       <p className="font-['Inter:Medium',sans-serif] font-medium not-italic text-[#9ca3af] text-[16px] text-right tracking-[0.347px] uppercase whitespace-nowrap">Avg Time</p>
@@ -1998,7 +1998,7 @@ function Table() {
 function TableMargin() {
   return (
     <div className="relative shrink-0 w-full" data-name="Table (margin)">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start pt-[11.582px] relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
         <Table />
       </div>
     </div>
@@ -2008,7 +2008,7 @@ function TableMargin() {
 function Container60() {
   return (
     <div className="bg-white drop-shadow-[0px_1.655px_6.618px_rgba(0,0,0,0.06)] flex-[317.333_1_0] min-w-0 relative rounded-[13.237px]" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start px-[16.546px] py-[14.891px] relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start gap-[20px] px-[20px] py-[20px] relative size-full">
         <Container61 />
         <TableMargin />
       </div>
@@ -2049,7 +2049,7 @@ function Text32() {
 function Container71() {
   return (
     <div className="relative shrink-0" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[6.618px] items-center relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[12px] items-center relative size-full">
         <Container72 />
         <Text32 />
       </div>
@@ -2068,7 +2068,7 @@ function Text33() {
 function Container70() {
   return (
     <div className="relative shrink-0 w-full" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-between relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-between gap-[16px] relative size-full">
         <Container71 />
         <Text33 />
       </div>
@@ -2109,7 +2109,7 @@ function Container73() {
 
 function TableRow5() {
   return (
-    <div className="grid grid-cols-[1fr_64px_84px_48px] gap-x-[16px] items-center py-[10px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
+    <div className="grid grid-cols-[1fr_72px_92px_60px] gap-x-[24px] items-center py-[16px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#374151] text-[16px] whitespace-nowrap">Daily Challenges</p>
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#6b7280] text-[16px] text-right whitespace-nowrap">45.2K</p>
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#6b7280] text-[16px] text-right whitespace-nowrap">85%</p>
@@ -2151,7 +2151,7 @@ function Container75() {
 
 function TableRow6() {
   return (
-    <div className="grid grid-cols-[1fr_64px_84px_48px] gap-x-[16px] items-center py-[10px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
+    <div className="grid grid-cols-[1fr_72px_92px_60px] gap-x-[24px] items-center py-[16px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#374151] text-[16px] whitespace-nowrap">Battle Pass</p>
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#6b7280] text-[16px] text-right whitespace-nowrap">38.1K</p>
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#6b7280] text-[16px] text-right whitespace-nowrap">12%</p>
@@ -2193,7 +2193,7 @@ function Container77() {
 
 function TableRow7() {
   return (
-    <div className="grid grid-cols-[1fr_64px_84px_48px] gap-x-[16px] items-center py-[10px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
+    <div className="grid grid-cols-[1fr_72px_92px_60px] gap-x-[24px] items-center py-[16px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#374151] text-[16px] whitespace-nowrap">Ranked Mode</p>
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#6b7280] text-[16px] text-right whitespace-nowrap">22.4K</p>
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#6b7280] text-[16px] text-right whitespace-nowrap">43%</p>
@@ -2235,7 +2235,7 @@ function Container79() {
 
 function TableRow8() {
   return (
-    <div className="grid grid-cols-[1fr_64px_84px_48px] gap-x-[16px] items-center py-[10px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
+    <div className="grid grid-cols-[1fr_72px_92px_60px] gap-x-[24px] items-center py-[16px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#374151] text-[16px] whitespace-nowrap">Voice Chat</p>
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#6b7280] text-[16px] text-right whitespace-nowrap">18.3K</p>
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#6b7280] text-[16px] text-right whitespace-nowrap">88%</p>
@@ -2277,7 +2277,7 @@ function Container81() {
 
 function TableRow9() {
   return (
-    <div className="grid grid-cols-[1fr_64px_84px_48px] gap-x-[16px] items-center py-[10px] w-full" data-name="Table Row">
+    <div className="grid grid-cols-[1fr_72px_92px_60px] gap-x-[24px] items-center py-[16px] w-full" data-name="Table Row">
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#374151] text-[16px] whitespace-nowrap">Clan System</p>
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#6b7280] text-[16px] text-right whitespace-nowrap">18.3K</p>
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#6b7280] text-[16px] text-right whitespace-nowrap">44%</p>
@@ -2288,7 +2288,7 @@ function TableRow9() {
 
 function FeatureAdoptionHeaderRow() {
   return (
-    <div className="grid grid-cols-[1fr_64px_84px_48px] gap-x-[16px] items-center pb-[10px] border-b border-[#f3f4f6] w-full" data-name="Header Row">
+    <div className="grid grid-cols-[1fr_72px_92px_60px] gap-x-[24px] items-center pb-[14px] border-b border-[#f3f4f6] w-full" data-name="Header Row">
       <p className="font-['Inter:Medium',sans-serif] font-medium not-italic text-[#9ca3af] text-[16px] tracking-[0.347px] uppercase whitespace-nowrap">Feature</p>
       <p className="font-['Inter:Medium',sans-serif] font-medium not-italic text-[#9ca3af] text-[16px] text-right tracking-[0.347px] uppercase whitespace-nowrap">Users</p>
       <p className="font-['Inter:Medium',sans-serif] font-medium not-italic text-[#9ca3af] text-[16px] text-right tracking-[0.347px] uppercase whitespace-nowrap">Adoption</p>
@@ -2313,7 +2313,7 @@ function Table1() {
 function TableMargin1() {
   return (
     <div className="relative shrink-0" data-name="Table (margin)">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start pt-[11.582px] relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
         <Table1 />
       </div>
     </div>
@@ -2323,7 +2323,7 @@ function TableMargin1() {
 function Container69() {
   return (
     <div className="bg-white drop-shadow-[0px_1.655px_6.618px_rgba(0,0,0,0.06)] flex-[317.333_1_0] min-w-0 relative rounded-[13.237px]" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start px-[16.546px] py-[14.891px] relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start gap-[20px] px-[20px] py-[20px] relative size-full">
         <Container70 />
         <TableMargin1 />
       </div>
@@ -2365,7 +2365,7 @@ function Text34() {
 function Container85() {
   return (
     <div className="relative shrink-0" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[6.618px] items-center relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[12px] items-center relative size-full">
         <Container86 />
         <Text34 />
       </div>
@@ -2384,7 +2384,7 @@ function Text35() {
 function Container84() {
   return (
     <div className="relative shrink-0 w-full" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-between relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-between gap-[16px] relative size-full">
         <Container85 />
         <Text35 />
       </div>
@@ -2440,7 +2440,7 @@ function Container92() {
 function Container91() {
   return (
     <div className="relative shrink-0" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[6.618px] items-center relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[8px] items-center relative size-full">
         <Text36 />
         <Container92 />
       </div>
@@ -2452,7 +2452,7 @@ function Container88() {
   return (
     <div className="relative shrink-0 w-full" data-name="Container">
       <div aria-hidden className="absolute border-[#f3f4f6] border-b-[0.735px] border-solid inset-0 pointer-events-none" />
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[8.273px] items-center pb-[7.353px] pt-[6.618px] relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[16px] items-center pb-[16px] pt-[14px] relative size-full">
         <Container89 />
         <Container90 />
         <Container91 />
@@ -2510,7 +2510,7 @@ function Container97() {
 function Container96() {
   return (
     <div className="relative shrink-0" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[6.618px] items-center relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[8px] items-center relative size-full">
         <Text37 />
         <Container97 />
       </div>
@@ -2522,7 +2522,7 @@ function Container93() {
   return (
     <div className="relative shrink-0 w-full" data-name="Container">
       <div aria-hidden className="absolute border-[#f3f4f6] border-b-[0.735px] border-solid inset-0 pointer-events-none" />
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[8.273px] items-center pb-[7.353px] pt-[6.618px] relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[16px] items-center pb-[16px] pt-[14px] relative size-full">
         <Container94 />
         <Container95 />
         <Container96 />
@@ -2579,7 +2579,7 @@ function Container102() {
 function Container101() {
   return (
     <div className="relative shrink-0" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[6.618px] items-center relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[8px] items-center relative size-full">
         <Text38 />
         <Container102 />
       </div>
@@ -2591,7 +2591,7 @@ function Container98() {
   return (
     <div className="relative shrink-0" data-name="Container">
       <div aria-hidden className="absolute border-[#f3f4f6] border-b-[0.735px] border-solid inset-0 pointer-events-none" />
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[8.273px] items-center pb-[7.353px] pt-[6.618px] relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[16px] items-center pb-[16px] pt-[14px] relative size-full">
         <Container99 />
         <Container100 />
         <Container101 />
@@ -2648,7 +2648,7 @@ function Container107() {
 function Container106() {
   return (
     <div className="relative shrink-0" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[6.618px] items-center relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[8px] items-center relative size-full">
         <Text39 />
         <Container107 />
       </div>
@@ -2660,7 +2660,7 @@ function Container103() {
   return (
     <div className="relative shrink-0 w-full" data-name="Container">
       <div aria-hidden className="absolute border-[#f3f4f6] border-b-[0.735px] border-solid inset-0 pointer-events-none" />
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[8.273px] items-center pb-[7.353px] pt-[6.618px] relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[16px] items-center pb-[16px] pt-[14px] relative size-full">
         <Container104 />
         <Container105 />
         <Container106 />
@@ -2717,7 +2717,7 @@ function Container112() {
 function Container111() {
   return (
     <div className="relative shrink-0" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[6.618px] items-center relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[8px] items-center relative size-full">
         <Text40 />
         <Container112 />
       </div>
@@ -2728,7 +2728,7 @@ function Container111() {
 function Container108() {
   return (
     <div className="relative shrink-0 w-full" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[8.273px] items-center py-[6.618px] relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[16px] items-center py-[14px] relative size-full">
         <Container109 />
         <Container110 />
         <Container111 />
@@ -2740,7 +2740,7 @@ function Container108() {
 function Container87() {
   return (
     <div className="relative shrink-0 w-full" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start pt-[11.582px] relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
         <Container88 />
         <Container93 />
         <Container98 />
@@ -2754,7 +2754,7 @@ function Container87() {
 function Container83() {
   return (
     <div className="bg-white drop-shadow-[0px_1.655px_6.618px_rgba(0,0,0,0.06)] flex-[317.333_1_0] min-w-0 relative rounded-[13.237px]" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start px-[16.546px] py-[14.891px] relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start gap-[20px] px-[20px] py-[20px] relative size-full">
         <Container84 />
         <Container87 />
       </div>
