@@ -644,7 +644,7 @@ function Frame5() {
 
 function LargeHeroCard() {
   return (
-    <div className="content-stretch flex flex-col min-h-[168px] items-start justify-between overflow-clip pb-[20px] pt-[16px] px-[16px] relative rounded-[10px] shadow-[0px_6.69px_8.362px_-1.673px_rgba(0,0,0,0.1),0px_2.676px_3.345px_-2.007px_rgba(0,0,0,0.1)] flex-[295.819_1_0] min-w-0" style={{ backgroundImage: "linear-gradient(142.07828029689713deg, rgb(111, 75, 255) 0%, rgb(86, 41, 230) 100%)" }} data-name="Large Hero Card">
+    <div className="content-stretch flex flex-col aspect-[53/34] min-h-[140px] items-start justify-between overflow-clip pb-[20px] pt-[16px] px-[16px] relative rounded-[10px] shadow-[0px_6.69px_8.362px_-1.673px_rgba(0,0,0,0.1),0px_2.676px_3.345px_-2.007px_rgba(0,0,0,0.1)] flex-[295.819_1_0] min-w-0" style={{ backgroundImage: "linear-gradient(142.07828029689713deg, rgb(111, 75, 255) 0%, rgb(86, 41, 230) 100%)" }} data-name="Large Hero Card">
       <SparklineVisualizationPlaceholder />
       <Container11 />
       <Frame5 />
@@ -688,25 +688,11 @@ function Text2() {
   );
 }
 
-function Badge() {
-  return (
-    <div className="bg-[#dcfce7] relative rounded-[15.35px] shrink-0" data-name="Badge">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center gap-[4px] px-[10px] py-[4px] relative">
-        <svg className="shrink-0" width="12" height="12" viewBox="0 0 12 12" fill="none">
-          <path d="M6 10V2M6 2L2.5 5.5M6 2L9.5 5.5" stroke="#16a34a" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-        <p className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[22px] not-italic relative shrink-0 text-[#16a34a] text-[16px] whitespace-nowrap">12%</p>
-      </div>
-    </div>
-  );
-}
-
 function Container15() {
   return (
     <div className="relative shrink-0 w-full" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-between gap-[8px] relative w-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center gap-[8px] relative w-full">
         <Text2 />
-        <Badge />
       </div>
     </div>
   );
@@ -791,25 +777,11 @@ function Text4() {
   );
 }
 
-function Badge1() {
-  return (
-    <div className="bg-[#dcfce7] relative rounded-[15.35px] shrink-0" data-name="Badge">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center gap-[4px] px-[10px] py-[4px] relative">
-        <svg className="shrink-0" width="12" height="12" viewBox="0 0 12 12" fill="none">
-          <path d="M6 10V2M6 2L2.5 5.5M6 2L9.5 5.5" stroke="#16a34a" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-        <p className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[22px] not-italic relative shrink-0 text-[#16a34a] text-[16px] whitespace-nowrap">12%</p>
-      </div>
-    </div>
-  );
-}
-
 function Container17() {
   return (
     <div className="relative shrink-0 w-full" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-between gap-[8px] relative w-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center gap-[8px] relative w-full">
         <Text4 />
-        <Badge1 />
       </div>
     </div>
   );
@@ -1841,15 +1813,15 @@ function Container64() {
 
 function Text27() {
   return (
-    <div className="relative shrink-0 flex items-start w-full" data-name="Text">
-      <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[22px] not-italic text-[#374151] text-[16px] whitespace-nowrap relative shrink-0">Battle Pass</p>
+    <div className="relative flex items-start w-full min-w-0" data-name="Text">
+      <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[22px] not-italic text-[#374151] text-[16px] truncate min-w-0">Battle Pass</p>
     </div>
   );
 }
 
 function TableRow() {
   return (
-    <div className="grid grid-cols-[1fr_80px_92px_92px] gap-x-[24px] items-center py-[16px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
+    <div className="grid grid-cols-[minmax(0,1fr)_80px_92px_92px] gap-x-[24px] items-center py-[16px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
       <div className="flex gap-[10px] items-center min-w-0">
         <Container64 />
         <Text27 />
@@ -1867,15 +1839,15 @@ function Container65() {
 
 function Text28() {
   return (
-    <div className="relative shrink-0 flex items-start w-full" data-name="Text">
-      <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[22px] not-italic text-[#374151] text-[16px] whitespace-nowrap relative shrink-0">Store</p>
+    <div className="relative flex items-start w-full min-w-0" data-name="Text">
+      <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[22px] not-italic text-[#374151] text-[16px] truncate min-w-0">Store</p>
     </div>
   );
 }
 
 function TableRow1() {
   return (
-    <div className="grid grid-cols-[1fr_80px_92px_92px] gap-x-[24px] items-center py-[16px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
+    <div className="grid grid-cols-[minmax(0,1fr)_80px_92px_92px] gap-x-[24px] items-center py-[16px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
       <div className="flex gap-[10px] items-center min-w-0">
         <Container65 />
         <Text28 />
@@ -1893,15 +1865,15 @@ function Container66() {
 
 function Text29() {
   return (
-    <div className="relative shrink-0 flex items-start w-full" data-name="Text">
-      <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[22px] not-italic text-[#374151] text-[16px] whitespace-nowrap relative shrink-0">Profile</p>
+    <div className="relative flex items-start w-full min-w-0" data-name="Text">
+      <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[22px] not-italic text-[#374151] text-[16px] truncate min-w-0">Profile</p>
     </div>
   );
 }
 
 function TableRow2() {
   return (
-    <div className="grid grid-cols-[1fr_80px_92px_92px] gap-x-[24px] items-center py-[16px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
+    <div className="grid grid-cols-[minmax(0,1fr)_80px_92px_92px] gap-x-[24px] items-center py-[16px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
       <div className="flex gap-[10px] items-center min-w-0">
         <Container66 />
         <Text29 />
@@ -1919,15 +1891,15 @@ function Container67() {
 
 function Text30() {
   return (
-    <div className="relative shrink-0 flex items-start w-full" data-name="Text">
-      <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[22px] not-italic text-[#374151] text-[16px] whitespace-nowrap relative shrink-0">Lobby</p>
+    <div className="relative flex items-start w-full min-w-0" data-name="Text">
+      <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[22px] not-italic text-[#374151] text-[16px] truncate min-w-0">Lobby</p>
     </div>
   );
 }
 
 function TableRow3() {
   return (
-    <div className="grid grid-cols-[1fr_80px_92px_92px] gap-x-[24px] items-center py-[16px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
+    <div className="grid grid-cols-[minmax(0,1fr)_80px_92px_92px] gap-x-[24px] items-center py-[16px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
       <div className="flex gap-[10px] items-center min-w-0">
         <Container67 />
         <Text30 />
@@ -1945,15 +1917,15 @@ function Container68() {
 
 function Text31() {
   return (
-    <div className="relative shrink-0 flex items-start w-full" data-name="Text">
-      <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[22px] not-italic text-[#374151] text-[16px] whitespace-nowrap relative shrink-0">Home</p>
+    <div className="relative flex items-start w-full min-w-0" data-name="Text">
+      <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[22px] not-italic text-[#374151] text-[16px] truncate min-w-0">Home</p>
     </div>
   );
 }
 
 function TableRow4() {
   return (
-    <div className="grid grid-cols-[1fr_80px_92px_92px] gap-x-[24px] items-center py-[16px] w-full" data-name="Table Row">
+    <div className="grid grid-cols-[minmax(0,1fr)_80px_92px_92px] gap-x-[24px] items-center py-[16px] w-full" data-name="Table Row">
       <div className="flex gap-[10px] items-center min-w-0">
         <Container68 />
         <Text31 />
@@ -1967,7 +1939,7 @@ function TableRow4() {
 
 function PopularScreensHeaderRow() {
   return (
-    <div className="grid grid-cols-[1fr_80px_92px_92px] gap-x-[24px] items-center pb-[14px] border-b border-[#f3f4f6] w-full" data-name="Header Row">
+    <div className="grid grid-cols-[minmax(0,1fr)_80px_92px_92px] gap-x-[24px] items-center pb-[14px] border-b border-[#f3f4f6] w-full" data-name="Header Row">
       <p className="font-['Inter:Medium',sans-serif] font-medium not-italic text-[#9ca3af] text-[16px] tracking-[0.347px] uppercase whitespace-nowrap">Screen</p>
       <p className="font-['Inter:Medium',sans-serif] font-medium not-italic text-[#9ca3af] text-[16px] text-right tracking-[0.347px] uppercase whitespace-nowrap">Views</p>
       <p className="font-['Inter:Medium',sans-serif] font-medium not-italic text-[#9ca3af] text-[16px] text-right tracking-[0.347px] uppercase whitespace-nowrap">Avg Time</p>
@@ -2103,8 +2075,8 @@ function Container73() {
 
 function TableRow5() {
   return (
-    <div className="grid grid-cols-[1fr_72px_92px_60px] gap-x-[24px] items-center py-[16px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
-      <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#374151] text-[16px] whitespace-nowrap">Daily Challenges</p>
+    <div className="grid grid-cols-[minmax(0,1fr)_72px_92px_60px] gap-x-[24px] items-center py-[16px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
+      <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#374151] text-[16px] truncate min-w-0">Daily Challenges</p>
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#6b7280] text-[16px] text-right whitespace-nowrap">45.2K</p>
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#6b7280] text-[16px] text-right whitespace-nowrap">85%</p>
       <Container73 />
@@ -2145,8 +2117,8 @@ function Container75() {
 
 function TableRow6() {
   return (
-    <div className="grid grid-cols-[1fr_72px_92px_60px] gap-x-[24px] items-center py-[16px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
-      <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#374151] text-[16px] whitespace-nowrap">Battle Pass</p>
+    <div className="grid grid-cols-[minmax(0,1fr)_72px_92px_60px] gap-x-[24px] items-center py-[16px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
+      <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#374151] text-[16px] truncate min-w-0">Battle Pass</p>
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#6b7280] text-[16px] text-right whitespace-nowrap">38.1K</p>
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#6b7280] text-[16px] text-right whitespace-nowrap">12%</p>
       <Container75 />
@@ -2187,8 +2159,8 @@ function Container77() {
 
 function TableRow7() {
   return (
-    <div className="grid grid-cols-[1fr_72px_92px_60px] gap-x-[24px] items-center py-[16px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
-      <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#374151] text-[16px] whitespace-nowrap">Ranked Mode</p>
+    <div className="grid grid-cols-[minmax(0,1fr)_72px_92px_60px] gap-x-[24px] items-center py-[16px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
+      <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#374151] text-[16px] truncate min-w-0">Ranked Mode</p>
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#6b7280] text-[16px] text-right whitespace-nowrap">22.4K</p>
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#6b7280] text-[16px] text-right whitespace-nowrap">43%</p>
       <Container77 />
@@ -2229,8 +2201,8 @@ function Container79() {
 
 function TableRow8() {
   return (
-    <div className="grid grid-cols-[1fr_72px_92px_60px] gap-x-[24px] items-center py-[16px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
-      <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#374151] text-[16px] whitespace-nowrap">Voice Chat</p>
+    <div className="grid grid-cols-[minmax(0,1fr)_72px_92px_60px] gap-x-[24px] items-center py-[16px] border-b border-[#f3f4f6] w-full" data-name="Table Row">
+      <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#374151] text-[16px] truncate min-w-0">Voice Chat</p>
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#6b7280] text-[16px] text-right whitespace-nowrap">18.3K</p>
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#6b7280] text-[16px] text-right whitespace-nowrap">88%</p>
       <Container79 />
@@ -2271,8 +2243,8 @@ function Container81() {
 
 function TableRow9() {
   return (
-    <div className="grid grid-cols-[1fr_72px_92px_60px] gap-x-[24px] items-center py-[16px] w-full" data-name="Table Row">
-      <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#374151] text-[16px] whitespace-nowrap">Clan System</p>
+    <div className="grid grid-cols-[minmax(0,1fr)_72px_92px_60px] gap-x-[24px] items-center py-[16px] w-full" data-name="Table Row">
+      <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#374151] text-[16px] truncate min-w-0">Clan System</p>
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#6b7280] text-[16px] text-right whitespace-nowrap">18.3K</p>
       <p className="font-['Inter:Regular',sans-serif] font-normal not-italic text-[#6b7280] text-[16px] text-right whitespace-nowrap">44%</p>
       <Container81 />
@@ -2282,7 +2254,7 @@ function TableRow9() {
 
 function FeatureAdoptionHeaderRow() {
   return (
-    <div className="grid grid-cols-[1fr_72px_92px_60px] gap-x-[24px] items-center pb-[14px] border-b border-[#f3f4f6] w-full" data-name="Header Row">
+    <div className="grid grid-cols-[minmax(0,1fr)_72px_92px_60px] gap-x-[24px] items-center pb-[14px] border-b border-[#f3f4f6] w-full" data-name="Header Row">
       <p className="font-['Inter:Medium',sans-serif] font-medium not-italic text-[#9ca3af] text-[16px] tracking-[0.347px] uppercase whitespace-nowrap">Feature</p>
       <p className="font-['Inter:Medium',sans-serif] font-medium not-italic text-[#9ca3af] text-[16px] text-right tracking-[0.347px] uppercase whitespace-nowrap">Users</p>
       <p className="font-['Inter:Medium',sans-serif] font-medium not-italic text-[#9ca3af] text-[16px] text-right tracking-[0.347px] uppercase whitespace-nowrap">Adoption</p>
@@ -2413,7 +2385,7 @@ function Container90() {
   return (
     <div className="flex-1 min-w-0 relative" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
-        <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[22px] not-italic relative shrink-0 text-[#374151] text-[16px] whitespace-nowrap">Retention improved</p>
+        <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[22px] not-italic relative text-[#374151] text-[16px] truncate min-w-0 w-full">Retention improved</p>
       </div>
     </div>
   );
@@ -2483,7 +2455,7 @@ function Container95() {
   return (
     <div className="flex-1 min-w-0 relative" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
-        <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[22px] not-italic relative shrink-0 text-[#374151] text-[16px] whitespace-nowrap">Drop Off increased</p>
+        <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[22px] not-italic relative text-[#374151] text-[16px] truncate min-w-0 w-full">Drop Off increased</p>
       </div>
     </div>
   );
@@ -2552,7 +2524,7 @@ function Container100() {
   return (
     <div className="relative shrink-0 flex-1 min-w-0" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
-        <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[22px] not-italic relative shrink-0 text-[#374151] text-[16px] whitespace-nowrap">Voice Chat usage decreased</p>
+        <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[22px] not-italic relative text-[#374151] text-[16px] truncate min-w-0 w-full">Voice Chat usage decreased</p>
       </div>
     </div>
   );
@@ -2621,7 +2593,7 @@ function Container105() {
   return (
     <div className="flex-1 min-w-0 relative" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
-        <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[22px] not-italic relative shrink-0 text-[#374151] text-[16px] whitespace-nowrap">New season launched</p>
+        <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[22px] not-italic relative text-[#374151] text-[16px] truncate min-w-0 w-full">New season launched</p>
       </div>
     </div>
   );
@@ -2690,7 +2662,7 @@ function Container110() {
   return (
     <div className="flex-1 min-w-0 relative" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
-        <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[22px] not-italic relative shrink-0 text-[#374151] text-[16px] whitespace-nowrap">New season launched</p>
+        <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[22px] not-italic relative text-[#374151] text-[16px] truncate min-w-0 w-full">New season launched</p>
       </div>
     </div>
   );
@@ -2768,7 +2740,7 @@ function DashboardBottom() {
 
 function MainContentArea() {
   return (
-    <div className="bg-white content-stretch flex flex-col gap-[36px] h-full min-h-0 min-w-0 flex-1 items-start overflow-y-auto p-[44px] relative" data-name="Main Content Area">
+    <div className="bg-white content-stretch flex flex-col gap-[36px] h-full min-h-0 min-w-0 flex-1 items-start overflow-y-auto overflow-x-hidden p-[44px] relative" data-name="Main Content Area">
       <HeaderSection />
       <SectionKpiRow />
       <MiddleSection />
