@@ -624,8 +624,8 @@ function Container11() {
 function Frame() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0">
-      <div className="[word-break:break-word] flex flex-col font-['Inter:Bold',sans-serif] font-bold h-[70px] justify-center leading-[0] not-italic relative shrink-0 text-[64px] text-white tracking-[-0.95px] w-[194px]">
-        <p className="leading-[28px]">45.2%</p>
+      <div className="[word-break:break-word] flex flex-col font-['Inter:Bold',sans-serif] font-bold h-[92px] justify-center leading-[0] not-italic relative shrink-0 text-[84px] text-white tracking-[-1.25px] w-[255px]">
+        <p className="leading-[37px]">45.2%</p>
       </div>
     </div>
   );
@@ -633,7 +633,7 @@ function Frame() {
 
 function Frame5() {
   return (
-    <div className="content-stretch flex flex-col gap-[6px] items-start relative shrink-0">
+    <div className="content-stretch flex flex-col gap-[4px] items-start relative shrink-0">
       <Frame />
       <div className="[word-break:break-word] flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center leading-[0] min-w-full not-italic relative shrink-0 text-[17.92px] text-white tracking-[-0.642px] w-[min-content]">
         <p className="leading-[normal]">Retention rate</p>
@@ -644,7 +644,7 @@ function Frame5() {
 
 function LargeHeroCard() {
   return (
-    <div className="content-stretch flex flex-col aspect-[53/34] min-h-[172px] items-start justify-between overflow-clip pb-[20px] pt-[16px] px-[16px] relative rounded-[10px] shadow-[0px_6.69px_8.362px_-1.673px_rgba(0,0,0,0.1),0px_2.676px_3.345px_-2.007px_rgba(0,0,0,0.1)] flex-[295.819_1_0] min-w-0" style={{ backgroundImage: "linear-gradient(142.07828029689713deg, rgb(111, 75, 255) 0%, rgb(86, 41, 230) 100%)" }} data-name="Large Hero Card">
+    <div className="content-stretch flex flex-col aspect-[53/34] min-h-[172px] items-start justify-between overflow-clip pb-[12px] pt-[10px] px-[16px] relative rounded-[10px] shadow-[0px_6.69px_8.362px_-1.673px_rgba(0,0,0,0.1),0px_2.676px_3.345px_-2.007px_rgba(0,0,0,0.1)] flex-[295.819_1_0] min-w-0" style={{ backgroundImage: "linear-gradient(142.07828029689713deg, rgb(111, 75, 255) 0%, rgb(86, 41, 230) 100%)" }} data-name="Large Hero Card">
       <SparklineVisualizationPlaceholder />
       <Container11 />
       <Frame5 />
