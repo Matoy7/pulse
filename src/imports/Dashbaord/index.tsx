@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import svgPaths from "./svg-j8ue68fght";
 import imgImageAnthony from "./e80369b0bde9bc36bf18f9bf130673329ab18cff.png";
 
@@ -29,8 +30,8 @@ function Background() {
 function Heading() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Heading 1">
-      <div className="[word-break:break-word] flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center leading-[0] not-italic relative shrink-0 text-[#1e293b] text-[15.348px] whitespace-nowrap">
-        <p className="leading-[17.441px]">Pulse</p>
+      <div className="[word-break:break-word] flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center leading-[0] not-italic relative shrink-0 text-[#1e293b] text-[16px] whitespace-nowrap">
+        <p className="leading-[18.182px]">Pulse</p>
       </div>
     </div>
   );
@@ -39,8 +40,8 @@ function Heading() {
 function Container2() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Container">
-      <div className="[word-break:break-word] flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e293b] text-[10.465px] whitespace-nowrap">
-        <p className="leading-[11.162px]">Nova Arena</p>
+      <div className="[word-break:break-word] flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e293b] text-[12px] whitespace-nowrap">
+        <p className="leading-[12.799px]">Nova Arena</p>
       </div>
     </div>
   );
@@ -86,8 +87,8 @@ function ItemLink() {
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex gap-[8.371px] items-center px-[11.162px] py-[8.371px] relative size-full">
           <Svg1 />
-          <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Inter:Semi_Bold',sans-serif] font-semibold justify-center leading-[0] left-[39.766px] not-italic text-[#623ec4] text-[11.162px] top-[17.119px] whitespace-nowrap">
-            <p className="leading-[16.743px]">Dashboard</p>
+          <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Inter:Semi_Bold',sans-serif] font-semibold justify-center leading-[0] left-[39.766px] not-italic text-[#623ec4] text-[15px] top-[17.119px] whitespace-nowrap">
+            <p className="leading-[22.5px]">Dashboard</p>
           </div>
         </div>
       </div>
@@ -116,8 +117,8 @@ function ItemLink1() {
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex gap-[8.371px] items-center px-[11.162px] py-[8.371px] relative size-full">
           <Image9Vectorized />
-          <div className="[word-break:break-word] flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e293b] text-[11.162px] whitespace-nowrap">
-            <p className="leading-[16.743px]">Retentions</p>
+          <div className="[word-break:break-word] flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e293b] text-[15px] whitespace-nowrap">
+            <p className="leading-[22.5px]">Retentions</p>
           </div>
         </div>
       </div>
@@ -150,8 +151,8 @@ function ItemLink2() {
     <div className="h-[32.266px] relative rounded-[8.371px] shrink-0 w-full" data-name="Item → Link">
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex gap-[8.371px] items-center px-[11.162px] py-[8.371px] relative size-full">
-          <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] left-[39.766px] not-italic text-[#1e293b] text-[11.162px] top-[16.772px] whitespace-nowrap">
-            <p className="leading-[16.743px]">Players</p>
+          <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] left-[39.766px] not-italic text-[#1e293b] text-[15px] top-[16.772px] whitespace-nowrap">
+            <p className="leading-[22.5px]">Players</p>
           </div>
           <Image3Vectorized />
         </div>
@@ -177,8 +178,8 @@ function ItemLink3() {
     <div className="relative rounded-[8.371px] shrink-0 w-full" data-name="Item → Link">
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex gap-[8.371px] items-center px-[11.162px] py-[8.371px] relative size-full">
-          <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] left-[39.766px] not-italic text-[#1e293b] text-[11.162px] top-[19.359px] whitespace-nowrap">
-            <p className="leading-[16.743px]">Features</p>
+          <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] left-[39.766px] not-italic text-[#1e293b] text-[15px] top-[19.359px] whitespace-nowrap">
+            <p className="leading-[22.5px]">Features</p>
           </div>
           <Image4Vectorized />
         </div>
@@ -206,8 +207,8 @@ function ItemLink4() {
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex gap-[8.371px] items-center px-[11.162px] py-[8.371px] relative size-full">
           <Image5Vectorized />
-          <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] left-[39.766px] not-italic text-[#1e293b] text-[11.162px] top-[17.119px] whitespace-nowrap">
-            <p className="leading-[16.743px]">Revenue</p>
+          <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] left-[39.766px] not-italic text-[#1e293b] text-[15px] top-[17.119px] whitespace-nowrap">
+            <p className="leading-[22.5px]">Revenue</p>
           </div>
         </div>
       </div>
@@ -233,8 +234,8 @@ function ItemLink5() {
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex gap-[8.371px] items-center px-[11.162px] py-[8.371px] relative size-full">
           <Image6Vectorized />
-          <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] left-[39.766px] not-italic text-[#1e293b] text-[11.162px] top-[18.166px] w-[73.36px]">
-            <p className="leading-[16.743px]">{`Bugs & Issues`}</p>
+          <div className="-translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] left-[39.766px] not-italic text-[#1e293b] text-[15px] top-[18.166px] whitespace-nowrap">
+            <p className="leading-[22.5px]">{`Bugs & Issues`}</p>
           </div>
         </div>
       </div>
@@ -301,7 +302,7 @@ function Text() {
   return (
     <div className="relative shrink-0 w-full" data-name="Text">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
-        <p className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[15.397px] not-italic relative shrink-0 text-[#111827] text-[11.2px] whitespace-nowrap">Rob Cohen</p>
+        <p className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[20.621px] not-italic relative shrink-0 text-[#111827] text-[15px] whitespace-nowrap">Rob Cohen</p>
       </div>
     </div>
   );
@@ -311,7 +312,7 @@ function Text1() {
   return (
     <div className="relative shrink-0 w-full" data-name="Text">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
-        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[13.116px] not-italic relative shrink-0 text-[#1e293b] text-[10.08px] whitespace-nowrap" dir="auto">
+        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[18.217px] not-italic relative shrink-0 text-[#1e293b] text-[14px] whitespace-nowrap" dir="auto">
           Senior PM
         </p>
       </div>
@@ -384,8 +385,8 @@ function Heading1() {
 function Container6() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Container">
-      <div className="[word-break:break-word] flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e293b] text-[11.2px] whitespace-nowrap">
-        <p className="leading-[16.743px]">{`Overview of your game's performance`}</p>
+      <div className="[word-break:break-word] flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#1e293b] text-[14px] whitespace-nowrap">
+        <p className="leading-[20.929px]">{`Overview of your game's performance`}</p>
       </div>
     </div>
   );
@@ -431,8 +432,8 @@ function Button() {
     <div className="bg-white content-stretch flex gap-[8.371px] items-center justify-center px-[11.86px] py-[7.674px] relative rounded-[8.371px] shrink-0" data-name="Button">
       <div aria-hidden className="absolute border-[#e2e8f0] border-[0.698px] border-solid inset-0 pointer-events-none rounded-[8.371px]" />
       <Image24Vectorized />
-      <div className="[word-break:break-word] flex flex-col font-['Inter:Medium',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#1e293b] text-[11.2px] text-center whitespace-nowrap">
-        <p className="leading-[16.743px]">Last 24 Hours</p>
+      <div className="[word-break:break-word] flex flex-col font-['Inter:Medium',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#1e293b] text-[15px] text-center whitespace-nowrap">
+        <p className="leading-[22.406px]">Last 24 Hours</p>
       </div>
       <Svg2 />
     </div>
@@ -525,7 +526,7 @@ function Container10() {
     <div className="absolute bg-[#f59e0b] left-[24.573px] rounded-[8.554px] size-[17.107px] top-[-3.898px]" data-name="Container">
       <div aria-hidden className="absolute border-[1.383px] border-solid border-white inset-0 pointer-events-none rounded-[8.554px]" />
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-center p-[1.383px] relative size-full">
-        <p className="[word-break:break-word] font-['Inter:Bold',sans-serif] font-bold leading-[9.504px] not-italic relative shrink-0 text-[9.504px] text-white whitespace-nowrap">3</p>
+        <p className="[word-break:break-word] font-['Inter:Bold',sans-serif] font-bold leading-[11.2px] not-italic relative shrink-0 text-[11.2px] text-white whitespace-nowrap">3</p>
       </div>
     </div>
   );
@@ -588,7 +589,7 @@ function Svg3() {
 
 function SparklineVisualizationPlaceholder() {
   return (
-    <div className="absolute bottom-[-0.151px] content-stretch flex flex-col h-[157.52px] items-start justify-center left-[-0.353px] opacity-30 right-[-0.118px]" data-name="Sparkline Visualization Placeholder">
+    <div className="absolute bottom-[-0.151px] content-stretch flex flex-col h-[131px] items-start justify-center left-[-0.353px] opacity-30 right-[-0.118px]" data-name="Sparkline Visualization Placeholder">
       <Svg3 />
     </div>
   );
@@ -629,10 +630,10 @@ function Container12() {
 
 function Background1() {
   return (
-    <div className="bg-[#fae07a] content-stretch flex gap-[1.338px] h-[14.533px] items-center px-[7.501px] py-[1.875px] relative rounded-[7.501px] shrink-0 w-[84.855px]" data-name="Background">
+    <div className="bg-[#fae07a] content-stretch flex gap-[4px] items-center px-[9px] py-[3.5px] relative rounded-[7.501px] shrink-0" data-name="Background">
       <Container12 />
-      <div className="[word-break:break-word] flex flex-col font-['Inter:Medium',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#2d2100] text-[7.501px] tracking-[0.094px] whitespace-nowrap">
-        <p className="leading-[6.69px]">+3.4% This 24h</p>
+      <div className="[word-break:break-word] flex flex-col font-['Inter:Medium',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#2d2100] text-[11.2px] tracking-[0.094px] whitespace-nowrap">
+        <p className="leading-[9.989px]">+3.4% This 24h</p>
       </div>
     </div>
   );
@@ -670,7 +671,7 @@ function Frame5() {
 
 function LargeHeroCard() {
   return (
-    <div className="content-stretch flex flex-col h-[180.023px] items-start justify-between overflow-clip pb-[50.845px] pt-[10.704px] px-[10.704px] relative rounded-[7.501px] shadow-[0px_6.69px_8.362px_-1.673px_rgba(0,0,0,0.1),0px_2.676px_3.345px_-2.007px_rgba(0,0,0,0.1)] flex-[295.819_1_0] min-w-0" style={{ backgroundImage: "linear-gradient(142.07828029689713deg, rgb(111, 75, 255) 0%, rgb(86, 41, 230) 100%)" }} data-name="Large Hero Card">
+    <div className="content-stretch flex flex-col h-[150px] items-start justify-between overflow-clip pb-[32px] pt-[10.704px] px-[10.704px] relative rounded-[7.501px] shadow-[0px_6.69px_8.362px_-1.673px_rgba(0,0,0,0.1),0px_2.676px_3.345px_-2.007px_rgba(0,0,0,0.1)] flex-[295.819_1_0] min-w-0" style={{ backgroundImage: "linear-gradient(142.07828029689713deg, rgb(111, 75, 255) 0%, rgb(86, 41, 230) 100%)" }} data-name="Large Hero Card">
       <SparklineVisualizationPlaceholder />
       <Container11 />
       <Frame5 />
@@ -708,9 +709,9 @@ function Group() {
 
 function Text2() {
   return (
-    <div className="h-[13.239px] relative shrink-0 w-[34.025px]" data-name="Text">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="[word-break:break-word] absolute font-['Inter:Medium',sans-serif] font-medium leading-[13.239px] left-0 not-italic text-[#131b2e] text-[12.624px] top-[-0.851px] whitespace-nowrap">Revenue</p>
+    <div className="relative shrink-0" data-name="Text">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center relative size-full">
+        <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[15.731px] not-italic text-[#131b2e] text-[15px] whitespace-nowrap">Revenue</p>
       </div>
     </div>
   );
@@ -720,7 +721,7 @@ function Badge() {
   return (
     <div className="bg-[#dcfce7] relative rounded-[15.35px] shrink-0" data-name="Badge">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center px-[5.372px] py-[1.535px] relative size-full">
-        <p className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[12.088px] not-italic relative shrink-0 text-[#16a34a] text-[8.058px] whitespace-nowrap">↑ 12%</p>
+        <p className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[16.801px] not-italic relative shrink-0 text-[#16a34a] text-[11.2px] whitespace-nowrap">↑ 12%</p>
       </div>
     </div>
   );
@@ -728,8 +729,8 @@ function Badge() {
 
 function Container15() {
   return (
-    <div className="h-[19.954px] relative shrink-0 w-[97.47px]" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-between pb-[4.605px] relative size-full">
+    <div className="relative shrink-0 w-full" data-name="Container">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-between gap-[8px] pb-[4.605px] relative w-full">
         <Text2 />
         <Badge />
       </div>
@@ -741,7 +742,7 @@ function Text3() {
   return (
     <div className="relative shrink-0" data-name="Text">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-center relative size-full">
-        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[12.088px] not-italic relative shrink-0 text-[#1e293b] text-[9.181px] whitespace-nowrap">Total evenue</p>
+        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[18.433px] not-italic relative shrink-0 text-[#1e293b] text-[14px] whitespace-nowrap">Total evenue</p>
       </div>
     </div>
   );
@@ -814,9 +815,9 @@ function Group2() {
 
 function Text4() {
   return (
-    <div className="h-[13.239px] relative shrink-0 w-[34.025px]" data-name="Text">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="[word-break:break-word] absolute font-['Inter:Medium',sans-serif] font-medium leading-[13.239px] left-0 not-italic text-[#131b2e] text-[12.624px] top-[-0.851px] whitespace-nowrap">DAU</p>
+    <div className="relative shrink-0" data-name="Text">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center relative size-full">
+        <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[15.731px] not-italic text-[#131b2e] text-[15px] whitespace-nowrap">DAU</p>
       </div>
     </div>
   );
@@ -826,7 +827,7 @@ function Badge1() {
   return (
     <div className="bg-[#dcfce7] relative rounded-[15.35px] shrink-0" data-name="Badge">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center px-[5.372px] py-[1.535px] relative size-full">
-        <p className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[12.088px] not-italic relative shrink-0 text-[#16a34a] text-[8.058px] whitespace-nowrap">↑ 12%</p>
+        <p className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[16.801px] not-italic relative shrink-0 text-[#16a34a] text-[11.2px] whitespace-nowrap">↑ 12%</p>
       </div>
     </div>
   );
@@ -834,8 +835,8 @@ function Badge1() {
 
 function Container17() {
   return (
-    <div className="h-[19.954px] relative shrink-0 w-[97.47px]" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-between pb-[4.605px] relative size-full">
+    <div className="relative shrink-0 w-full" data-name="Container">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-between gap-[8px] pb-[4.605px] relative w-full">
         <Text4 />
         <Badge1 />
       </div>
@@ -847,7 +848,7 @@ function Text5() {
   return (
     <div className="relative shrink-0" data-name="Text">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-center relative size-full">
-        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[12.088px] not-italic relative shrink-0 text-[#1e293b] text-[9.181px] whitespace-nowrap">Total evenue</p>
+        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[18.433px] not-italic relative shrink-0 text-[#1e293b] text-[14px] whitespace-nowrap">Total evenue</p>
       </div>
     </div>
   );
@@ -910,9 +911,9 @@ function Group4() {
 
 function Text6() {
   return (
-    <div className="h-[13.239px] relative shrink-0 w-[34.025px]" data-name="Text">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="[word-break:break-word] absolute font-['Inter:Medium',sans-serif] font-medium leading-[13.239px] left-0 not-italic text-[#131b2e] text-[12.624px] top-[-0.851px] whitespace-nowrap">{`Average Session `}</p>
+    <div className="relative shrink-0" data-name="Text">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center relative size-full">
+        <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[15.731px] not-italic text-[#131b2e] text-[15px] whitespace-nowrap">{`Average Session `}</p>
       </div>
     </div>
   );
@@ -920,8 +921,8 @@ function Text6() {
 
 function Container19() {
   return (
-    <div className="h-[19.954px] relative shrink-0 w-[97.47px]" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-between pb-[4.605px] relative size-full">
+    <div className="relative shrink-0 w-full" data-name="Container">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-between gap-[8px] pb-[4.605px] relative w-full">
         <Text6 />
       </div>
     </div>
@@ -932,7 +933,7 @@ function Text7() {
   return (
     <div className="relative shrink-0" data-name="Text">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-center relative size-full">
-        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[12.088px] not-italic relative shrink-0 text-[#1e293b] text-[9.181px] whitespace-nowrap">Total evenue</p>
+        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[18.433px] not-italic relative shrink-0 text-[#1e293b] text-[14px] whitespace-nowrap">Total evenue</p>
       </div>
     </div>
   );
@@ -995,9 +996,9 @@ function Group6() {
 
 function Text8() {
   return (
-    <div className="h-[13.239px] relative shrink-0 w-[34.025px]" data-name="Text">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="[word-break:break-word] absolute font-['Inter:Medium',sans-serif] font-medium leading-[13.239px] left-0 not-italic text-[#131b2e] text-[12.624px] top-[-0.851px] whitespace-nowrap">Drop Off Rate</p>
+    <div className="relative shrink-0" data-name="Text">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center relative size-full">
+        <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[15.731px] not-italic text-[#131b2e] text-[15px] whitespace-nowrap">Drop Off Rate</p>
       </div>
     </div>
   );
@@ -1005,8 +1006,8 @@ function Text8() {
 
 function Container21() {
   return (
-    <div className="h-[19.954px] relative shrink-0 w-[97.47px]" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-between pb-[4.605px] relative size-full">
+    <div className="relative shrink-0 w-full" data-name="Container">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-between gap-[8px] pb-[4.605px] relative w-full">
         <Text8 />
       </div>
     </div>
@@ -1017,7 +1018,7 @@ function Text9() {
   return (
     <div className="relative shrink-0" data-name="Text">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-center relative size-full">
-        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[12.088px] not-italic relative shrink-0 text-[#1e293b] text-[9.181px] whitespace-nowrap">Total evenue</p>
+        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[18.433px] not-italic relative shrink-0 text-[#1e293b] text-[14px] whitespace-nowrap">Total evenue</p>
       </div>
     </div>
   );
@@ -1069,8 +1070,8 @@ function SectionKpiRow() {
 function Heading2() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Heading 3">
-      <div className="[word-break:break-word] flex flex-col font-['Inter:Medium',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#1e293b] text-[15.68px] w-[292.32px]">
-        <p className="leading-[19.534px]">Player Funnel Performance</p>
+      <div className="[word-break:break-word] flex flex-col font-['Inter:Medium',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#1e293b] text-[17px] w-[292.32px]">
+        <p className="leading-[21.178px]">Player Funnel Performance</p>
       </div>
     </div>
   );
@@ -1101,9 +1102,9 @@ function Container25() {
 
 function Container26() {
   return (
-    <div className="min-w-[53.353px] relative shrink-0 w-[53.353px]" data-name="Container">
+    <div className="min-w-[76px] relative shrink-0 w-[76px]" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start min-w-[inherit] relative size-full">
-        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[11.115px] not-italic relative shrink-0 text-[#1e293b] text-[9.881px] whitespace-nowrap">Sign Up</p>
+        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[15.748px] not-italic relative shrink-0 text-[#1e293b] text-[14px] whitespace-nowrap">Sign Up</p>
       </div>
     </div>
   );
@@ -1113,7 +1114,7 @@ function Text10() {
   return (
     <div className="h-[14.45px] relative shrink-0 w-[22.282px]" data-name="Text">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[14.45px] left-0 not-italic text-[9.633px] text-white top-[-0.739px] tracking-[-0.096px] whitespace-nowrap">100%</p>
+        <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[19.501px] left-0 not-italic text-[13px] text-white top-[-0.739px] tracking-[-0.096px] whitespace-nowrap">100%</p>
       </div>
     </div>
   );
@@ -1143,7 +1144,7 @@ function Container27() {
 
 function Container24() {
   return (
-    <div className="h-[35.569px] relative shrink-0 w-full" data-name="Container">
+    <div className="relative shrink-0 w-full" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[7.41px] items-center relative size-full">
         <Container25 />
         <Container26 />
@@ -1181,7 +1182,7 @@ function Container32() {
   return (
     <div className="relative shrink-0 w-full" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
-        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[11.115px] not-italic relative shrink-0 text-[#1e293b] text-[8.522px] whitespace-nowrap">Tutorial</p>
+        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[18.26px] not-italic relative shrink-0 text-[#1e293b] text-[14px] whitespace-nowrap">Tutorial</p>
       </div>
     </div>
   );
@@ -1191,7 +1192,7 @@ function Container33() {
   return (
     <div className="relative shrink-0 w-full" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
-        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[11.115px] not-italic relative shrink-0 text-[#1e293b] text-[8.522px] whitespace-nowrap">Completed</p>
+        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[18.26px] not-italic relative shrink-0 text-[#1e293b] text-[14px] whitespace-nowrap">Completed</p>
       </div>
     </div>
   );
@@ -1199,7 +1200,7 @@ function Container33() {
 
 function Container31() {
   return (
-    <div className="min-w-[53.353px] relative shrink-0 w-[53.353px]" data-name="Container">
+    <div className="min-w-[76px] relative shrink-0 w-[76px]" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start min-w-[inherit] relative size-full">
         <Container32 />
         <Container33 />
@@ -1212,7 +1213,7 @@ function Text11() {
   return (
     <div className="h-[14.45px] relative shrink-0 w-[18.32px]" data-name="Text">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[14.45px] left-0 not-italic text-[9.633px] text-white top-[-0.739px] tracking-[-0.096px] whitespace-nowrap">78%</p>
+        <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[19.501px] left-0 not-italic text-[13px] text-white top-[-0.739px] tracking-[-0.096px] whitespace-nowrap">78%</p>
       </div>
     </div>
   );
@@ -1240,7 +1241,7 @@ function Container34() {
 
 function Container29() {
   return (
-    <div className="h-[35.569px] relative shrink-0 w-full" data-name="Container">
+    <div className="relative shrink-0 w-full" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[7.41px] items-center relative size-full">
         <Container30 />
         <Container31 />
@@ -1276,9 +1277,9 @@ function Container37() {
 
 function Container38() {
   return (
-    <div className="min-w-[53.353px] relative shrink-0 w-[53.353px]" data-name="Container">
+    <div className="min-w-[76px] relative shrink-0 w-[76px]" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start min-w-[inherit] relative size-full">
-        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[11.115px] not-italic relative shrink-0 text-[#1e293b] text-[8.522px] whitespace-nowrap">First Match</p>
+        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[18.26px] not-italic relative shrink-0 text-[#1e293b] text-[14px] whitespace-nowrap">First Match</p>
       </div>
     </div>
   );
@@ -1288,7 +1289,7 @@ function Text12() {
   return (
     <div className="h-[14.45px] relative shrink-0 w-[18.525px]" data-name="Text">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[14.45px] left-0 not-italic text-[9.633px] text-white top-[-0.739px] tracking-[-0.096px] whitespace-nowrap">62%</p>
+        <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[19.501px] left-0 not-italic text-[13px] text-white top-[-0.739px] tracking-[-0.096px] whitespace-nowrap">62%</p>
       </div>
     </div>
   );
@@ -1316,7 +1317,7 @@ function Container39() {
 
 function Container36() {
   return (
-    <div className="h-[35.569px] relative shrink-0 w-full" data-name="Container">
+    <div className="relative shrink-0 w-full" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[7.41px] items-center relative size-full">
         <Container37 />
         <Container38 />
@@ -1361,7 +1362,7 @@ function Container44() {
   return (
     <div className="relative shrink-0 w-full" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
-        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[11.115px] not-italic relative shrink-0 text-[#1e293b] text-[8.522px] whitespace-nowrap">Next Day</p>
+        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[18.26px] not-italic relative shrink-0 text-[#1e293b] text-[14px] whitespace-nowrap">Next Day</p>
       </div>
     </div>
   );
@@ -1371,7 +1372,7 @@ function Container45() {
   return (
     <div className="relative shrink-0 w-full" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
-        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[11.115px] not-italic relative shrink-0 text-[#1e293b] text-[8.522px] w-[26.88px]">Return</p>
+        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[18.26px] not-italic relative shrink-0 text-[#1e293b] text-[14px] whitespace-nowrap">Return</p>
       </div>
     </div>
   );
@@ -1379,7 +1380,7 @@ function Container45() {
 
 function Container43() {
   return (
-    <div className="min-w-[53.353px] relative shrink-0 w-[53.353px]" data-name="Container">
+    <div className="min-w-[76px] relative shrink-0 w-[76px]" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start min-w-[inherit] relative size-full">
         <Container44 />
         <Container45 />
@@ -1392,7 +1393,7 @@ function Text13() {
   return (
     <div className="h-[14.45px] relative shrink-0 w-[18.701px]" data-name="Text">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[14.45px] left-0 not-italic text-[#7060ec] text-[9.633px] top-[-0.739px] tracking-[-0.096px] whitespace-nowrap">45%</p>
+        <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[19.501px] left-0 not-italic text-[#7060ec] text-[13px] top-[-0.739px] tracking-[-0.096px] whitespace-nowrap">45%</p>
       </div>
     </div>
   );
@@ -1420,7 +1421,7 @@ function Container46() {
 
 function Container41() {
   return (
-    <div className="h-[35.569px] relative shrink-0 w-full" data-name="Container">
+    <div className="relative shrink-0 w-full" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[7.41px] items-center relative size-full">
         <Container42 />
         <Container43 />
@@ -1458,7 +1459,7 @@ function Container51() {
   return (
     <div className="relative shrink-0 w-full" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
-        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[11.115px] not-italic relative shrink-0 text-[#1e293b] text-[8.96px] whitespace-nowrap">First</p>
+        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[17.367px] not-italic relative shrink-0 text-[#1e293b] text-[14px] whitespace-nowrap">First</p>
       </div>
     </div>
   );
@@ -1468,7 +1469,7 @@ function Container52() {
   return (
     <div className="relative shrink-0 w-full" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
-        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[11.115px] not-italic relative shrink-0 text-[#1e293b] text-[8.96px] whitespace-nowrap">Purchase</p>
+        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[17.367px] not-italic relative shrink-0 text-[#1e293b] text-[14px] whitespace-nowrap">Purchase</p>
       </div>
     </div>
   );
@@ -1476,7 +1477,7 @@ function Container52() {
 
 function Container50() {
   return (
-    <div className="min-w-[53.353px] relative shrink-0 w-[53.353px]" data-name="Container">
+    <div className="min-w-[76px] relative shrink-0 w-[76px]" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start min-w-[inherit] relative size-full">
         <Container51 />
         <Container52 />
@@ -1489,7 +1490,7 @@ function Text14() {
   return (
     <div className="h-[14.45px] relative shrink-0 w-[18.505px]" data-name="Text">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[14.45px] left-0 not-italic text-[#8b6200] text-[9.633px] top-[-0.739px] tracking-[-0.096px] whitespace-nowrap">38%</p>
+        <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[19.501px] left-0 not-italic text-[#8b6200] text-[13px] top-[-0.739px] tracking-[-0.096px] whitespace-nowrap">38%</p>
       </div>
     </div>
   );
@@ -1517,7 +1518,7 @@ function Container53() {
 
 function Container48() {
   return (
-    <div className="h-[35.569px] relative shrink-0 w-full" data-name="Container">
+    <div className="relative shrink-0 w-full" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[7.41px] items-center relative size-full">
         <Container49 />
         <Container50 />
@@ -1529,7 +1530,7 @@ function Container48() {
 
 function Container23() {
   return (
-    <div className="content-stretch flex flex-col gap-[7.41px] items-start relative shrink-0 w-full" data-name="Container">
+    <div className="content-stretch flex flex-col gap-[5px] items-start relative shrink-0 w-full" data-name="Container">
       <Container24 />
       <Container29 />
       <Container36 />
@@ -1541,7 +1542,7 @@ function Container23() {
 
 function ContainerMargin() {
   return (
-    <div className="content-stretch flex flex-col items-start pt-[13.338px] relative shrink-0 w-full" data-name="Container (margin)">
+    <div className="content-stretch flex flex-col items-start pt-[10px] relative shrink-0 w-full" data-name="Container (margin)">
       <Container23 />
     </div>
   );
@@ -1549,7 +1550,7 @@ function ContainerMargin() {
 
 function PlayerFunnelPerformance() {
   return (
-    <div className="bg-white content-stretch flex flex-col gap-[17.92px] items-start py-[17.92px] relative rounded-[11.162px] flex-[289.52_1_0] min-w-0" data-name="Player Funnel Performance">
+    <div className="bg-white content-stretch flex flex-col gap-[12px] items-start py-[14px] relative rounded-[11.162px] flex-[289.52_1_0] min-w-0" data-name="Player Funnel Performance">
       <Heading2 />
       <ContainerMargin />
     </div>
@@ -1560,7 +1561,7 @@ function Text15() {
   return (
     <div className="h-[9.367px] relative shrink-0 w-[24.774px]" data-name="Text">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="[word-break:break-word] absolute font-['Inter:Bold',sans-serif] font-bold leading-[9.367px] left-0 not-italic text-[#7b6cf5] text-[9.367px] top-[-0.51px] whitespace-nowrap">24.6K</p>
+        <p className="[word-break:break-word] absolute font-['Inter:Bold',sans-serif] font-bold leading-[12px] left-0 not-italic text-[#7b6cf5] text-[12px] top-[-0.51px] whitespace-nowrap">24.6K</p>
       </div>
     </div>
   );
@@ -1568,7 +1569,7 @@ function Text15() {
 
 function Icon8() {
   return (
-    <div className="h-[168px] relative shrink-0 w-[53.2px]" data-name="Icon">
+    <div className="h-[137.15px] relative shrink-0 w-[53.2px]" data-name="Icon">
       <svg className="absolute block inset-0 size-full" fill="none" height="300" preserveAspectRatio="none" viewBox="0 0 95 300" width="95">
         <g clipPath="url(#clip0_0_84)" id="Icon">
           <path d={svgPaths.p2b8ed000} fill="url(#paint0_linear_0_84)" id="Vector" />
@@ -1591,7 +1592,7 @@ function Text16() {
   return (
     <div className="h-[9.367px] relative shrink-0 w-[45.468px]" data-name="Text">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Inter:Medium',sans-serif] font-medium leading-[9.367px] left-[22.96px] not-italic text-[#1e293b] text-[9.367px] text-center top-[-0.51px] whitespace-nowrap">Battle Pass</p>
+        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Inter:Medium',sans-serif] font-medium leading-[12px] left-[22.96px] not-italic text-[#1e293b] text-[12px] text-center top-[-0.51px] whitespace-nowrap">Battle Pass</p>
       </div>
     </div>
   );
@@ -1613,7 +1614,7 @@ function Text17() {
   return (
     <div className="h-[9.367px] relative shrink-0 w-[24.774px]" data-name="Text">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="[word-break:break-word] absolute font-['Inter:Bold',sans-serif] font-bold leading-[9.367px] left-0 not-italic text-[#7b6cf5] text-[9.367px] top-[-0.51px] whitespace-nowrap">21.7K</p>
+        <p className="[word-break:break-word] absolute font-['Inter:Bold',sans-serif] font-bold leading-[12px] left-0 not-italic text-[#7b6cf5] text-[12px] top-[-0.51px] whitespace-nowrap">21.7K</p>
       </div>
     </div>
   );
@@ -1621,7 +1622,7 @@ function Text17() {
 
 function Icon9() {
   return (
-    <div className="h-[147.84px] relative shrink-0 w-[53.2px]" data-name="Icon">
+    <div className="h-[120.69px] relative shrink-0 w-[53.2px]" data-name="Icon">
       <svg className="absolute block inset-0 size-full" fill="none" height="264" preserveAspectRatio="none" viewBox="0 0 95 264" width="95">
         <g clipPath="url(#clip0_0_119)" id="Icon">
           <path d={svgPaths.p380200} fill="url(#paint0_linear_0_119)" id="Vector" />
@@ -1644,7 +1645,7 @@ function Text18() {
   return (
     <div className="h-[9.367px] relative shrink-0 w-[33.683px]" data-name="Text">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Inter:Medium',sans-serif] font-medium leading-[9.367px] left-[17.08px] not-italic text-[#1e293b] text-[9.367px] text-center top-[-0.51px] whitespace-nowrap">Bundles</p>
+        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Inter:Medium',sans-serif] font-medium leading-[12px] left-[17.08px] not-italic text-[#1e293b] text-[12px] text-center top-[-0.51px] whitespace-nowrap">Bundles</p>
       </div>
     </div>
   );
@@ -1666,7 +1667,7 @@ function Text19() {
   return (
     <div className="h-[9.367px] relative shrink-0 w-[24.774px]" data-name="Text">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="[word-break:break-word] absolute font-['Inter:Bold',sans-serif] font-bold leading-[9.367px] left-0 not-italic text-[#8575f6] text-[9.367px] top-[-0.51px] whitespace-nowrap">18.2K</p>
+        <p className="[word-break:break-word] absolute font-['Inter:Bold',sans-serif] font-bold leading-[12px] left-0 not-italic text-[#8575f6] text-[12px] top-[-0.51px] whitespace-nowrap">18.2K</p>
       </div>
     </div>
   );
@@ -1674,7 +1675,7 @@ function Text19() {
 
 function Icon10() {
   return (
-    <div className="h-[124.32px] relative shrink-0 w-[53.2px]" data-name="Icon">
+    <div className="h-[101.49px] relative shrink-0 w-[53.2px]" data-name="Icon">
       <svg className="absolute block inset-0 size-full" fill="none" height="222" preserveAspectRatio="none" viewBox="0 0 95 222" width="95">
         <g clipPath="url(#clip0_0_129)" id="Icon">
           <path d={svgPaths.p3fade6c0} fill="url(#paint0_linear_0_129)" id="Vector" />
@@ -1697,7 +1698,7 @@ function Text20() {
   return (
     <div className="h-[9.367px] relative shrink-0 w-[21.961px]" data-name="Text">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Inter:Medium',sans-serif] font-medium leading-[9.367px] left-[11.2px] not-italic text-[#1e293b] text-[9.367px] text-center top-[-0.51px] whitespace-nowrap">Skins</p>
+        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Inter:Medium',sans-serif] font-medium leading-[12px] left-[11.2px] not-italic text-[#1e293b] text-[12px] text-center top-[-0.51px] whitespace-nowrap">Skins</p>
       </div>
     </div>
   );
@@ -1719,7 +1720,7 @@ function Text21() {
   return (
     <div className="h-[9.367px] relative shrink-0 w-[24.774px]" data-name="Text">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="[word-break:break-word] absolute font-['Inter:Bold',sans-serif] font-bold leading-[9.367px] left-0 not-italic text-[#7b6cf5] text-[9.367px] top-[-0.51px] whitespace-nowrap">14.6K</p>
+        <p className="[word-break:break-word] absolute font-['Inter:Bold',sans-serif] font-bold leading-[12px] left-0 not-italic text-[#7b6cf5] text-[12px] top-[-0.51px] whitespace-nowrap">14.6K</p>
       </div>
     </div>
   );
@@ -1727,7 +1728,7 @@ function Text21() {
 
 function Icon11() {
   return (
-    <div className="h-[99.12px] relative shrink-0 w-[53.2px]" data-name="Icon">
+    <div className="h-[80.92px] relative shrink-0 w-[53.2px]" data-name="Icon">
       <svg className="absolute block inset-0 size-full" fill="none" height="177" preserveAspectRatio="none" viewBox="0 0 95 177" width="95">
         <g clipPath="url(#clip0_0_22)" id="Icon">
           <path d={svgPaths.p14476580} fill="url(#paint0_linear_0_22)" id="Vector" />
@@ -1750,7 +1751,7 @@ function Text22() {
   return (
     <div className="h-[9.367px] relative shrink-0 w-[50.795px]" data-name="Text">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Inter:Medium',sans-serif] font-medium leading-[9.367px] left-[25.2px] not-italic text-[#1e293b] text-[9.367px] text-center top-[-0.51px] whitespace-nowrap">Season Pass</p>
+        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Inter:Medium',sans-serif] font-medium leading-[12px] left-[25.2px] not-italic text-[#1e293b] text-[12px] text-center top-[-0.51px] whitespace-nowrap">Season Pass</p>
       </div>
     </div>
   );
@@ -1772,7 +1773,7 @@ function Text23() {
   return (
     <div className="h-[9.367px] relative shrink-0 w-[24.774px]" data-name="Text">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="[word-break:break-word] absolute font-['Inter:Bold',sans-serif] font-bold leading-[9.367px] left-0 not-italic text-[#8b6200] text-[9.367px] top-[-0.51px] whitespace-nowrap">10.3K</p>
+        <p className="[word-break:break-word] absolute font-['Inter:Bold',sans-serif] font-bold leading-[12px] left-0 not-italic text-[#8b6200] text-[12px] top-[-0.51px] whitespace-nowrap">10.3K</p>
       </div>
     </div>
   );
@@ -1780,7 +1781,7 @@ function Text23() {
 
 function Icon12() {
   return (
-    <div className="h-[70.56px] relative shrink-0 w-[53.2px]" data-name="Icon">
+    <div className="h-[57.6px] relative shrink-0 w-[53.2px]" data-name="Icon">
       <svg className="absolute block inset-0 size-full" fill="none" height="126" preserveAspectRatio="none" viewBox="0 0 95 126" width="95">
         <g clipPath="url(#clip0_0_16)" id="Icon">
           <path d={svgPaths.p982ad00} fill="url(#paint0_linear_0_16)" id="Vector" />
@@ -1803,7 +1804,7 @@ function Text24() {
   return (
     <div className="h-[9.367px] relative shrink-0 w-[23.355px]" data-name="Text">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Inter:Medium',sans-serif] font-medium leading-[9.367px] left-[11.76px] not-italic text-[#1e293b] text-[9.367px] text-center top-[-0.51px] whitespace-nowrap">Coins</p>
+        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Inter:Medium',sans-serif] font-medium leading-[12px] left-[11.76px] not-italic text-[#1e293b] text-[12px] text-center top-[-0.51px] whitespace-nowrap">Coins</p>
       </div>
     </div>
   );
@@ -1835,9 +1836,9 @@ function FlatBarChart() {
 
 function RevenueBreakdown() {
   return (
-    <div className="bg-white content-stretch flex flex-col h-[281.734px] items-start justify-between pt-[17.92px] px-[19.541px] relative rounded-[13.028px] flex-[508_1_0] min-w-0" data-name="Revenue Breakdown">
-      <div className="[word-break:break-word] flex flex-col font-['Inter:Medium',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#1e293b] text-[15.68px] whitespace-nowrap">
-        <p className="leading-[22.798px]">Revenue Breakdown</p>
+    <div className="bg-white content-stretch flex flex-col h-[230px] items-start justify-between pt-[14px] px-[19.541px] relative rounded-[13.028px] flex-[508_1_0] min-w-0" data-name="Revenue Breakdown">
+      <div className="[word-break:break-word] flex flex-col font-['Inter:Medium',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#1e293b] text-[17px] whitespace-nowrap">
+        <p className="leading-[24.717px]">Revenue Breakdown</p>
       </div>
       <FlatBarChart />
     </div>
@@ -1881,7 +1882,7 @@ function Text25() {
   return (
     <div className="h-[16.132px] relative shrink-0 w-[77.581px]" data-name="Text">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[16.132px] left-0 not-italic text-[#111827] text-[10.64px] top-[-0.829px] whitespace-nowrap">Popular Screens</p>
+        <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[24.259px] left-0 not-italic text-[#111827] text-[16px] top-[-0.829px] whitespace-nowrap">Popular Screens</p>
       </div>
     </div>
   );
@@ -1902,7 +1903,7 @@ function Text26() {
   return (
     <div className="h-[14.27px] relative shrink-0 w-[33.379px]" data-name="Text">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="[word-break:break-word] absolute font-['Inter:Medium',sans-serif] font-medium leading-[14.27px] left-0 not-italic text-[#7b6cf5] text-[9.514px] top-[-0.918px] whitespace-nowrap">View all</p>
+        <p className="[word-break:break-word] absolute font-['Inter:Medium',sans-serif] font-medium leading-[19.499px] left-0 not-italic text-[#7b6cf5] text-[13px] top-[-0.918px] whitespace-nowrap">View all</p>
       </div>
     </div>
   );
@@ -1919,220 +1920,40 @@ function Container61() {
   );
 }
 
-function HeaderCell() {
+function TableHeaderRow() {
   return (
-    <div className="absolute h-[17.993px] left-0 top-0 w-[91.771px]" data-name="Header Cell">
-      <p className="[word-break:break-word] absolute font-['Inter:Medium',sans-serif] font-medium leading-[13.03px] left-0 not-italic text-[#9ca3af] text-[8.687px] top-[-1.652px] tracking-[0.347px] uppercase whitespace-nowrap">Screen</p>
+    <div className="grid grid-cols-[1fr_auto_auto_auto] gap-x-[16px] items-center pb-[6px] w-full" data-name="Header Row">
+      <p className="font-['Inter:Medium',sans-serif] font-medium leading-[18px] not-italic text-[#9ca3af] text-[12px] tracking-[0.347px] uppercase whitespace-nowrap">Screen</p>
+      <p className="font-['Inter:Medium',sans-serif] font-medium leading-[18px] not-italic text-[#9ca3af] text-[12px] text-right tracking-[0.347px] uppercase whitespace-nowrap">Views</p>
+      <p className="font-['Inter:Medium',sans-serif] font-medium leading-[18px] not-italic text-[#9ca3af] text-[12px] text-right tracking-[0.347px] uppercase whitespace-nowrap">Avg Time</p>
+      <p className="font-['Inter:Medium',sans-serif] font-medium leading-[18px] not-italic text-[#9ca3af] text-[12px] text-right tracking-[0.347px] uppercase whitespace-nowrap">Exit Rate</p>
     </div>
   );
 }
 
-function HeaderCell1() {
+function TableDataRow({ color, name, views, avgTime, exitRate, last = false }: { color: string; name: string; views: string; avgTime: string; exitRate: string; last?: boolean }) {
   return (
-    <div className="absolute h-[17.993px] left-[91.773px] top-0 w-[33.873px]" data-name="Header Cell">
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Inter:Medium',sans-serif] font-medium leading-[13.03px] left-[33.74px] not-italic text-[#9ca3af] text-[8.687px] text-right top-[-1.652px] tracking-[0.347px] uppercase whitespace-nowrap">Views</p>
-    </div>
-  );
-}
-
-function HeaderCell2() {
-  return (
-    <div className="absolute h-[17.993px] left-[125.642px] top-0 w-[51.326px]" data-name="Header Cell">
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Inter:Medium',sans-serif] font-medium leading-[13.03px] left-[51.537px] not-italic text-[#9ca3af] text-[8.687px] text-right top-[-1.652px] tracking-[0.347px] uppercase whitespace-nowrap">Avg Time</p>
-    </div>
-  );
-}
-
-function HeaderCell3() {
-  return (
-    <div className="absolute h-[17.993px] left-[176.971px] top-0 w-[52.464px]" data-name="Header Cell">
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Inter:Medium',sans-serif] font-medium leading-[13.03px] left-[52.914px] not-italic text-[#9ca3af] text-[8.687px] text-right top-[-1.652px] tracking-[0.347px] uppercase whitespace-nowrap">Exit Rate</p>
-    </div>
-  );
-}
-
-function Container64() {
-  return <div className="bg-[#7b6cf5] h-[4.136px] opacity-85 relative rounded-[2.482px] shrink-0 w-[23.164px]" data-name="Container" />;
-}
-
-function Text27() {
-  return (
-    <div className="h-[14.891px] relative shrink-0 w-[46.489px]" data-name="Text">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="[word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[14.891px] left-0 not-italic text-[#374151] text-[9.928px] top-[-0.09px] whitespace-nowrap">Battle Pass</p>
+    <div className={`grid grid-cols-[1fr_auto_auto_auto] gap-x-[16px] items-center py-[6px] w-full${last ? "" : " border-b-[0.735px] border-[#f3f4f6] border-solid"}`} data-name="Table Row">
+      <div className="content-stretch flex gap-[8px] items-center min-w-0">
+        <div className={`${color} h-[4.136px] opacity-85 relative rounded-[2.482px] shrink-0 w-[23.164px]`} data-name="Container" />
+        <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic text-[#374151] text-[14px] whitespace-nowrap">{name}</p>
       </div>
-    </div>
-  );
-}
-
-function TableCell() {
-  return (
-    <div className="absolute content-stretch flex gap-[6.618px] items-center left-0 py-[5.791px] top-0 w-[91.771px]" data-name="Table Cell">
-      <Container64 />
-      <Text27 />
-    </div>
-  );
-}
-
-function TableRow() {
-  return (
-    <div className="absolute border-[#f3f4f6] border-b-[0.735px] border-solid h-[26.841px] left-0 top-[23.033px] w-[229.434px]" data-name="Table Row">
-      <TableCell />
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[14.891px] left-[124.981px] not-italic text-[#6b7280] text-[9.928px] text-right top-[5.701px] whitespace-nowrap">45.2K</p>
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[14.891px] left-[177.374px] not-italic text-[#6b7280] text-[9.928px] text-right top-[5.701px] whitespace-nowrap">2m 01s</p>
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[14.891px] left-[229.734px] not-italic text-[#6b7280] text-[9.928px] text-right top-[5.701px] whitespace-nowrap">45.2%</p>
-    </div>
-  );
-}
-
-function Container65() {
-  return <div className="bg-[#7b6cf5] h-[4.136px] opacity-85 relative rounded-[2.482px] shrink-0 w-[23.164px]" data-name="Container" />;
-}
-
-function Text28() {
-  return (
-    <div className="h-[14.891px] relative shrink-0 w-[22.785px]" data-name="Text">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="[word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[14.891px] left-0 not-italic text-[#374151] text-[9.928px] top-[-0.09px] whitespace-nowrap">Store</p>
-      </div>
-    </div>
-  );
-}
-
-function TableCell1() {
-  return (
-    <div className="absolute content-stretch flex gap-[6.618px] items-center left-0 py-[5.791px] top-[0.37px] w-[91.771px]" data-name="Table Cell">
-      <Container65 />
-      <Text28 />
-    </div>
-  );
-}
-
-function TableRow1() {
-  return (
-    <div className="absolute border-[#f3f4f6] border-b-[0.735px] border-solid h-[27.209px] left-0 top-[54.914px] w-[229.434px]" data-name="Table Row">
-      <TableCell1 />
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[14.891px] left-[125.222px] not-italic text-[#6b7280] text-[9.928px] text-right top-[6.065px] whitespace-nowrap">38.1K</p>
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[14.891px] left-[177.374px] not-italic text-[#6b7280] text-[9.928px] text-right top-[6.065px] whitespace-nowrap">2m 01s</p>
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[14.891px] left-[229.152px] not-italic text-[#6b7280] text-[9.928px] text-right top-[6.065px] whitespace-nowrap">38.1%</p>
-    </div>
-  );
-}
-
-function Container66() {
-  return <div className="bg-[#7b6cf5] h-[4.136px] opacity-85 relative rounded-[2.482px] shrink-0 w-[23.164px]" data-name="Container" />;
-}
-
-function Text29() {
-  return (
-    <div className="h-[14.891px] relative shrink-0 w-[27.944px]" data-name="Text">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="[word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[14.891px] left-0 not-italic text-[#374151] text-[9.928px] top-[-0.09px] whitespace-nowrap">Profile</p>
-      </div>
-    </div>
-  );
-}
-
-function TableCell2() {
-  return (
-    <div className="absolute content-stretch flex gap-[6.618px] items-center left-0 py-[5.791px] top-[0.37px] w-[91.771px]" data-name="Table Cell">
-      <Container66 />
-      <Text29 />
-    </div>
-  );
-}
-
-function TableRow2() {
-  return (
-    <div className="absolute border-[#f3f4f6] border-b-[0.735px] border-solid h-[27.209px] left-0 top-[87.164px] w-[229.434px]" data-name="Table Row">
-      <TableCell2 />
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[14.891px] left-[125.541px] not-italic text-[#6b7280] text-[9.928px] text-right top-[6.065px] whitespace-nowrap">22.4K</p>
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[14.891px] left-[177.374px] not-italic text-[#6b7280] text-[9.928px] text-right top-[6.065px] whitespace-nowrap">2m 01s</p>
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[14.891px] left-[229.471px] not-italic text-[#6b7280] text-[9.928px] text-right top-[6.065px] whitespace-nowrap">22.4%</p>
-    </div>
-  );
-}
-
-function Container67() {
-  return <div className="bg-[#f5c53a] h-[4.136px] opacity-85 relative rounded-[2.482px] shrink-0 w-[23.164px]" data-name="Container" />;
-}
-
-function Text30() {
-  return (
-    <div className="h-[14.891px] relative shrink-0 w-[26.967px]" data-name="Text">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="[word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[14.891px] left-0 not-italic text-[#374151] text-[9.928px] top-[-0.09px] whitespace-nowrap">Lobby</p>
-      </div>
-    </div>
-  );
-}
-
-function TableCell3() {
-  return (
-    <div className="absolute content-stretch flex gap-[6.618px] items-center left-0 py-[5.791px] top-[0.37px] w-[91.771px]" data-name="Table Cell">
-      <Container67 />
-      <Text30 />
-    </div>
-  );
-}
-
-function TableRow3() {
-  return (
-    <div className="absolute border-[#f3f4f6] border-b-[0.735px] border-solid h-[27.209px] left-0 top-[119.409px] w-[229.434px]" data-name="Table Row">
-      <TableCell3 />
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[14.891px] left-[125.513px] not-italic text-[#6b7280] text-[9.928px] text-right top-[6.065px] whitespace-nowrap">18.3K</p>
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[14.891px] left-[177.374px] not-italic text-[#6b7280] text-[9.928px] text-right top-[6.065px] whitespace-nowrap">2m 01s</p>
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[14.891px] left-[228.883px] not-italic text-[#6b7280] text-[9.928px] text-right top-[6.065px] whitespace-nowrap">18.3%</p>
-    </div>
-  );
-}
-
-function Container68() {
-  return <div className="bg-[#f5c53a] h-[4.136px] opacity-85 relative rounded-[2.482px] shrink-0 w-[23.164px]" data-name="Container" />;
-}
-
-function Text31() {
-  return (
-    <div className="h-[14.891px] relative shrink-0 w-[26.611px]" data-name="Text">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="[word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[14.891px] left-0 not-italic text-[#374151] text-[9.928px] top-[-0.09px] whitespace-nowrap">Home</p>
-      </div>
-    </div>
-  );
-}
-
-function TableCell4() {
-  return (
-    <div className="absolute content-stretch flex gap-[6.618px] items-center left-0 py-[5.791px] top-[0.37px] w-[91.771px]" data-name="Table Cell">
-      <Container68 />
-      <Text31 />
-    </div>
-  );
-}
-
-function TableRow4() {
-  return (
-    <div className="absolute h-[26.841px] left-0 top-[151.659px] w-[229.434px]" data-name="Table Row">
-      <TableCell4 />
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[14.891px] left-[125.513px] not-italic text-[#6b7280] text-[9.928px] text-right top-[6.065px] whitespace-nowrap">18.3K</p>
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[14.891px] left-[177.374px] not-italic text-[#6b7280] text-[9.928px] text-right top-[6.065px] whitespace-nowrap">2m 01s</p>
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[14.891px] left-[228.883px] not-italic text-[#6b7280] text-[9.928px] text-right top-[6.065px] whitespace-nowrap">18.3%</p>
+      <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic text-[#6b7280] text-[14px] text-right whitespace-nowrap">{views}</p>
+      <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic text-[#6b7280] text-[14px] text-right whitespace-nowrap">{avgTime}</p>
+      <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic text-[#6b7280] text-[14px] text-right whitespace-nowrap">{exitRate}</p>
     </div>
   );
 }
 
 function Table() {
   return (
-    <div className="h-[153.301px] relative shrink-0 w-[229.434px]" data-name="Table">
-      <HeaderCell />
-      <HeaderCell1 />
-      <HeaderCell2 />
-      <HeaderCell3 />
-      <TableRow />
-      <TableRow1 />
-      <TableRow2 />
-      <TableRow3 />
-      <TableRow4 />
+    <div className="relative shrink-0 w-full" data-name="Table">
+      <TableHeaderRow />
+      <TableDataRow color="bg-[#7b6cf5]" name="Battle Pass" views="45.2K" avgTime="2m 01s" exitRate="45.2%" />
+      <TableDataRow color="bg-[#7b6cf5]" name="Store" views="38.1K" avgTime="2m 01s" exitRate="38.1%" />
+      <TableDataRow color="bg-[#7b6cf5]" name="Profile" views="22.4K" avgTime="2m 01s" exitRate="22.4%" />
+      <TableDataRow color="bg-[#f5c53a]" name="Lobby" views="18.3K" avgTime="2m 01s" exitRate="18.3%" />
+      <TableDataRow color="bg-[#f5c53a]" name="Home" views="18.3K" avgTime="2m 01s" exitRate="18.3%" last />
     </div>
   );
 }
@@ -2150,7 +1971,7 @@ function TableMargin() {
 function Container60() {
   return (
     <div className="bg-white drop-shadow-[0px_1.655px_6.618px_rgba(0,0,0,0.06)] flex-[317.333_1_0] min-w-0 relative rounded-[13.237px]" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start px-[16.546px] py-[14.891px] relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start px-[16.546px] py-[12px] relative size-full">
         <Container61 />
         <TableMargin />
       </div>
@@ -2184,7 +2005,7 @@ function Text32() {
   return (
     <div className="h-[16.132px] relative shrink-0 w-[85.417px]" data-name="Text">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[16.132px] left-0 not-italic text-[#111827] text-[10.64px] top-[-0.829px] whitespace-nowrap">Feature Adoption</p>
+        <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[24.259px] left-0 not-italic text-[#111827] text-[16px] top-[-0.829px] whitespace-nowrap">Feature Adoption</p>
       </div>
     </div>
   );
@@ -2205,7 +2026,7 @@ function Text33() {
   return (
     <div className="h-[14.27px] relative shrink-0 w-[33.379px]" data-name="Text">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="[word-break:break-word] absolute font-['Inter:Medium',sans-serif] font-medium leading-[14.27px] left-0 not-italic text-[#7b6cf5] text-[9.514px] top-[-0.918px] whitespace-nowrap">View all</p>
+        <p className="[word-break:break-word] absolute font-['Inter:Medium',sans-serif] font-medium leading-[19.499px] left-0 not-italic text-[#7b6cf5] text-[13px] top-[-0.918px] whitespace-nowrap">View all</p>
       </div>
     </div>
   );
@@ -2222,260 +2043,80 @@ function Container70() {
   );
 }
 
-function HeaderCell4() {
+function TableHeaderRow1() {
   return (
-    <div className="absolute h-[17.993px] left-0 top-0 w-[87.175px]" data-name="Header Cell">
-      <p className="[word-break:break-word] absolute font-['Inter:Medium',sans-serif] font-medium leading-[13.03px] left-0 not-italic text-[#9ca3af] text-[8.687px] top-[-1.652px] tracking-[0.347px] uppercase whitespace-nowrap">Feature</p>
+    <div className="grid grid-cols-[1fr_auto_auto_auto] gap-x-[16px] items-center pb-[6px] w-full" data-name="Header Row">
+      <p className="font-['Inter:Medium',sans-serif] font-medium leading-[18px] not-italic text-[#9ca3af] text-[12px] tracking-[0.347px] uppercase whitespace-nowrap">Feature</p>
+      <p className="font-['Inter:Medium',sans-serif] font-medium leading-[18px] not-italic text-[#9ca3af] text-[12px] text-right tracking-[0.347px] uppercase whitespace-nowrap">Users</p>
+      <p className="font-['Inter:Medium',sans-serif] font-medium leading-[18px] not-italic text-[#9ca3af] text-[12px] text-right tracking-[0.347px] uppercase whitespace-nowrap">Adoption</p>
+      <p className="font-['Inter:Medium',sans-serif] font-medium leading-[18px] not-italic text-[#9ca3af] text-[12px] text-right tracking-[0.347px] uppercase whitespace-nowrap">Trend</p>
     </div>
   );
 }
 
-function HeaderCell5() {
+function TrendIcon({ bg, stroke, path1, path2 }: { bg: string; stroke: string; path1: string; path2: string }) {
   return (
-    <div className="absolute h-[17.993px] left-[87.175px] top-0 w-[37.366px]" data-name="Header Cell">
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Inter:Medium',sans-serif] font-medium leading-[13.03px] left-[37.089px] not-italic text-[#9ca3af] text-[8.687px] text-right top-[-1.652px] tracking-[0.347px] uppercase whitespace-nowrap">Users</p>
-    </div>
-  );
-}
-
-function HeaderCell6() {
-  return (
-    <div className="absolute h-[17.993px] left-[124.538px] top-0 w-[64.609px]" data-name="Header Cell">
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Inter:Medium',sans-serif] font-medium leading-[13.03px] left-[64.635px] not-italic text-[#9ca3af] text-[8.687px] text-right top-[-1.652px] tracking-[0.347px] uppercase whitespace-nowrap">Adoption</p>
-    </div>
-  );
-}
-
-function HeaderCell7() {
-  return (
-    <div className="absolute h-[17.993px] left-[189.151px] top-0 w-[40.284px]" data-name="Header Cell">
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Inter:Medium',sans-serif] font-medium leading-[13.03px] left-[40.107px] not-italic text-[#9ca3af] text-[8.687px] text-right top-[-1.652px] tracking-[0.347px] uppercase whitespace-nowrap">Trend</p>
-    </div>
-  );
-}
-
-function Icon15() {
-  return (
-    <div className="relative shrink-0 size-[9.928px]" data-name="Icon">
-      <svg className="absolute block inset-0 size-full" fill="none" height="17.7276" preserveAspectRatio="none" viewBox="0 0 17.7276 17.7276" width="17.7276">
-        <g id="Icon">
-          <path d={svgPaths.p27a5fc80} id="Vector" stroke="#7B6CF5" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.84662" />
-          <path d={svgPaths.p100b9c00} id="Vector_2" stroke="#7B6CF5" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.84662" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function Container74() {
-  return (
-    <div className="bg-[#ede9fe] relative rounded-[4.964px] shrink-0 size-[18.201px]" data-name="Container">
+    <div className={`${bg} relative rounded-[4.964px] shrink-0 size-[18.201px]`} data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-center relative size-full">
-        <Icon15 />
+        <div className="relative shrink-0 size-[9.928px]" data-name="Icon">
+          <svg className="absolute block inset-0 size-full" fill="none" height="17.7276" preserveAspectRatio="none" viewBox="0 0 17.7276 17.7276" width="17.7276">
+            <g id="Icon">
+              <path d={path1} id="Vector" stroke={stroke} strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.84662" />
+              <path d={path2} id="Vector_2" stroke={stroke} strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.84662" />
+            </g>
+          </svg>
+        </div>
       </div>
     </div>
   );
 }
 
-function Container73() {
+function TableDataRow1({ name, users, adoption, trend, last = false }: { name: string; users: string; adoption: string; trend: ReactNode; last?: boolean }) {
   return (
-    <div className="absolute content-stretch flex items-start justify-end left-[189.151px] top-[5.79px] w-[40.284px]" data-name="Container">
-      <Container74 />
-    </div>
-  );
-}
-
-function TableRow5() {
-  return (
-    <div className="absolute border-[#f3f4f6] border-b-[0.735px] border-solid h-[30.15px] left-0 top-[19.673px] w-[229.434px]" data-name="Table Row">
-      <p className="[word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[14.891px] left-0 not-italic text-[#374151] text-[9.928px] top-[7.353px] whitespace-nowrap">Daily Challenges</p>
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[14.891px] left-[123.878px] not-italic text-[#6b7280] text-[9.928px] text-right top-[7.353px] whitespace-nowrap">45.2K</p>
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[14.891px] left-[189.381px] not-italic text-[#6b7280] text-[9.928px] text-right top-[7.353px] whitespace-nowrap">85%</p>
-      <Container73 />
-    </div>
-  );
-}
-
-function Icon16() {
-  return (
-    <div className="relative shrink-0 size-[9.928px]" data-name="Icon">
-      <svg className="absolute block inset-0 size-full" fill="none" height="17.7276" preserveAspectRatio="none" viewBox="0 0 17.7276 17.7276" width="17.7276">
-        <g id="Icon">
-          <path d={svgPaths.p1e11abb0} id="Vector" stroke="#7B6CF5" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.84662" />
-          <path d={svgPaths.p196200c0} id="Vector_2" stroke="#7B6CF5" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.84662" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function Container76() {
-  return (
-    <div className="bg-[#ede9fe] relative rounded-[4.964px] shrink-0 size-[18.201px]" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-center relative size-full">
-        <Icon16 />
-      </div>
-    </div>
-  );
-}
-
-function Container75() {
-  return (
-    <div className="absolute content-stretch flex items-start justify-end left-[189.151px] top-[6.16px] w-[40.284px]" data-name="Container">
-      <Container76 />
-    </div>
-  );
-}
-
-function TableRow6() {
-  return (
-    <div className="absolute border-[#f3f4f6] border-b-[0.735px] border-solid h-[30.518px] left-0 top-[51.503px] w-[229.434px]" data-name="Table Row">
-      <p className="[word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[14.891px] left-0 not-italic text-[#374151] text-[9.928px] top-[7.722px] whitespace-nowrap">Battle Pass</p>
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[14.891px] left-[124.118px] not-italic text-[#6b7280] text-[9.928px] text-right top-[7.722px] whitespace-nowrap">38.1K</p>
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[14.891px] left-[189.358px] not-italic text-[#6b7280] text-[9.928px] text-right top-[7.722px] whitespace-nowrap">12%</p>
-      <Container75 />
-    </div>
-  );
-}
-
-function Icon17() {
-  return (
-    <div className="relative shrink-0 size-[9.928px]" data-name="Icon">
-      <svg className="absolute block inset-0 size-full" fill="none" height="17.7276" preserveAspectRatio="none" viewBox="0 0 17.7276 17.7276" width="17.7276">
-        <g id="Icon">
-          <path d={svgPaths.p22811ec0} id="Vector" stroke="#7B6CF5" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.84662" />
-          <path d={svgPaths.p3d12cb80} id="Vector_2" stroke="#7B6CF5" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.84662" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function Container78() {
-  return (
-    <div className="bg-[#ede9fe] relative rounded-[4.964px] shrink-0 size-[18.201px]" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-center relative size-full">
-        <Icon17 />
-      </div>
-    </div>
-  );
-}
-
-function Container77() {
-  return (
-    <div className="absolute content-stretch flex items-start justify-end left-[189.151px] top-[6.16px] w-[40.284px]" data-name="Container">
-      <Container78 />
-    </div>
-  );
-}
-
-function TableRow7() {
-  return (
-    <div className="absolute border-[#f3f4f6] border-b-[0.735px] border-solid h-[30.518px] left-0 top-[83.703px] w-[229.434px]" data-name="Table Row">
-      <p className="[word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[14.891px] left-0 not-italic text-[#374151] text-[9.928px] top-[7.722px] whitespace-nowrap">Ranked Mode</p>
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[14.891px] left-[124.438px] not-italic text-[#6b7280] text-[9.928px] text-right top-[7.722px] whitespace-nowrap">22.4K</p>
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[14.891px] left-[189.118px] not-italic text-[#6b7280] text-[9.928px] text-right top-[7.722px] whitespace-nowrap">43%</p>
-      <Container77 />
-    </div>
-  );
-}
-
-function Icon18() {
-  return (
-    <div className="relative shrink-0 size-[9.928px]" data-name="Icon">
-      <svg className="absolute block inset-0 size-full" fill="none" height="17.7276" preserveAspectRatio="none" viewBox="0 0 17.7276 17.7276" width="17.7276">
-        <g id="Icon">
-          <path d="M3.69323 8.86374H14.0343" id="Vector" stroke="#F59E0B" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.84662" />
-          <path d={svgPaths.p9c14000} id="Vector_2" stroke="#F59E0B" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.84662" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function Container80() {
-  return (
-    <div className="bg-[#fef3c7] relative rounded-[4.964px] shrink-0 size-[18.201px]" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-center relative size-full">
-        <Icon18 />
-      </div>
-    </div>
-  );
-}
-
-function Container79() {
-  return (
-    <div className="absolute content-stretch flex items-start justify-end left-[189.151px] top-[6.16px] w-[40.284px]" data-name="Container">
-      <Container80 />
-    </div>
-  );
-}
-
-function TableRow8() {
-  return (
-    <div className="absolute border-[#f3f4f6] border-b-[0.735px] border-solid h-[30.518px] left-0 top-[115.898px] w-[229.434px]" data-name="Table Row">
-      <p className="[word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[14.891px] left-0 not-italic text-[#374151] text-[9.928px] top-[7.722px] whitespace-nowrap">Voice Chat</p>
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[14.891px] left-[124.41px] not-italic text-[#6b7280] text-[9.928px] text-right top-[7.722px] whitespace-nowrap">18.3K</p>
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[14.891px] left-[189.381px] not-italic text-[#6b7280] text-[9.928px] text-right top-[7.722px] whitespace-nowrap">88%</p>
-      <Container79 />
-    </div>
-  );
-}
-
-function Icon19() {
-  return (
-    <div className="relative shrink-0 size-[9.928px]" data-name="Icon">
-      <svg className="absolute block inset-0 size-full" fill="none" height="17.7276" preserveAspectRatio="none" viewBox="0 0 17.7276 17.7276" width="17.7276">
-        <g id="Icon">
-          <path d={svgPaths.p11421580} id="Vector" stroke="#EF4444" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.84662" />
-          <path d={svgPaths.p2b058a60} id="Vector_2" stroke="#EF4444" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.84662" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function Container82() {
-  return (
-    <div className="bg-[#fee2e2] relative rounded-[4.964px] shrink-0 size-[18.201px]" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-center relative size-full">
-        <Icon19 />
-      </div>
-    </div>
-  );
-}
-
-function Container81() {
-  return (
-    <div className="absolute content-stretch flex items-start justify-end left-[189.151px] top-[6.16px] w-[40.284px]" data-name="Container">
-      <Container82 />
-    </div>
-  );
-}
-
-function TableRow9() {
-  return (
-    <div className="absolute h-[30.15px] left-0 top-[148.098px] w-[229.434px]" data-name="Table Row">
-      <p className="[word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[14.891px] left-0 not-italic text-[#374151] text-[9.928px] top-[7.722px] whitespace-nowrap">Clan System</p>
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[14.891px] left-[124.41px] not-italic text-[#6b7280] text-[9.928px] text-right top-[7.722px] whitespace-nowrap">18.3K</p>
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[14.891px] left-[189.118px] not-italic text-[#6b7280] text-[9.928px] text-right top-[7.722px] whitespace-nowrap">44%</p>
-      <Container81 />
+    <div className={`grid grid-cols-[1fr_auto_auto_auto] gap-x-[16px] items-center py-[6px] w-full${last ? "" : " border-b-[0.735px] border-[#f3f4f6] border-solid"}`} data-name="Table Row">
+      <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic text-[#374151] text-[14px] whitespace-nowrap">{name}</p>
+      <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic text-[#6b7280] text-[14px] text-right whitespace-nowrap">{users}</p>
+      <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic text-[#6b7280] text-[14px] text-right whitespace-nowrap">{adoption}</p>
+      <div className="flex items-center justify-end">{trend}</div>
     </div>
   );
 }
 
 function Table1() {
   return (
-    <div className="h-[169.846px] relative shrink-0 w-[229.434px]" data-name="Table">
-      <HeaderCell4 />
-      <HeaderCell5 />
-      <HeaderCell6 />
-      <HeaderCell7 />
-      <TableRow5 />
-      <TableRow6 />
-      <TableRow7 />
-      <TableRow8 />
-      <TableRow9 />
+    <div className="relative shrink-0 w-full" data-name="Table">
+      <TableHeaderRow1 />
+      <TableDataRow1
+        name="Daily Challenges"
+        users="45.2K"
+        adoption="85%"
+        trend={<TrendIcon bg="bg-[#ede9fe]" stroke="#7B6CF5" path1={svgPaths.p27a5fc80} path2={svgPaths.p100b9c00} />}
+      />
+      <TableDataRow1
+        name="Battle Pass"
+        users="38.1K"
+        adoption="12%"
+        trend={<TrendIcon bg="bg-[#ede9fe]" stroke="#7B6CF5" path1={svgPaths.p1e11abb0} path2={svgPaths.p196200c0} />}
+      />
+      <TableDataRow1
+        name="Ranked Mode"
+        users="22.4K"
+        adoption="43%"
+        trend={<TrendIcon bg="bg-[#ede9fe]" stroke="#7B6CF5" path1={svgPaths.p22811ec0} path2={svgPaths.p3d12cb80} />}
+      />
+      <TableDataRow1
+        name="Voice Chat"
+        users="18.3K"
+        adoption="88%"
+        trend={<TrendIcon bg="bg-[#fef3c7]" stroke="#F59E0B" path1="M3.69323 8.86374H14.0343" path2={svgPaths.p9c14000} />}
+      />
+      <TableDataRow1
+        name="Clan System"
+        users="18.3K"
+        adoption="44%"
+        trend={<TrendIcon bg="bg-[#fee2e2]" stroke="#EF4444" path1={svgPaths.p11421580} path2={svgPaths.p2b058a60} />}
+        last
+      />
     </div>
   );
 }
@@ -2493,7 +2134,7 @@ function TableMargin1() {
 function Container69() {
   return (
     <div className="bg-white drop-shadow-[0px_1.655px_6.618px_rgba(0,0,0,0.06)] flex-[317.333_1_0] min-w-0 relative rounded-[13.237px]" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start px-[16.546px] py-[14.891px] relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start px-[16.546px] py-[12px] relative size-full">
         <Container70 />
         <TableMargin1 />
       </div>
@@ -2528,7 +2169,7 @@ function Text34() {
   return (
     <div className="h-[16.132px] relative shrink-0 w-[104.721px]" data-name="Text">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[16.132px] left-0 not-italic text-[#111827] text-[10.64px] top-[-0.829px] whitespace-nowrap">{`Alerts & Notifications`}</p>
+        <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[24.259px] left-0 not-italic text-[#111827] text-[16px] top-[-0.829px] whitespace-nowrap">{`Alerts & Notifications`}</p>
       </div>
     </div>
   );
@@ -2549,7 +2190,7 @@ function Text35() {
   return (
     <div className="h-[14.27px] relative shrink-0 w-[33.379px]" data-name="Text">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="[word-break:break-word] absolute font-['Inter:Medium',sans-serif] font-medium leading-[14.27px] left-0 not-italic text-[#7b6cf5] text-[9.514px] top-[-0.918px] whitespace-nowrap">View all</p>
+        <p className="[word-break:break-word] absolute font-['Inter:Medium',sans-serif] font-medium leading-[19.499px] left-0 not-italic text-[#7b6cf5] text-[13px] top-[-0.918px] whitespace-nowrap">View all</p>
       </div>
     </div>
   );
@@ -2593,7 +2234,7 @@ function Container90() {
   return (
     <div className="flex-[183.181_0_0] h-[14.891px] min-w-px relative" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start overflow-clip relative rounded-[inherit] size-full">
-        <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[14.891px] not-italic relative shrink-0 text-[#374151] text-[9.928px] whitespace-nowrap">Retention improved</p>
+        <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[20.999px] not-italic relative shrink-0 text-[#374151] text-[14px] whitespace-nowrap">Retention improved</p>
       </div>
     </div>
   );
@@ -2603,7 +2244,7 @@ function Text36() {
   return (
     <div className="h-[13.03px] relative shrink-0 w-[26.599px]" data-name="Text">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="[word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[13.03px] left-0 not-italic text-[#9ca3af] text-[8.687px] top-[-1.652px] whitespace-nowrap">2h ago</p>
+        <p className="[word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[17.999px] left-0 not-italic text-[#9ca3af] text-[12px] top-[-1.652px] whitespace-nowrap">2h ago</p>
       </div>
     </div>
   );
@@ -2628,7 +2269,7 @@ function Container88() {
   return (
     <div className="relative shrink-0 w-[229.434px]" data-name="Container">
       <div aria-hidden className="absolute border-[#f3f4f6] border-b-[0.735px] border-solid inset-0 pointer-events-none" />
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[8.273px] items-center pb-[7.353px] pt-[6.618px] relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[8.273px] items-center pb-[5px] pt-[5px] relative size-full">
         <Container89 />
         <Container90 />
         <Container91 />
@@ -2665,7 +2306,7 @@ function Container95() {
   return (
     <div className="flex-[183.181_0_0] h-[14.891px] min-w-px relative" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start overflow-clip relative rounded-[inherit] size-full">
-        <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[14.891px] not-italic relative shrink-0 text-[#374151] text-[9.928px] whitespace-nowrap">Drop Off increased</p>
+        <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[20.999px] not-italic relative shrink-0 text-[#374151] text-[14px] whitespace-nowrap">Drop Off increased</p>
       </div>
     </div>
   );
@@ -2675,7 +2316,7 @@ function Text37() {
   return (
     <div className="h-[13.03px] relative shrink-0 w-[26.599px]" data-name="Text">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="[word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[13.03px] left-0 not-italic text-[#9ca3af] text-[8.687px] top-[-1.652px] whitespace-nowrap">4h ago</p>
+        <p className="[word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[17.999px] left-0 not-italic text-[#9ca3af] text-[12px] top-[-1.652px] whitespace-nowrap">4h ago</p>
       </div>
     </div>
   );
@@ -2700,7 +2341,7 @@ function Container93() {
   return (
     <div className="relative shrink-0 w-[229.434px]" data-name="Container">
       <div aria-hidden className="absolute border-[#f3f4f6] border-b-[0.735px] border-solid inset-0 pointer-events-none" />
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[8.273px] items-center pb-[7.353px] pt-[6.618px] relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[8.273px] items-center pb-[5px] pt-[5px] relative size-full">
         <Container94 />
         <Container95 />
         <Container96 />
@@ -2734,9 +2375,9 @@ function Container99() {
 
 function Container100() {
   return (
-    <div className="h-[14.891px] relative shrink-0 w-[151.543px]" data-name="Container">
+    <div className="flex-[183.181_0_0] h-[14.891px] min-w-px relative" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start overflow-clip relative rounded-[inherit] size-full">
-        <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[14.891px] not-italic relative shrink-0 text-[#374151] text-[9.928px] whitespace-nowrap">Voice Chat usage decreased</p>
+        <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[20.999px] not-italic relative shrink-0 text-[#374151] text-[14px] whitespace-nowrap">Voice Chat usage decreased</p>
       </div>
     </div>
   );
@@ -2746,7 +2387,7 @@ function Text38() {
   return (
     <div className="h-[13.03px] relative shrink-0 w-[26.599px]" data-name="Text">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="[word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[13.03px] left-0 not-italic text-[#9ca3af] text-[8.687px] top-[-1.652px] whitespace-nowrap">6h ago</p>
+        <p className="[word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[17.999px] left-0 not-italic text-[#9ca3af] text-[12px] top-[-1.652px] whitespace-nowrap">6h ago</p>
       </div>
     </div>
   );
@@ -2771,7 +2412,7 @@ function Container98() {
   return (
     <div className="relative shrink-0" data-name="Container">
       <div aria-hidden className="absolute border-[#f3f4f6] border-b-[0.735px] border-solid inset-0 pointer-events-none" />
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[8.273px] items-center pb-[7.353px] pt-[6.618px] relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[8.273px] items-center pb-[5px] pt-[5px] relative size-full">
         <Container99 />
         <Container100 />
         <Container101 />
@@ -2807,7 +2448,7 @@ function Container105() {
   return (
     <div className="flex-[182.931_0_0] h-[14.891px] min-w-px relative" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start overflow-clip relative rounded-[inherit] size-full">
-        <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[14.891px] not-italic relative shrink-0 text-[#374151] text-[9.928px] whitespace-nowrap">New season launched</p>
+        <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[20.999px] not-italic relative shrink-0 text-[#374151] text-[14px] whitespace-nowrap">New season launched</p>
       </div>
     </div>
   );
@@ -2817,7 +2458,7 @@ function Text39() {
   return (
     <div className="h-[13.03px] relative shrink-0 w-[26.807px]" data-name="Text">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="[word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[13.03px] left-0 not-italic text-[#9ca3af] text-[8.687px] top-[-1.652px] whitespace-nowrap">1d ago</p>
+        <p className="[word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[17.999px] left-0 not-italic text-[#9ca3af] text-[12px] top-[-1.652px] whitespace-nowrap">1d ago</p>
       </div>
     </div>
   );
@@ -2842,7 +2483,7 @@ function Container103() {
   return (
     <div className="relative shrink-0 w-[229.434px]" data-name="Container">
       <div aria-hidden className="absolute border-[#f3f4f6] border-b-[0.735px] border-solid inset-0 pointer-events-none" />
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[8.273px] items-center pb-[7.353px] pt-[6.618px] relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[8.273px] items-center pb-[5px] pt-[5px] relative size-full">
         <Container104 />
         <Container105 />
         <Container106 />
@@ -2878,7 +2519,7 @@ function Container110() {
   return (
     <div className="flex-[182.931_0_0] h-[14.891px] min-w-px relative" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start overflow-clip relative rounded-[inherit] size-full">
-        <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[14.891px] not-italic relative shrink-0 text-[#374151] text-[9.928px] whitespace-nowrap">New season launched</p>
+        <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[20.999px] not-italic relative shrink-0 text-[#374151] text-[14px] whitespace-nowrap">New season launched</p>
       </div>
     </div>
   );
@@ -2888,7 +2529,7 @@ function Text40() {
   return (
     <div className="h-[13.03px] relative shrink-0 w-[26.807px]" data-name="Text">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="[word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[13.03px] left-0 not-italic text-[#9ca3af] text-[8.687px] top-[-1.652px] whitespace-nowrap">1d ago</p>
+        <p className="[word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[17.999px] left-0 not-italic text-[#9ca3af] text-[12px] top-[-1.652px] whitespace-nowrap">1d ago</p>
       </div>
     </div>
   );
@@ -2938,7 +2579,7 @@ function Container87() {
 function Container83() {
   return (
     <div className="bg-white drop-shadow-[0px_1.655px_6.618px_rgba(0,0,0,0.06)] flex-[317.333_1_0] min-w-0 relative rounded-[13.237px]" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start px-[16.546px] py-[14.891px] relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start px-[16.546px] py-[12px] relative size-full">
         <Container84 />
         <Container87 />
       </div>
@@ -2958,7 +2599,7 @@ function DashboardBottom() {
 
 function MainContentArea() {
   return (
-    <div className="bg-white content-stretch flex flex-col gap-[22.324px] h-full min-h-0 min-w-0 flex-1 items-start overflow-y-auto p-[27.905px] relative" data-name="Main Content Area">
+    <div className="bg-white content-stretch flex flex-col gap-[16px] h-full min-h-0 min-w-0 flex-1 items-start overflow-y-auto p-[20px] relative" data-name="Main Content Area">
       <HeaderSection />
       <SectionKpiRow />
       <MiddleSection />
