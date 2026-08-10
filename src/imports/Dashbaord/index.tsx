@@ -723,7 +723,7 @@ function Frame5() {
 
 function LargeHeroCard() {
   return (
-    <div className="content-stretch flex flex-col min-h-[172px] items-start justify-between overflow-clip pb-[12px] pt-[10px] px-[16px] relative rounded-[10px] shadow-[0px_6.69px_8.362px_-1.673px_rgba(0,0,0,0.1),0px_2.676px_3.345px_-2.007px_rgba(0,0,0,0.1)] flex-1 min-w-0 transition-shadow duration-200 hover:shadow-[0px_10px_20px_-2px_rgba(86,41,230,0.35),0px_4px_8px_-2px_rgba(86,41,230,0.2)] cursor-default" style={{ backgroundImage: "linear-gradient(142.07828029689713deg, rgb(111, 75, 255) 0%, rgb(86, 41, 230) 100%)" }} data-name="Large Hero Card">
+    <div className="content-stretch flex flex-col min-h-[172px] items-start justify-between overflow-clip pb-[12px] pt-[10px] px-[16px] relative rounded-[10px] shadow-[0px_6.69px_8.362px_-1.673px_rgba(0,0,0,0.1),0px_2.676px_3.345px_-2.007px_rgba(0,0,0,0.1)] flex-[5_1_0] min-w-0 transition-shadow duration-200 hover:shadow-[0px_10px_20px_-2px_rgba(86,41,230,0.35),0px_4px_8px_-2px_rgba(86,41,230,0.2)] cursor-default" style={{ backgroundImage: "linear-gradient(142.07828029689713deg, rgb(111, 75, 255) 0%, rgb(86, 41, 230) 100%)" }} data-name="Large Hero Card">
       <SparklineVisualizationPlaceholder />
       <Container11 />
       <Frame5 />
@@ -743,7 +743,7 @@ const DROP_OFF_TREND = [18, 17, 16.5, 15, 15.5, 14, 14.6, 13.8];
 function Container13() {
   const { data } = useDashboardData();
   return (
-    <div className="grid grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[repeat(2,fit-content(100%))] gap-[24px] relative flex-1 min-w-0" data-name="Container">
+    <div className="grid grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[repeat(2,fit-content(100%))] gap-[28px] relative flex-[9_1_0] min-w-0" data-name="Container">
       <KpiCard
         title="Revenue"
         value={data.revenue}
@@ -778,7 +778,7 @@ function Container13() {
 
 function SectionKpiRow() {
   return (
-    <div className="content-start flex flex-wrap gap-[24px] items-stretch relative shrink-0 w-full" data-name="Section - KPI Row">
+    <div className="content-start flex flex-wrap gap-[28px] items-stretch relative shrink-0 w-full" data-name="Section - KPI Row">
       <LargeHeroCard />
       <Container13 />
     </div>
