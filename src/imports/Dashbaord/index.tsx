@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useRef, useState } from "react";
 import svgPaths from "./svg-j8ue68fght";
 import imgImageAnthony from "./e80369b0bde9bc36bf18f9bf130673329ab18cff.png";
+import { KpiCard } from "@/components/ui/KpiCard";
 
 // ---------------------------------------------------------------------------
 // Dashboard data model: realistic mock data per date-range selection.
@@ -922,7 +923,7 @@ function LargeHeroCard() {
   );
 }
 
-function Group1() {
+function RevenueSparkline() {
   return (
     <div className="absolute inset-0">
       <svg className="absolute block inset-0 size-full" fill="none" height="74.631" preserveAspectRatio="none" viewBox="0 0 349.286 74.631" width="349.286">
@@ -942,77 +943,7 @@ function Group1() {
   );
 }
 
-function Group() {
-  return (
-    <div className="relative w-full h-[46px] overflow-hidden rounded-[6px] shrink-0" data-name="Group">
-      <Group1 />
-    </div>
-  );
-}
-
-function Text2() {
-  return (
-    <div className="relative shrink-0 flex items-start w-full" data-name="Text">
-      <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[22px] not-italic text-[#131b2e] text-[16px] whitespace-nowrap relative shrink-0">Revenue</p>
-    </div>
-  );
-}
-
-function Container15() {
-  return (
-    <div className="relative shrink-0 w-full" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center gap-[8px] relative w-full">
-        <Text2 />
-      </div>
-    </div>
-  );
-}
-
-function Text3() {
-  return (
-    <div className="relative shrink-0" data-name="Text">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-center relative size-full">
-        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[22px] not-italic relative shrink-0 text-[#1e293b] text-[16px] whitespace-nowrap">Total evenue</p>
-      </div>
-    </div>
-  );
-}
-
-function Container16() {
-  const { data } = useDashboardData();
-  return (
-    <div className="relative shrink-0" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[2.295px] items-start overflow-clip relative rounded-[inherit] size-full">
-        <p className="[word-break:break-word] font-['Inter:Bold',sans-serif] font-bold leading-[18.573px] not-italic relative shrink-0 text-[#111827] text-[22.952px] tracking-[-0.507px] whitespace-nowrap transition-opacity duration-200">{data.revenue}</p>
-        <Text3 />
-      </div>
-    </div>
-  );
-}
-
-function StatCard() {
-  return (
-    <div className="bg-white drop-shadow-[0px_0.767px_3.07px_rgba(0,0,0,0.06)] flex-[1_0_0] min-w-px relative rounded-[10.745px] transition-shadow duration-200 hover:shadow-[0px_6px_16px_-2px_rgba(15,23,42,0.12)] cursor-default" data-name="StatCard">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[14px] items-start pb-[16px] pt-[16px] px-[16px] relative size-full">
-        <Container15 />
-        <Container16 />
-        <Group />
-      </div>
-    </div>
-  );
-}
-
-function Container14() {
-  return (
-    <div className="col-1 justify-self-stretch relative row-1 self-stretch shrink-0" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-start justify-center relative size-full">
-        <StatCard />
-      </div>
-    </div>
-  );
-}
-
-function Group3() {
+function DauSparkline() {
   return (
     <div className="absolute inset-0">
       <svg className="absolute block inset-0 size-full" fill="none" height="78.0643" preserveAspectRatio="none" viewBox="0 0 309.919 78.0643" width="309.919">
@@ -1032,67 +963,7 @@ function Group3() {
   );
 }
 
-function Group2() {
-  return (
-    <div className="relative w-full h-[46px] overflow-hidden rounded-[6px] shrink-0" data-name="Group">
-      <Group3 />
-    </div>
-  );
-}
-
-function Text4() {
-  return (
-    <div className="relative shrink-0 flex items-start w-full" data-name="Text">
-      <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[22px] not-italic text-[#131b2e] text-[16px] whitespace-nowrap relative shrink-0">DAU</p>
-    </div>
-  );
-}
-
-function Container17() {
-  return (
-    <div className="relative shrink-0 w-full" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center gap-[8px] relative w-full">
-        <Text4 />
-      </div>
-    </div>
-  );
-}
-
-function Text5() {
-  return (
-    <div className="relative shrink-0" data-name="Text">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-center relative size-full">
-        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[22px] not-italic relative shrink-0 text-[#1e293b] text-[16px] whitespace-nowrap">Total evenue</p>
-      </div>
-    </div>
-  );
-}
-
-function Container18() {
-  const { data } = useDashboardData();
-  return (
-    <div className="relative shrink-0" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[2.295px] items-start relative size-full">
-        <p className="[word-break:break-word] font-['Inter:Bold',sans-serif] font-bold leading-[18.573px] not-italic relative shrink-0 text-[#111827] text-[22.952px] tracking-[-0.507px] whitespace-nowrap transition-opacity duration-200">{data.dau}</p>
-        <Text5 />
-      </div>
-    </div>
-  );
-}
-
-function StatCard1() {
-  return (
-    <div className="bg-white col-2 drop-shadow-[0px_0.767px_3.07px_rgba(0,0,0,0.06)] justify-self-stretch relative rounded-[10.745px] row-1 shrink-0 self-stretch transition-shadow duration-200 hover:shadow-[0px_6px_16px_-2px_rgba(15,23,42,0.12)] cursor-default" data-name="StatCard">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[14px] items-start pb-[16px] pt-[16px] px-[16px] relative size-full">
-        <Container17 />
-        <Container18 />
-        <Group2 />
-      </div>
-    </div>
-  );
-}
-
-function Group5() {
+function AvgSessionSparkline() {
   return (
     <div className="absolute inset-0">
       <svg className="absolute block inset-0 size-full" fill="none" height="76.2532" preserveAspectRatio="none" viewBox="0 0 333.786 76.2532" width="333.786">
@@ -1112,67 +983,7 @@ function Group5() {
   );
 }
 
-function Group4() {
-  return (
-    <div className="relative w-full h-[46px] overflow-hidden rounded-[6px] shrink-0" data-name="Group">
-      <Group5 />
-    </div>
-  );
-}
-
-function Text6() {
-  return (
-    <div className="relative shrink-0 flex items-start w-full" data-name="Text">
-      <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[22px] not-italic text-[#131b2e] text-[16px] whitespace-nowrap relative shrink-0">{`Average Session `}</p>
-    </div>
-  );
-}
-
-function Container19() {
-  return (
-    <div className="relative shrink-0 w-full" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-between gap-[8px] relative w-full">
-        <Text6 />
-      </div>
-    </div>
-  );
-}
-
-function Text7() {
-  return (
-    <div className="relative shrink-0" data-name="Text">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-center relative size-full">
-        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[22px] not-italic relative shrink-0 text-[#1e293b] text-[16px] whitespace-nowrap">Total evenue</p>
-      </div>
-    </div>
-  );
-}
-
-function Container20() {
-  const { data } = useDashboardData();
-  return (
-    <div className="relative shrink-0" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[2.295px] items-start relative size-full">
-        <p className="[word-break:break-word] font-['Inter:Bold',sans-serif] font-bold leading-[18.573px] not-italic relative shrink-0 text-[#111827] text-[22.952px] tracking-[-0.507px] whitespace-nowrap transition-opacity duration-200">{data.avgSession}</p>
-        <Text7 />
-      </div>
-    </div>
-  );
-}
-
-function StatCard2() {
-  return (
-    <div className="bg-white col-1 drop-shadow-[0px_0.767px_3.07px_rgba(0,0,0,0.06)] justify-self-stretch relative rounded-[10.745px] row-2 shrink-0 self-stretch transition-shadow duration-200 hover:shadow-[0px_6px_16px_-2px_rgba(15,23,42,0.12)] cursor-default" data-name="StatCard">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[14px] items-start pb-[16px] pt-[16px] px-[16px] relative size-full">
-        <Container19 />
-        <Container20 />
-        <Group4 />
-      </div>
-    </div>
-  );
-}
-
-function Group7() {
+function DropOffSparkline() {
   return (
     <div className="absolute inset-0">
       <svg className="absolute block inset-0 size-full" fill="none" height="74.8087" preserveAspectRatio="none" viewBox="0 0 334.217 74.8087" width="334.217">
@@ -1192,73 +1003,38 @@ function Group7() {
   );
 }
 
-function Group6() {
-  return (
-    <div className="relative w-full h-[46px] overflow-hidden rounded-[6px] shrink-0" data-name="Group">
-      <Group7 />
-    </div>
-  );
-}
-
-function Text8() {
-  return (
-    <div className="relative shrink-0 flex items-start w-full" data-name="Text">
-      <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium leading-[22px] not-italic text-[#131b2e] text-[16px] whitespace-nowrap relative shrink-0">Drop Off Rate</p>
-    </div>
-  );
-}
-
-function Container21() {
-  return (
-    <div className="relative shrink-0 w-full" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-between gap-[8px] relative w-full">
-        <Text8 />
-      </div>
-    </div>
-  );
-}
-
-function Text9() {
-  return (
-    <div className="relative shrink-0" data-name="Text">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-center relative size-full">
-        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[22px] not-italic relative shrink-0 text-[#1e293b] text-[16px] whitespace-nowrap">Total evenue</p>
-      </div>
-    </div>
-  );
-}
-
-function Container22() {
+function Container13() {
   const { data } = useDashboardData();
   return (
-    <div className="relative shrink-0" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[2.295px] items-start relative size-full">
-        <p className="[word-break:break-word] font-['Inter:Bold',sans-serif] font-bold leading-[18.573px] not-italic relative shrink-0 text-[#111827] text-[22.952px] tracking-[-0.507px] whitespace-nowrap transition-opacity duration-200">{data.dropOff}</p>
-        <Text9 />
-      </div>
-    </div>
-  );
-}
-
-function StatCard3() {
-  return (
-    <div className="bg-white col-2 drop-shadow-[0px_0.767px_3.07px_rgba(0,0,0,0.06)] justify-self-stretch relative rounded-[10.745px] row-2 self-stretch shrink-0 transition-shadow duration-200 hover:shadow-[0px_6px_16px_-2px_rgba(15,23,42,0.12)] cursor-default" data-name="StatCard">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[14px] items-start pb-[16px] pt-[16px] px-[16px] relative size-full">
-        <Container21 />
-        <Container22 />
-        <Group6 />
-      </div>
-    </div>
-  );
-}
-
-function Container13() {
-  return (
     <div className="grid grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[repeat(2,fit-content(100%))] gap-[16px] relative flex-[514.118_1_0] min-w-0" data-name="Container">
-      <Container14 />
-      <StatCard1 />
-      <StatCard2 />
-      <StatCard3 />
+      <KpiCard
+        title="Revenue"
+        value={data.revenue}
+        caption="Total evenue"
+        chart={<RevenueSparkline />}
+        className="col-1 row-1 self-stretch justify-self-stretch shrink-0"
+      />
+      <KpiCard
+        title="DAU"
+        value={data.dau}
+        caption="Total evenue"
+        chart={<DauSparkline />}
+        className="col-2 row-1 self-stretch justify-self-stretch shrink-0"
+      />
+      <KpiCard
+        title="Average Session"
+        value={data.avgSession}
+        caption="Total evenue"
+        chart={<AvgSessionSparkline />}
+        className="col-1 row-2 self-stretch justify-self-stretch shrink-0"
+      />
+      <KpiCard
+        title="Drop Off Rate"
+        value={data.dropOff}
+        caption="Total evenue"
+        chart={<DropOffSparkline />}
+        className="col-2 row-2 self-stretch justify-self-stretch shrink-0"
+      />
     </div>
   );
 }

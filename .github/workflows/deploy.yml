@@ -47,6 +47,14 @@ jobs:
           GH_PAGES_BASE: ${{ steps.base.outputs.path }}
         run: npm run build
 
+      - name: Build Storybook
+        run: npm run build-storybook
+
+      - name: Copy Storybook into dist/storybook
+        run: |
+          mkdir -p dist/storybook
+          cp -r storybook-static/. dist/storybook/
+
       - name: Upload build artifact
         uses: actions/upload-pages-artifact@v3
         with:

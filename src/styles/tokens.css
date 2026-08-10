@@ -1,0 +1,164 @@
+/**
+ * Design Token Foundation
+ * ------------------------------------------------------------------------
+ * Phase 2 of the UI modernization effort.
+ *
+ * This file defines the raw (primitive) design values and the semantic
+ * tokens built on top of them, using Tailwind CSS 4's CSS-first `@theme`
+ * convention. Anything declared inside an `@theme` block automatically
+ * becomes usable as a Tailwind utility class, e.g.:
+ *
+ *   --color-primary   -> bg-primary, text-primary, border-primary, ...
+ *   --radius-lg       -> rounded-lg
+ *   --shadow-md       -> shadow-md
+ *   --text-title      -> text-title (font-size + line-height pair)
+ *
+ * IMPORTANT: nothing in the existing dashboard (src/imports/Dashbaord/)
+ * uses these default Tailwind utility names today — it exclusively uses
+ * arbitrary-value classes (e.g. text-[16px], bg-[#7b6cf5], rounded-[10px]).
+ * That means every token below is purely additive: it introduces new,
+ * semantically-named utilities for future components to consume, without
+ * altering a single pixel of the current dashboard render.
+ *
+ * Two layers:
+ *   1. Primitives — raw palette/scale values. Not meant to be used
+ *      directly in components; they exist so the semantic layer has a
+ *      single source of truth to reference.
+ *   2. Semantic tokens — purpose-named tokens (primary, surface,
+ *      foreground-muted, ...) that components should actually consume.
+ * ------------------------------------------------------------------------
+ */
+
+@theme {
+  /* ---------------------------------------------------------------------
+   * 1. COLOR — primitives
+   * Distilled from the dashboard's actual usage, not the full 51-color
+   * inventory. Only the shades that earn a semantic role are kept.
+   * ------------------------------------------------------------------- */
+  --color-white: #ffffff;
+
+  --color-slate-50: #fafafa;   /* sidebar surface */
+  --color-slate-100: #f3f4f6;  /* hairline dividers */
+  --color-slate-200: #e2e8f0;  /* input/button outlines */
+  --color-slate-500: #6b7280;  /* muted/secondary text */
+  --color-slate-800: #1e293b; /* primary text */
+
+  --color-purple-100: #ede9fe; /* light tint bg (badges, active nav) */
+  --color-purple-500: #7b6cf5; /* brand primary — most-used purple */
+  --color-purple-600: #623ec4; /* active/selected/hover state */
+
+  --color-amber-100: #fef3c7;
+  --color-amber-500: #f59e0b;
+
+  --color-red-100: #fee2e2;
+  --color-red-500: #ef4444;
+
+  --color-green-600: #16a34a;
+
+  --color-app-bg: #f8f9fb; /* outer page background */
+
+  /* ---------------------------------------------------------------------
+   * 1. COLOR — semantic tokens
+   * This is the palette components should actually reference.
+   * ------------------------------------------------------------------- */
+  --color-background: var(--color-app-bg);
+  --color-surface: var(--color-white);
+  --color-surface-muted: var(--color-slate-50);
+
+  --color-foreground: var(--color-slate-800);
+  --color-foreground-muted: var(--color-slate-500);
+
+  --color-border: var(--color-slate-100);
+  --color-border-strong: var(--color-slate-200);
+
+  --color-primary: var(--color-purple-500);
+  --color-primary-hover: var(--color-purple-600);
+  --color-primary-muted: var(--color-purple-100);
+
+  --color-success: var(--color-green-600);
+
+  --color-warning: var(--color-amber-500);
+  --color-warning-muted: var(--color-amber-100);
+
+  --color-destructive: var(--color-red-500);
+  --color-destructive-muted: var(--color-red-100);
+
+  /* ---------------------------------------------------------------------
+   * 2. TYPOGRAPHY
+   * Inter stays the typeface. Sizes are rounded, rem-based, and paired
+   * with a line-height via Tailwind v4's `--text-*--line-height` syntax.
+   * Replaces one-off Figma-exported values like 22.952px / 17.92px.
+   * ------------------------------------------------------------------- */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  --text-display: 3rem;        /* 48px */
+  --text-display--line-height: 3.5rem;   /* 56px */
+
+  --text-heading: 1.5rem;       /* 24px */
+  --text-heading--line-height: 2rem;      /* 32px */
+
+  --text-title: 1.125rem;      /* 18px */
+  --text-title--line-height: 1.625rem;   /* 26px */
+
+  --text-body: 1rem;           /* 16px — existing minimum floor */
+  --text-body--line-height: 1.5rem;      /* 24px */
+
+  --text-body-small: 0.875rem; /* 14px */
+  --text-body-small--line-height: 1.25rem;   /* 20px */
+
+  --text-caption: 0.75rem;     /* 12px — tooltips / meta text only */
+  --text-caption--line-height: 1rem;      /* 16px */
+
+  /* Font weights: Tailwind's built-in font-normal / font-medium /
+   * font-semibold / font-bold utilities already cover the 4 weights
+   * used throughout the dashboard (400/500/600/700) — no overrides
+   * needed here. */
+
+  /* ---------------------------------------------------------------------
+   * 3. SPACING
+   * A predictable 4px-based scale. Matches Tailwind v4's default
+   * --spacing multiplier (0.25rem = 4px), so it composes directly with
+   * built-in utilities (p-4, gap-6, ...) with no arbitrary values.
+   * Declared explicitly here for documentation / single-source clarity.
+   * ------------------------------------------------------------------- */
+  --spacing: 0.25rem; /* 4px base unit (Tailwind default, confirmed here) */
+
+  /* ---------------------------------------------------------------------
+   * 4. RADIUS
+   * Five steps, replacing the 17 arbitrary radius values in the
+   * existing dashboard.
+   * ------------------------------------------------------------------- */
+  --radius-sm: 0.375rem;  /* 6px  — small chips / icon boxes */
+  --radius-md: 0.5rem;    /* 8px  — buttons, inputs */
+  --radius-lg: 0.75rem;   /* 12px — cards */
+  --radius-xl: 1rem;      /* 16px — large surfaces / modals */
+  --radius-full: 9999px;  /* pills, avatars, status dots */
+
+  /* ---------------------------------------------------------------------
+   * 5. SHADOWS
+   * Subtle elevation set for a modern SaaS feel.
+   * ------------------------------------------------------------------- */
+  --shadow-sm: 0px 2px 6px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0px 6px 16px -2px rgba(15, 23, 42, 0.12);
+  --shadow-lg: 0px 12px 32px -4px rgba(15, 23, 42, 0.16);
+}
+
+/**
+ * ---------------------------------------------------------------------
+ * 6. BORDERS & TRANSITIONS — plain reference variables
+ * These aren't registered in @theme because they don't map to a
+ * Tailwind utility namespace (border width / transition duration are
+ * already fully covered by Tailwind's built-in bare-value utilities —
+ * border, border-2, duration-150, duration-200, etc. work today with
+ * no config). Defined here as plain custom properties for use in raw
+ * CSS or inline styles where a named reference is clearer than a
+ * magic number.
+ * ---------------------------------------------------------------------
+ */
+:root {
+  --border-width-default: 1px;
+
+  --transition-fast: 150ms; /* micro-interactions: hover, icon color */
+  --transition-base: 200ms; /* card elevation, dropdown open/close */
+  --transition-easing: ease-out;
+}

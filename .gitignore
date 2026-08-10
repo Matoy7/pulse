@@ -6,3 +6,6 @@ dist/
 *.log
 .DS_Store
 *.tsbuildinfo
+
+*storybook.log
+storybook-static
