@@ -1,7 +1,11 @@
-import { createContext, useContext, useEffect, useRef, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import svgPaths from "./svg-j8ue68fght";
 import imgImageAnthony from "./e80369b0bde9bc36bf18f9bf130673329ab18cff.png";
 import { KpiCard } from "@/components/ui/KpiCard";
+import { DateRangeSelector } from "@/components/ui/DateRangeSelector";
+import { IconButton } from "@/components/ui/IconButton";
+import { NotificationButton } from "@/components/ui/NotificationButton";
+import { Settings, Search } from "lucide-react";
 
 // ---------------------------------------------------------------------------
 // Dashboard data model: realistic mock data per date-range selection.
@@ -573,224 +577,25 @@ function Container5() {
   );
 }
 
-function Image24Vectorized() {
-  return (
-    <div className="h-[16.073px] relative shrink-0 w-[17.412px]" data-name="image 24 [Vectorized]">
-      <svg className="absolute block inset-0 size-full" fill="none" height="28.701" preserveAspectRatio="none" viewBox="0 0 31.0927 28.701" width="31.0927">
-        <g id="image 24 [Vectorized]">
-          <path d={svgPaths.p3fa02480} fill="#0B1A2F" id="Vector" />
-          <path d={svgPaths.p3d729100} fill="#0B1A2F" id="Vector_2" />
-          <path d={svgPaths.p27572d00} fill="#0B1A2F" id="Vector_3" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function Svg2() {
-  return (
-    <div className="relative shrink-0 size-[11.162px]" data-name="SVG">
-      <svg className="absolute block inset-0 size-full" fill="none" height="19.9326" preserveAspectRatio="none" viewBox="0 0 19.9326 19.9326" width="19.9326">
-        <g id="SVG">
-          <path d={svgPaths.p2a90bd40} id="Vector" stroke="#1E293B" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66105" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function DateRangeDropdown() {
-  const { range, setRange } = useDashboardData();
-  const [open, setOpen] = useState(false);
-  const rootRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    function handlePointerDown(e: MouseEvent) {
-      if (rootRef.current && !rootRef.current.contains(e.target as Node)) {
-        setOpen(false);
-      }
-    }
-    function handleKeyDown(e: KeyboardEvent) {
-      if (e.key === "Escape") setOpen(false);
-    }
-    document.addEventListener("mousedown", handlePointerDown);
-    document.addEventListener("keydown", handleKeyDown);
-    return () => {
-      document.removeEventListener("mousedown", handlePointerDown);
-      document.removeEventListener("keydown", handleKeyDown);
-    };
-  }, []);
-
-  const activeLabel = RANGE_OPTIONS.find((o) => o.key === range)?.label ?? "Last 24 Hours";
-
-  return (
-    <div className="relative shrink-0" ref={rootRef} data-name="Container">
-      <button
-        type="button"
-        onClick={() => setOpen((v) => !v)}
-        aria-haspopup="listbox"
-        aria-expanded={open}
-        className="bg-white content-stretch flex gap-[8.371px] items-center justify-center px-[11.86px] py-[7.674px] relative rounded-[8.371px] shrink-0 cursor-pointer transition-colors duration-150 hover:bg-[#f8f7ff]"
-        data-name="Button"
-      >
-        <div aria-hidden className="absolute border-[#e2e8f0] border-[0.698px] border-solid inset-0 pointer-events-none rounded-[8.371px]" />
-        <Image24Vectorized />
-        <div className="[word-break:break-word] flex flex-col font-['Inter:Medium',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#1e293b] text-[16px] text-center whitespace-nowrap">
-          <p className="leading-[16.743px]">{activeLabel}</p>
-        </div>
-        <div className={`relative shrink-0 size-[11.162px] transition-transform duration-150 ${open ? "rotate-180" : ""}`} data-name="SVG">
-          <svg className="absolute block inset-0 size-full" fill="none" height="19.9326" preserveAspectRatio="none" viewBox="0 0 19.9326 19.9326" width="19.9326">
-            <g id="SVG">
-              <path d={svgPaths.p2a90bd40} id="Vector" stroke="#1E293B" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66105" />
-            </g>
-          </svg>
-        </div>
-      </button>
-      {open && (
-        <div
-          role="listbox"
-          className="absolute right-0 top-[calc(100%+8px)] z-50 w-[200px] bg-white rounded-[10px] border border-[#e2e8f0] shadow-[0px_8px_24px_rgba(15,23,42,0.12)] py-[6px] origin-top-right animate-[dropdownOpen_150ms_ease-out]"
-        >
-          {RANGE_OPTIONS.map((opt) => {
-            const selected = opt.key === range;
-            return (
-              <button
-                key={opt.key}
-                type="button"
-                role="option"
-                aria-selected={selected}
-                onClick={() => {
-                  setRange(opt.key);
-                  setOpen(false);
-                }}
-                className={`w-full flex items-center justify-between gap-[8px] px-[14px] py-[9px] text-left text-[16px] font-['Inter:Regular',sans-serif] transition-colors duration-150 cursor-pointer ${
-                  selected ? "text-[#623ec4] font-medium bg-[#f5f3ff]" : "text-[#1e293b] hover:bg-[#f8fafc]"
-                }`}
-              >
-                <span className="whitespace-nowrap">{opt.label}</span>
-                {selected && (
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="shrink-0">
-                    <path d="M2.5 7.2L5.5 10.2L11.5 3.8" stroke="#623ec4" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                )}
-              </button>
-            );
-          })}
-        </div>
-      )}
-    </div>
-  );
-}
-
-function Container8() {
-  return (
-    <div className="content-stretch flex flex-col items-center justify-center relative shrink-0" data-name="Container">
-      <DateRangeDropdown />
-    </div>
-  );
-}
-
-function Container7() {
-  return (
-    <div className="content-stretch flex items-center relative shrink-0" data-name="Container">
-      <Container8 />
-    </div>
-  );
-}
-
 function Frame1() {
+  const { range, setRange } = useDashboardData();
   return (
     <div className="content-stretch flex items-start justify-end px-[17.92px] relative shrink-0">
-      <Container7 />
-    </div>
-  );
-}
-
-function Image7Vectorized() {
-  return (
-    <button type="button" className="h-[38px] w-[38px] flex items-center justify-center relative shrink-0 rounded-[11.405px] cursor-pointer transition-colors duration-150 hover:bg-[#f1f5f9]" data-name="image 7 [Vectorized]">
-      <div className="h-[19.43px] relative shrink-0 w-[20.34px]">
-        <svg className="absolute block inset-0 size-full" fill="none" height="34.696" preserveAspectRatio="none" viewBox="0 0 36.3224 34.696" width="36.3224">
-          <g id="image 7 [Vectorized]">
-            <path d={svgPaths.p35882b80} fill="#293751" id="Vector" />
-            <path d={svgPaths.p3dc82180} fill="#293751" id="Vector_2" />
-          </g>
-        </svg>
-      </div>
-    </button>
-  );
-}
-
-function Icon1() {
-  return (
-    <div className="relative shrink-0 size-[16.157px]" data-name="Icon">
-      <svg className="absolute block inset-0 size-full" fill="none" height="28.8522" preserveAspectRatio="none" viewBox="0 0 28.8522 28.8522" width="28.8522">
-        <g id="Icon">
-          <path d={svgPaths.p2421cd00} id="Vector" stroke="#374151" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.40435" />
-          <path d={svgPaths.pc631240} id="Vector_2" stroke="#374151" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.40435" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function IconBox() {
-  return (
-    <button type="button" className="bg-white content-stretch flex items-center justify-center relative rounded-[11.405px] shrink-0 size-[38.017px] cursor-pointer transition-colors duration-150 hover:bg-[#f1f5f9]" data-name="IconBox">
-      <Icon1 />
-    </button>
-  );
-}
-
-function Icon2() {
-  return (
-    <div className="relative shrink-0 size-[16.157px]" data-name="Icon">
-      <svg className="absolute block inset-0 size-full" fill="none" height="28.8522" preserveAspectRatio="none" viewBox="0 0 28.8522 28.8522" width="28.8522">
-        <g id="Icon">
-          <path d={svgPaths.p3a221f80} id="Vector" stroke="#374151" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.40435" />
-          <path d={svgPaths.p5e0ff2} id="Vector_2" stroke="#374151" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.40435" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function IconBox1() {
-  return (
-    <button type="button" className="bg-white relative rounded-[11.405px] shrink-0 size-[38.017px] cursor-pointer transition-colors duration-150 hover:bg-[#f1f5f9]" data-name="IconBox">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-center relative size-full">
-        <Icon2 />
-      </div>
-    </button>
-  );
-}
-
-function Container10() {
-  return (
-    <div className="absolute bg-[#f59e0b] left-[24.573px] rounded-[8.554px] size-[17.107px] top-[-3.898px]" data-name="Container">
-      <div aria-hidden className="absolute border-[1.383px] border-solid border-white inset-0 pointer-events-none rounded-[8.554px]" />
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-center p-[1.383px] relative size-full">
-        <p className="[word-break:break-word] font-['Inter:Bold',sans-serif] font-bold leading-[22px] not-italic relative shrink-0 text-[16px] text-white whitespace-nowrap">3</p>
-      </div>
-    </div>
-  );
-}
-
-function Container9() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0" data-name="Container">
-      <IconBox1 />
-      <Container10 />
+      <DateRangeSelector
+        options={RANGE_OPTIONS.map((option) => ({ value: option.key, label: option.label }))}
+        value={range}
+        onValueChange={(next) => setRange(next as RangeKey)}
+      />
     </div>
   );
 }
 
 function Frame3() {
   return (
-    <div className="content-stretch flex items-center relative shrink-0">
-      <Image7Vectorized />
-      <IconBox />
-      <Container9 />
+    <div className="content-stretch flex items-center gap-[8px] relative shrink-0">
+      <IconButton icon={<Settings className="size-4" />} aria-label="Settings" />
+      <IconButton icon={<Search className="size-4" />} aria-label="Search" />
+      <NotificationButton count={3} />
     </div>
   );
 }
