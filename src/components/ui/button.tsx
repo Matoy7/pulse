@@ -29,7 +29,10 @@ const buttonVariants = cva(
         default: "h-10 px-4 py-2",
         sm: "h-9 rounded-md px-3",
         lg: "h-11 rounded-md px-8",
-        icon: "size-10",
+        // Uses the shared --spacing-control token (single source of
+        // truth for header control height) rather than a standalone
+        // "size-10" that could drift from DateRangeSelector's height.
+        icon: "size-control",
       },
     },
     defaultVariants: {

@@ -68,7 +68,12 @@ export function DateRangeSelector({
         <button
           type="button"
           className={cn(
-            "inline-flex items-center gap-2 rounded-md border border-border-strong bg-surface px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-surface-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
+            // h-control: same shared height token IconButton uses, so the
+            // two always match exactly regardless of this button's own
+            // text line-height. Width stays content-driven (px-3 + the
+            // label) — only height is pinned, per the fixed requirement
+            // that width may differ but height must be identical.
+            "inline-flex h-control items-center gap-2 rounded-md border border-border-strong bg-surface px-3 text-sm font-medium text-foreground transition-colors hover:bg-surface-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
             className
           )}
         >
@@ -77,6 +82,7 @@ export function DateRangeSelector({
           <ChevronDownIcon className="size-4 text-foreground-muted" aria-hidden="true" />
         </button>
       </DropdownMenuTrigger>
+
       <DropdownMenuContent align="end">
         <DropdownMenuRadioGroup value={selected} onValueChange={handleChange}>
           {options.map((option) => (

@@ -123,6 +123,15 @@
    * ------------------------------------------------------------------- */
   --spacing: 0.25rem; /* 4px base unit (Tailwind default, confirmed here) */
 
+  /* Shared control height — the single source of truth for every
+   * header control's height (icon buttons, DateRangeSelector's
+   * trigger, and any future header control). Registering it as a
+   * named spacing token makes it usable as h-control / w-control /
+   * size-control, so every component references the SAME token
+   * instead of independently typing "40px" or "size-10" in more than
+   * one place and risking drift between them. */
+  --spacing-control: 2.5rem; /* 40px */
+
   /* ---------------------------------------------------------------------
    * 4. RADIUS
    * Five steps, replacing the 17 arbitrary radius values in the
