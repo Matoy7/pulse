@@ -923,85 +923,14 @@ function LargeHeroCard() {
   );
 }
 
-function RevenueSparkline() {
-  return (
-    <div className="absolute inset-0">
-      <svg className="absolute block inset-0 size-full" fill="none" height="74.631" preserveAspectRatio="none" viewBox="0 0 349.286 74.631" width="349.286">
-        <g id="Group">
-          <path d={svgPaths.p91d4770} fill="url(#paint0_linear_0_43)" fillOpacity="0.6" id="Vector" />
-          <path d={svgPaths.p149ff200} fill="#6032DC" id="Vector_2" />
-        </g>
-        <defs>
-          <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_0_43" x1="9.55643e-05" x2="3.09103" y1="18.1225" y2="75.2423">
-            <stop stopColor="#7B6CF5" stopOpacity="0.55" />
-            <stop offset="0.5" stopColor="#9D8FF9" stopOpacity="0.22" />
-            <stop offset="1" stopColor="#C4BCFC" stopOpacity="0" />
-          </linearGradient>
-        </defs>
-      </svg>
-    </div>
-  );
-}
-
-function DauSparkline() {
-  return (
-    <div className="absolute inset-0">
-      <svg className="absolute block inset-0 size-full" fill="none" height="78.0643" preserveAspectRatio="none" viewBox="0 0 309.919 78.0643" width="309.919">
-        <g id="Group">
-          <path d={svgPaths.p1584e000} fill="url(#paint0_linear_0_78)" fillOpacity="0.6" id="Vector" />
-          <path d={svgPaths.p3288db80} fill="#6032DC" id="Vector_2" />
-        </g>
-        <defs>
-          <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_0_78" x1="0.00933154" x2="4.35055" y1="25.5909" y2="77.9605">
-            <stop stopColor="#7B6CF5" stopOpacity="0.55" />
-            <stop offset="0.5" stopColor="#9D8FF9" stopOpacity="0.22" />
-            <stop offset="1" stopColor="#C4BCFC" stopOpacity="0" />
-          </linearGradient>
-        </defs>
-      </svg>
-    </div>
-  );
-}
-
-function AvgSessionSparkline() {
-  return (
-    <div className="absolute inset-0">
-      <svg className="absolute block inset-0 size-full" fill="none" height="76.2532" preserveAspectRatio="none" viewBox="0 0 333.786 76.2532" width="333.786">
-        <g id="Group">
-          <path d={svgPaths.p1b29a480} fill="url(#paint0_linear_0_63)" fillOpacity="0.6" id="Vector" />
-          <path d={svgPaths.p17c76f00} fill="#6032DC" id="Vector_2" />
-        </g>
-        <defs>
-          <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_0_63" x1="10.4124" x2="11.4439" y1="4.66496" y2="76.0879">
-            <stop stopColor="#7B6CF5" stopOpacity="0.55" />
-            <stop offset="0.5" stopColor="#9D8FF9" stopOpacity="0.22" />
-            <stop offset="1" stopColor="#C4BCFC" stopOpacity="0" />
-          </linearGradient>
-        </defs>
-      </svg>
-    </div>
-  );
-}
-
-function DropOffSparkline() {
-  return (
-    <div className="absolute inset-0">
-      <svg className="absolute block inset-0 size-full" fill="none" height="74.8087" preserveAspectRatio="none" viewBox="0 0 334.217 74.8087" width="334.217">
-        <g id="Group">
-          <path d={svgPaths.p1aa61700} fill="url(#paint0_linear_0_37)" fillOpacity="0.6" id="Vector" />
-          <path d={svgPaths.p45f7b00} fill="#6032DC" id="Vector_2" />
-        </g>
-        <defs>
-          <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_0_37" x1="10.9905" x2="11.858" y1="3.92555" y2="74.6633">
-            <stop stopColor="#7B6CF5" stopOpacity="0.55" />
-            <stop offset="0.5" stopColor="#9D8FF9" stopOpacity="0.22" />
-            <stop offset="1" stopColor="#C4BCFC" stopOpacity="0" />
-          </linearGradient>
-        </defs>
-      </svg>
-    </div>
-  );
-}
+// Mock trend data for the four KPI card sparklines. These are
+// presentational-only trend lines (not tied to the date-range selector's
+// dataset) — they communicate general trend direction for each metric,
+// not literal historical values.
+const REVENUE_TREND = [38, 42, 40, 47, 51, 49, 58, 62];
+const DAU_TREND = [180, 205, 195, 220, 210, 240, 235, 260];
+const AVG_SESSION_TREND = [9, 10, 9.5, 11, 12, 11.5, 13, 13.5];
+const DROP_OFF_TREND = [18, 17, 16.5, 15, 15.5, 14, 14.6, 13.8];
 
 function Container13() {
   const { data } = useDashboardData();
@@ -1011,28 +940,28 @@ function Container13() {
         title="Revenue"
         value={data.revenue}
         caption="Total evenue"
-        chart={<RevenueSparkline />}
+        sparklineData={REVENUE_TREND}
         className="col-1 row-1 self-stretch justify-self-stretch shrink-0"
       />
       <KpiCard
         title="DAU"
         value={data.dau}
         caption="Total evenue"
-        chart={<DauSparkline />}
+        sparklineData={DAU_TREND}
         className="col-2 row-1 self-stretch justify-self-stretch shrink-0"
       />
       <KpiCard
         title="Average Session"
         value={data.avgSession}
         caption="Total evenue"
-        chart={<AvgSessionSparkline />}
+        sparklineData={AVG_SESSION_TREND}
         className="col-1 row-2 self-stretch justify-self-stretch shrink-0"
       />
       <KpiCard
         title="Drop Off Rate"
         value={data.dropOff}
         caption="Total evenue"
-        chart={<DropOffSparkline />}
+        sparklineData={DROP_OFF_TREND}
         className="col-2 row-2 self-stretch justify-self-stretch shrink-0"
       />
     </div>

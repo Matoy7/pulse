@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { AreaSparkline } from "./AreaSparkline";
 
 export interface KpiCardProps {
   /** KPI label shown at the top of the card, e.g. "Revenue". */
@@ -8,13 +8,15 @@ export interface KpiCardProps {
   /** Supporting caption under the value, e.g. "Total evenue". */
   caption: string;
   /**
-   * Decorative sparkline chart rendered at the bottom of the card.
-   * Each KPI's sparkline is unique artwork (its own SVG path + gradient),
-   * so it's supplied via composition rather than baked into this
-   * component — KpiCard stays generic and has no knowledge of any
-   * specific KPI's chart data.
+   * Ordered numeric trend data rendered as a compact area sparkline at
+   * the bottom of the card, e.g. [38, 42, 40, 47, 51, 49, 58, 62].
+   * KpiCard is fully data-driven for its chart — it owns rendering the
+   * sparkline itself (via AreaSparkline) rather than accepting an
+   * arbitrary ReactNode, so every KPI card automatically gets the same
+   * chart treatment and there's no per-instance SVG artwork to keep in
+   * sync.
    */
-  chart: ReactNode;
+  sparklineData: number[];
   /**
    * Optional passthrough for classes the parent layout needs to apply
    * (e.g. CSS Grid placement like "col-2 row-1 self-stretch"). KpiCard
@@ -25,12 +27,12 @@ export interface KpiCardProps {
 
 /**
  * A single KPI stat card: title, headline value, caption, and a
- * decorative sparkline chart. Used four times on the dashboard
+ * compact area-sparkline trend chart. Used four times on the dashboard
  * (Revenue, DAU, Average Session, Drop Off Rate) — extracted from four
  * previously-duplicated implementations that were visually identical
  * apart from their content.
  */
-export function KpiCard({ title, value, caption, chart, className = "" }: KpiCardProps) {
+export function KpiCard({ title, value, caption, sparklineData, className = "" }: KpiCardProps) {
   return (
     <div
       className={`bg-white drop-shadow-[0px_0.767px_3.07px_rgba(0,0,0,0.06)] relative rounded-[10.745px] transition-shadow duration-200 hover:shadow-[0px_6px_16px_-2px_rgba(15,23,42,0.12)] cursor-default ${className}`}
@@ -63,7 +65,7 @@ export function KpiCard({ title, value, caption, chart, className = "" }: KpiCar
         </div>
 
         <div className="relative w-full h-[46px] overflow-hidden rounded-[6px] shrink-0" data-name="Group">
-          {chart}
+          <AreaSparkline data={sparklineData} className="h-full" />
         </div>
       </div>
     </div>
