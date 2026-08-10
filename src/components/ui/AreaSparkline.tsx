@@ -1,7 +1,7 @@
 "use client";
 
 import { useId } from "react";
-import { Area, AreaChart } from "recharts";
+import { Area, AreaChart, YAxis } from "recharts";
 import { ChartContainer, type ChartConfig } from "./chart";
 
 /**
@@ -12,7 +12,7 @@ import { ChartContainer, type ChartConfig } from "./chart";
  * stripped out: no axes, no grid, no legend, no tooltip, no visible
  * data points, no card chrome. What's kept from the reference is the
  * visual language: a smooth curved area, a thin primary-colored line,
- * and a subtle gradient fill beneath it.
+ * and a clearly visible gradient fill beneath it.
  */
 
 export interface AreaSparklineProps {
@@ -43,11 +43,17 @@ export function AreaSparkline({ data, height = 46, className = "" }: AreaSparkli
       className={`w-full ${className}`}
       style={{ height }}
     >
-      <AreaChart data={chartData} margin={{ top: 2, right: 0, bottom: 2, left: 0 }}>
+      <AreaChart data={chartData} margin={{ top: 3, right: 0, bottom: 0, left: 0 }}>
+        {/* Hidden but not omitted: an explicit tight domain (no padding)
+            makes the curve's own peak and trough touch the top/bottom of
+            the plot area, so the line and its fill use the full compact
+            height available rather than floating in a padded middle band. */}
+        <YAxis hide domain={["dataMin", "dataMax"]} />
         <defs>
           <linearGradient id={gradientId} x1="0" y1="0" x2="0" y2="1">
-            <stop offset="5%" stopColor="var(--color-value)" stopOpacity={0.35} />
-            <stop offset="95%" stopColor="var(--color-value)" stopOpacity={0.02} />
+            <stop offset="5%" stopColor="var(--color-value)" stopOpacity={0.8} />
+            <stop offset="60%" stopColor="var(--color-value)" stopOpacity={0.25} />
+            <stop offset="100%" stopColor="var(--color-value)" stopOpacity={0.05} />
           </linearGradient>
         </defs>
         <Area
@@ -56,6 +62,7 @@ export function AreaSparkline({ data, height = 46, className = "" }: AreaSparkli
           stroke="var(--color-value)"
           strokeWidth={1.5}
           fill={`url(#${gradientId})`}
+          fillOpacity={1}
           dot={false}
           activeDot={false}
           isAnimationActive={false}
