@@ -45,7 +45,7 @@ export const Revenue: Story = {
   args: {
     title: 'Revenue',
     value: '$84,200',
-    caption: 'Total evenue',
+    caption: 'Total revenue',
     sparklineData: [38, 42, 40, 47, 51, 49, 58, 62],
   },
 };
@@ -54,7 +54,7 @@ export const DAU: Story = {
   args: {
     title: 'DAU',
     value: '430',
-    caption: 'Total evenue',
+    caption: 'Daily active users',
     sparklineData: [180, 205, 195, 220, 210, 240, 235, 260],
   },
 };
@@ -63,7 +63,7 @@ export const AverageSession: Story = {
   args: {
     title: 'Average Session',
     value: '13m 42s',
-    caption: 'Total evenue',
+    caption: 'Average session duration',
     sparklineData: [9, 10, 9.5, 11, 12, 11.5, 13, 13.5],
   },
 };
@@ -72,7 +72,7 @@ export const DropOffRate: Story = {
   args: {
     title: 'Drop Off Rate',
     value: '14.6%',
-    caption: 'Total evenue',
+    caption: 'Players who leave',
     sparklineData: [18, 17, 16.5, 15, 15.5, 14, 14.6, 13.8],
   },
 };

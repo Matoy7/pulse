@@ -36,7 +36,7 @@ const INDICATOR_CLASS: Record<PopularScreenRow["indicatorColor"], string> = {
 export function PopularScreensTable({ rows, onViewAll }: PopularScreensTableProps) {
   return (
     <div
-      className="bg-white drop-shadow-[0px_1.655px_6.618px_rgba(0,0,0,0.06)] flex-[317.333_1_0] min-w-0 relative rounded-[13.237px] transition-shadow duration-200 hover:shadow-[0px_8px_20px_-4px_rgba(15,23,42,0.14)] cursor-default"
+      className="bg-white border border-[#eef0f5] shadow-sm flex-[317.333_1_0] min-w-0 relative rounded-xl transition-shadow duration-150 hover:shadow-md cursor-default"
       data-name="Popular Screens"
     >
       <div className="flex flex-col items-start gap-[14px] px-[20px] py-[16px] relative size-full">
@@ -51,7 +51,7 @@ export function PopularScreensTable({ rows, onViewAll }: PopularScreensTableProp
                 </svg>
               </div>
             </div>
-            <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[22px] not-italic text-[#111827] text-[16px] whitespace-nowrap">
+            <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[24px] not-italic text-[#111827] text-[18px] whitespace-nowrap">
               Popular Screens
             </p>
           </div>
@@ -67,10 +67,10 @@ export function PopularScreensTable({ rows, onViewAll }: PopularScreensTableProp
         <div className="-mx-[20px] w-[calc(100%+40px)]">
           <Table>
             <colgroup>
-              <col />
-              <col className="w-[60px]" />
-              <col className="w-[68px]" />
-              <col className="w-[68px]" />
+              <col className="w-[42%]" />
+              <col className="w-[18%]" />
+              <col className="w-[20%]" />
+              <col className="w-[20%]" />
             </colgroup>
             <TableHeader>
               <TableRow className="border-b border-[#f3f4f6]">

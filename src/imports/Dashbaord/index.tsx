@@ -264,7 +264,7 @@ function ItemLink() {
   return (
     <button
       type="button"
-      className="bg-[#e0d8f3] relative rounded-[10px] shrink-0 w-full cursor-pointer transition-colors duration-150 hover:bg-[#d5c9ef] text-left"
+      className="bg-[#e0d8f3] relative rounded-[10px] shrink-0 w-full h-[44px] cursor-pointer transition-colors duration-150 hover:bg-[#d5c9ef] text-left"
       data-name="Item → Link"
     >
       <div className="flex flex-row items-center gap-[12px] px-[12px] py-[10px] size-full">
@@ -294,7 +294,7 @@ function ItemLink1() {
   return (
     <button
       type="button"
-      className="relative rounded-[10px] shrink-0 w-full cursor-pointer text-left text-[#1e293b] transition-colors duration-150 hover:bg-[#f4f2fb] hover:text-[#623ec4]"
+      className="relative rounded-[10px] shrink-0 w-full h-[44px] cursor-pointer text-left text-[#1e293b] transition-colors duration-150 hover:bg-[#f4f2fb] hover:text-[#623ec4]"
       data-name="Item → Link"
     >
       <div className="flex flex-row items-center gap-[12px] px-[12px] py-[10px] size-full">
@@ -329,7 +329,7 @@ function ItemLink2() {
   return (
     <button
       type="button"
-      className="relative rounded-[10px] shrink-0 w-full cursor-pointer text-left text-[#1e293b] transition-colors duration-150 hover:bg-[#f4f2fb] hover:text-[#623ec4]"
+      className="relative rounded-[10px] shrink-0 w-full h-[44px] cursor-pointer text-left text-[#1e293b] transition-colors duration-150 hover:bg-[#f4f2fb] hover:text-[#623ec4]"
       data-name="Item → Link"
     >
       <div className="flex flex-row items-center gap-[12px] px-[12px] py-[10px] size-full">
@@ -356,7 +356,7 @@ function ItemLink3() {
   return (
     <button
       type="button"
-      className="relative rounded-[10px] shrink-0 w-full cursor-pointer text-left text-[#1e293b] transition-colors duration-150 hover:bg-[#f4f2fb] hover:text-[#623ec4]"
+      className="relative rounded-[10px] shrink-0 w-full h-[44px] cursor-pointer text-left text-[#1e293b] transition-colors duration-150 hover:bg-[#f4f2fb] hover:text-[#623ec4]"
       data-name="Item → Link"
     >
       <div className="flex flex-row items-center gap-[12px] px-[12px] py-[10px] size-full">
@@ -384,7 +384,7 @@ function ItemLink4() {
   return (
     <button
       type="button"
-      className="relative rounded-[10px] shrink-0 w-full cursor-pointer text-left text-[#1e293b] transition-colors duration-150 hover:bg-[#f4f2fb] hover:text-[#623ec4]"
+      className="relative rounded-[10px] shrink-0 w-full h-[44px] cursor-pointer text-left text-[#1e293b] transition-colors duration-150 hover:bg-[#f4f2fb] hover:text-[#623ec4]"
       data-name="Item → Link"
     >
       <div className="flex flex-row items-center gap-[12px] px-[12px] py-[10px] size-full">
@@ -411,7 +411,7 @@ function ItemLink5() {
   return (
     <button
       type="button"
-      className="relative rounded-[10px] shrink-0 w-full cursor-pointer text-left text-[#1e293b] transition-colors duration-150 hover:bg-[#f4f2fb] hover:text-[#623ec4]"
+      className="relative rounded-[10px] shrink-0 w-full h-[44px] cursor-pointer text-left text-[#1e293b] transition-colors duration-150 hover:bg-[#f4f2fb] hover:text-[#623ec4]"
       data-name="Item → Link"
     >
       <div className="flex flex-row items-center gap-[12px] px-[12px] py-[10px] size-full">
@@ -450,20 +450,6 @@ function NavMargin() {
     <div className="bg-white relative shrink-0 w-full" data-name="Nav:margin">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start justify-center pt-[11.162px] relative size-full">
         <Nav />
-      </div>
-    </div>
-  );
-}
-
-function Container3() {
-  return <div className="bg-[#e5e7eb] h-[26.612px] relative shrink-0 w-[0.95px]" data-name="Container" />;
-}
-
-function TopNav() {
-  return (
-    <div className="bg-white drop-shadow-[0px_1.901px_7.604px_rgba(0,0,0,0.06)] relative rounded-[19.009px] shrink-0 w-full" data-name="TopNav">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start justify-center px-[19.009px] py-[9.504px] relative size-full">
-        <Container3 />
       </div>
     </div>
   );
@@ -542,11 +528,13 @@ function Frame2() {
 
 function AsideSidebar() {
   return (
-    <div className="bg-[#fafafa] content-stretch flex flex-col items-start relative shrink-0 w-[264px] max-w-[264px] h-full overflow-y-auto overflow-x-hidden" data-name="Aside - Sidebar">
+    <div className="bg-[#fafafa] content-stretch flex flex-col items-start relative shrink-0 w-[276px] max-w-[276px] h-full overflow-y-auto overflow-x-hidden" data-name="Aside - Sidebar">
       <Container />
       <NavMargin />
-      <TopNav />
-      <Frame2 />
+      <div className="flex-1 w-full" aria-hidden="true" />
+      <div className="border-t border-[#e5e7eb] w-full pt-[8px]">
+        <Frame2 />
+      </div>
     </div>
   );
 }
@@ -554,8 +542,8 @@ function AsideSidebar() {
 function Heading1() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Heading 2">
-      <div className="[word-break:break-word] flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center leading-[0] not-italic relative shrink-0 text-[#1e293b] text-[23.52px] whitespace-nowrap">
-        <p className="leading-[25.115px]">Dashboard</p>
+      <div className="[word-break:break-word] flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center leading-[0] not-italic relative shrink-0 text-[#1e293b] text-[29px] whitespace-nowrap">
+        <p className="leading-[34px]">Dashboard</p>
       </div>
     </div>
   );
@@ -670,8 +658,8 @@ function OverlayOverlayBlur() {
 
 function Container12() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col h-[6.563px] items-start min-w-px relative" data-name="Container">
-      <div className="relative shrink-0 size-[6.094px]" data-name="Icon">
+    <div className="content-stretch flex flex-[1_0_0] flex-col h-[5.7px] items-start min-w-px relative" data-name="Container">
+      <div className="relative shrink-0 size-[5.3px]" data-name="Icon">
         <svg className="absolute block inset-0 size-full" fill="none" height="10.8831" preserveAspectRatio="none" viewBox="0 0 10.8831 10.8831" width="10.8831">
           <path d={svgPaths.p145f6700} fill="#2D2100" id="Icon" />
         </svg>
@@ -683,9 +671,9 @@ function Container12() {
 function Background1() {
   const { data } = useDashboardData();
   return (
-    <div className="bg-[#fae07a] content-stretch flex gap-[6px] items-center px-[10px] py-[4px] relative rounded-[8px] shrink-0" data-name="Background">
+    <div className="bg-[#fae07a] content-stretch flex gap-[5px] items-center px-[9px] py-[3px] relative rounded-[7px] shrink-0" data-name="Background">
       <Container12 />
-      <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium not-italic relative shrink-0 text-[#2d2100] text-[16px] tracking-[0.094px] whitespace-nowrap">{data.retentionBadge}</p>
+      <p className="[word-break:break-word] font-['Inter:Medium',sans-serif] font-medium not-italic relative shrink-0 text-[#2d2100] text-[14px] tracking-[0.094px] whitespace-nowrap">{data.retentionBadge}</p>
     </div>
   );
 }
@@ -703,8 +691,8 @@ function Frame() {
   const { data } = useDashboardData();
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0">
-      <div className="[word-break:break-word] flex flex-col font-['Inter:Bold',sans-serif] font-bold h-[92px] justify-center leading-[0] not-italic relative shrink-0 text-[84px] text-white tracking-[-1.25px] w-[255px] transition-opacity duration-200">
-        <p className="leading-[37px]">{data.retention}</p>
+      <div className="[word-break:break-word] flex flex-col font-['Inter:Bold',sans-serif] font-bold h-[85px] justify-center leading-[0] not-italic relative shrink-0 text-[78px] text-white tracking-[-1.16px] w-[237px] transition-opacity duration-200">
+        <p className="leading-[34px]">{data.retention}</p>
       </div>
     </div>
   );
@@ -723,7 +711,7 @@ function Frame5() {
 
 function LargeHeroCard() {
   return (
-    <div className="content-stretch flex flex-col min-h-[172px] items-start justify-between overflow-clip pb-[12px] pt-[10px] px-[16px] relative rounded-[10px] shadow-[0px_6.69px_8.362px_-1.673px_rgba(0,0,0,0.1),0px_2.676px_3.345px_-2.007px_rgba(0,0,0,0.1)] flex-[5_1_0] min-w-0 transition-shadow duration-200 hover:shadow-[0px_10px_20px_-2px_rgba(86,41,230,0.35),0px_4px_8px_-2px_rgba(86,41,230,0.2)] cursor-default" style={{ backgroundImage: "linear-gradient(142.07828029689713deg, rgb(111, 75, 255) 0%, rgb(86, 41, 230) 100%)" }} data-name="Large Hero Card">
+    <div className="content-stretch flex flex-col min-h-[172px] items-start justify-between overflow-clip pb-[14px] pt-[14px] px-[18px] relative rounded-xl shadow-md flex-[5_1_0] min-w-0 transition-shadow duration-150 hover:shadow-lg cursor-default" style={{ backgroundImage: "linear-gradient(142.07828029689713deg, rgb(111, 75, 255) 0%, rgb(86, 41, 230) 100%)" }} data-name="Large Hero Card">
       <SparklineVisualizationPlaceholder />
       <Container11 />
       <Frame5 />
@@ -743,32 +731,32 @@ const DROP_OFF_TREND = [18, 17, 16.5, 15, 15.5, 14, 14.6, 13.8];
 function Container13() {
   const { data } = useDashboardData();
   return (
-    <div className="grid grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[repeat(2,fit-content(100%))] gap-[28px] relative flex-[9_1_0] min-w-0" data-name="Container">
+    <div className="grid grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[repeat(2,fit-content(100%))] gap-[24px] relative flex-[9_1_0] min-w-0" data-name="Container">
       <KpiCard
         title="Revenue"
         value={data.revenue}
-        caption="Total evenue"
+        caption="Total revenue"
         sparklineData={REVENUE_TREND}
         className="col-1 row-1 self-stretch justify-self-stretch shrink-0"
       />
       <KpiCard
         title="DAU"
         value={data.dau}
-        caption="Total evenue"
+        caption="Daily active users"
         sparklineData={DAU_TREND}
         className="col-2 row-1 self-stretch justify-self-stretch shrink-0"
       />
       <KpiCard
         title="Average Session"
         value={data.avgSession}
-        caption="Total evenue"
+        caption="Average session duration"
         sparklineData={AVG_SESSION_TREND}
         className="col-1 row-2 self-stretch justify-self-stretch shrink-0"
       />
       <KpiCard
         title="Drop Off Rate"
         value={data.dropOff}
-        caption="Total evenue"
+        caption="Players who leave"
         sparklineData={DROP_OFF_TREND}
         className="col-2 row-2 self-stretch justify-self-stretch shrink-0"
       />
@@ -788,8 +776,8 @@ function SectionKpiRow() {
 function Heading2() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Heading 3">
-      <div className="[word-break:break-word] flex flex-col font-['Inter:Medium',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#1e293b] text-[16px] w-full">
-        <p className="leading-[24px]">Player Funnel Performance</p>
+      <div className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold',sans-serif] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#1e293b] text-[18px] w-full">
+        <p className="leading-[26px]">Player Funnel Performance</p>
       </div>
     </div>
   );
@@ -820,7 +808,7 @@ function Container25() {
 
 function Container26() {
   return (
-    <div className="min-w-[104px] relative shrink-0 w-[104px]" data-name="Container">
+    <div className="min-w-[92px] relative shrink-0 w-[92px]" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start min-w-[inherit] relative size-full">
         <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#1e293b] text-[16px] whitespace-nowrap">Sign Up</p>
       </div>
@@ -863,7 +851,7 @@ function Container27() {
 function Container24() {
   return (
     <div className="h-[48px] relative shrink-0 w-full" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[12px] items-center relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[16px] items-center relative size-full">
         <Container25 />
         <Container26 />
         <Container27 />
@@ -918,7 +906,7 @@ function Container33() {
 
 function Container31() {
   return (
-    <div className="min-w-[104px] relative shrink-0 w-[104px]" data-name="Container">
+    <div className="min-w-[92px] relative shrink-0 w-[92px]" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start min-w-[inherit] relative size-full">
         <Container32 />
         <Container33 />
@@ -962,7 +950,7 @@ function Container34() {
 function Container29() {
   return (
     <div className="h-[48px] relative shrink-0 w-full" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[12px] items-center relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[16px] items-center relative size-full">
         <Container30 />
         <Container31 />
         <Container34 />
@@ -997,7 +985,7 @@ function Container37() {
 
 function Container38() {
   return (
-    <div className="min-w-[104px] relative shrink-0 w-[104px]" data-name="Container">
+    <div className="min-w-[92px] relative shrink-0 w-[92px]" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start min-w-[inherit] relative size-full">
         <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#1e293b] text-[16px] whitespace-nowrap">First Match</p>
       </div>
@@ -1040,7 +1028,7 @@ function Container39() {
 function Container36() {
   return (
     <div className="h-[48px] relative shrink-0 w-full" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[12px] items-center relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[16px] items-center relative size-full">
         <Container37 />
         <Container38 />
         <Container39 />
@@ -1102,7 +1090,7 @@ function Container45() {
 
 function Container43() {
   return (
-    <div className="min-w-[104px] relative shrink-0 w-[104px]" data-name="Container">
+    <div className="min-w-[92px] relative shrink-0 w-[92px]" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start min-w-[inherit] relative size-full">
         <Container44 />
         <Container45 />
@@ -1146,7 +1134,7 @@ function Container46() {
 function Container41() {
   return (
     <div className="h-[48px] relative shrink-0 w-full" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[12px] items-center relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[16px] items-center relative size-full">
         <Container42 />
         <Container43 />
         <Container46 />
@@ -1201,7 +1189,7 @@ function Container52() {
 
 function Container50() {
   return (
-    <div className="min-w-[104px] relative shrink-0 w-[104px]" data-name="Container">
+    <div className="min-w-[92px] relative shrink-0 w-[92px]" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start min-w-[inherit] relative size-full">
         <Container51 />
         <Container52 />
@@ -1245,7 +1233,7 @@ function Container53() {
 function Container48() {
   return (
     <div className="h-[48px] relative shrink-0 w-full" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[12px] items-center relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[16px] items-center relative size-full">
         <Container49 />
         <Container50 />
         <Container53 />
@@ -1276,7 +1264,7 @@ function ContainerMargin() {
 
 function PlayerFunnelPerformance() {
   return (
-    <div className="bg-white content-stretch flex flex-col gap-[24px] items-start px-[20px] py-[20px] relative rounded-[11.162px] flex-[289.52_1_0] min-w-0" data-name="Player Funnel Performance">
+    <div className="bg-white border border-[#eef0f5] shadow-sm content-stretch flex flex-col gap-[24px] items-start px-[20px] py-[20px] relative rounded-xl flex-[289.52_1_0] min-w-0" data-name="Player Funnel Performance">
       <Heading2 />
       <ContainerMargin />
     </div>
@@ -1296,7 +1284,7 @@ function Icon8() {
   const { data } = useDashboardData();
   const barHeight = data.revenueBars[0].height;
   return (
-    <div className="group/revbar relative shrink-0 w-[53.2px] transition-[height] duration-300 ease-out cursor-default" style={{ height: `${barHeight}px` }} data-name="Icon">
+    <div className="group/revbar relative shrink-0 w-[60px] transition-[height] duration-300 ease-out cursor-default" style={{ height: `${barHeight}px` }} data-name="Icon">
       <svg className="absolute block inset-0 size-full transition-[filter] duration-150 group-hover/revbar:brightness-110" fill="none" preserveAspectRatio="none" viewBox="0 0 95 300">
         <g clipPath="url(#clip0_0_84)" id="Icon">
           <path d={svgPaths.p2b8ed000} fill="url(#paint0_linear_0_84)" id="Vector" />
@@ -1351,7 +1339,7 @@ function Icon9() {
   const { data } = useDashboardData();
   const barHeight = data.revenueBars[1].height;
   return (
-    <div className="group/revbar relative shrink-0 w-[53.2px] transition-[height] duration-300 ease-out cursor-default" style={{ height: `${barHeight}px` }} data-name="Icon">
+    <div className="group/revbar relative shrink-0 w-[60px] transition-[height] duration-300 ease-out cursor-default" style={{ height: `${barHeight}px` }} data-name="Icon">
       <svg className="absolute block inset-0 size-full transition-[filter] duration-150 group-hover/revbar:brightness-110" fill="none" preserveAspectRatio="none" viewBox="0 0 95 264">
         <g clipPath="url(#clip0_0_119)" id="Icon">
           <path d={svgPaths.p380200} fill="url(#paint0_linear_0_119)" id="Vector" />
@@ -1406,7 +1394,7 @@ function Icon10() {
   const { data } = useDashboardData();
   const barHeight = data.revenueBars[2].height;
   return (
-    <div className="group/revbar relative shrink-0 w-[53.2px] transition-[height] duration-300 ease-out cursor-default" style={{ height: `${barHeight}px` }} data-name="Icon">
+    <div className="group/revbar relative shrink-0 w-[60px] transition-[height] duration-300 ease-out cursor-default" style={{ height: `${barHeight}px` }} data-name="Icon">
       <svg className="absolute block inset-0 size-full transition-[filter] duration-150 group-hover/revbar:brightness-110" fill="none" preserveAspectRatio="none" viewBox="0 0 95 222">
         <g clipPath="url(#clip0_0_129)" id="Icon">
           <path d={svgPaths.p3fade6c0} fill="url(#paint0_linear_0_129)" id="Vector" />
@@ -1461,7 +1449,7 @@ function Icon11() {
   const { data } = useDashboardData();
   const barHeight = data.revenueBars[3].height;
   return (
-    <div className="group/revbar relative shrink-0 w-[53.2px] transition-[height] duration-300 ease-out cursor-default" style={{ height: `${barHeight}px` }} data-name="Icon">
+    <div className="group/revbar relative shrink-0 w-[60px] transition-[height] duration-300 ease-out cursor-default" style={{ height: `${barHeight}px` }} data-name="Icon">
       <svg className="absolute block inset-0 size-full transition-[filter] duration-150 group-hover/revbar:brightness-110" fill="none" preserveAspectRatio="none" viewBox="0 0 95 177">
         <g clipPath="url(#clip0_0_22)" id="Icon">
           <path d={svgPaths.p14476580} fill="url(#paint0_linear_0_22)" id="Vector" />
@@ -1516,7 +1504,7 @@ function Icon12() {
   const { data } = useDashboardData();
   const barHeight = data.revenueBars[4].height;
   return (
-    <div className="group/revbar relative shrink-0 w-[53.2px] transition-[height] duration-300 ease-out cursor-default" style={{ height: `${barHeight}px` }} data-name="Icon">
+    <div className="group/revbar relative shrink-0 w-[60px] transition-[height] duration-300 ease-out cursor-default" style={{ height: `${barHeight}px` }} data-name="Icon">
       <svg className="absolute block inset-0 size-full transition-[filter] duration-150 group-hover/revbar:brightness-110" fill="none" preserveAspectRatio="none" viewBox="0 0 95 126">
         <g clipPath="url(#clip0_0_16)" id="Icon">
           <path d={svgPaths.p982ad00} fill="url(#paint0_linear_0_16)" id="Vector" />
@@ -1560,7 +1548,7 @@ function Container59() {
 
 function FlatBarChart() {
   return (
-    <div className="grid grid-cols-[repeat(5,minmax(0,1fr))] gap-x-[16px] items-end px-[20px] py-[16px] relative shrink-0 w-full" data-name="FlatBarChart">
+    <div className="grid grid-cols-[repeat(5,minmax(0,1fr))] gap-x-[12px] items-end px-[20px] py-[16px] relative shrink-0 w-full" data-name="FlatBarChart">
       <Container55 />
       <Container56 />
       <Container57 />
@@ -1572,9 +1560,9 @@ function FlatBarChart() {
 
 function RevenueBreakdown() {
   return (
-    <div className="bg-white content-stretch flex flex-col gap-[24px] items-start px-[20px] py-[20px] relative rounded-[13.028px] flex-[508_1_0] min-w-0" data-name="Revenue Breakdown">
-      <div className="[word-break:break-word] flex flex-col font-['Inter:Medium',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#1e293b] text-[16px] w-full">
-        <p className="leading-[24px]">Revenue Breakdown</p>
+    <div className="bg-white border border-[#eef0f5] shadow-sm content-stretch flex flex-col gap-[24px] items-start px-[20px] py-[20px] relative rounded-xl flex-[508_1_0] min-w-0" data-name="Revenue Breakdown">
+      <div className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold',sans-serif] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#1e293b] text-[18px] w-full">
+        <p className="leading-[26px]">Revenue Breakdown</p>
       </div>
       <FlatBarChart />
     </div>
@@ -1659,11 +1647,13 @@ function DashboardBottom() {
 
 function MainContentArea() {
   return (
-    <div className="bg-white content-stretch flex flex-col gap-[36px] h-full min-h-0 min-w-0 flex-1 items-start overflow-y-auto overflow-x-hidden p-[44px] relative" data-name="Main Content Area">
-      <HeaderSection />
-      <SectionKpiRow />
-      <MiddleSection />
-      <DashboardBottom />
+    <div className="bg-white h-full min-h-0 min-w-0 flex-1 overflow-y-auto overflow-x-hidden relative" data-name="Main Content Area">
+      <div className="max-w-[1360px] mx-auto flex flex-col gap-[32px] items-start px-[40px] py-[40px]">
+        <HeaderSection />
+        <SectionKpiRow />
+        <MiddleSection />
+        <DashboardBottom />
+      </div>
     </div>
   );
 }
