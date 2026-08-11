@@ -38,7 +38,7 @@ const TYPE_STYLES: Record<AlertType, { bg: string; stroke: string; dot: string }
 function AlertIcon({ type }: { type: AlertType }) {
   const { bg, stroke } = TYPE_STYLES[type];
   return (
-    <div className={`${bg} relative rounded-[5.791px] shrink-0 size-[21.51px]`}>
+    <div className={`${bg} relative rounded-[5px] shrink-0 size-[18px]`}>
       <div className="flex items-center justify-center relative size-full">
         <svg className="size-[10.755px]" fill="none" viewBox="0 0 19.2049 19.2049" aria-hidden="true">
           {type === "positive" && (
@@ -93,10 +93,10 @@ export function AlertsNotificationsTable({ alerts, onViewAll }: AlertsNotificati
       className="bg-white border border-[#eef0f5] shadow-sm flex-[317.333_1_0] min-w-0 relative rounded-xl transition-shadow duration-150 hover:shadow-md cursor-default"
       data-name="Alerts & Notifications"
     >
-      <div className="flex flex-col items-start gap-[14px] px-[20px] py-[16px] relative size-full">
+      <div className="flex flex-col items-start gap-[10px] px-[14px] py-[12px] relative size-full">
         <div className="flex items-center justify-between gap-[16px] relative shrink-0 w-full">
-          <div className="flex gap-[12px] items-center shrink-0">
-            <div className="bg-[#ede9fe] relative rounded-[6.618px] shrink-0 size-[23.164px]">
+          <div className="flex gap-[8px] items-center shrink-0">
+            <div className="bg-[#ede9fe] relative rounded-[6px] shrink-0 size-[20px]">
               <div className="flex items-center justify-center relative size-full">
                 <svg className="size-[11.582px]" fill="none" viewBox="0 0 20.6822 20.6822" aria-hidden="true">
                   <path d={svgPaths.p33303f00} stroke="#7B6CF5" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.72351" />
@@ -111,13 +111,13 @@ export function AlertsNotificationsTable({ alerts, onViewAll }: AlertsNotificati
           <button
             type="button"
             onClick={onViewAll}
-            className="shrink-0 cursor-pointer text-left font-['Inter:Medium',sans-serif] font-medium leading-[22px] not-italic text-[#7b6cf5] text-[16px] whitespace-nowrap transition-colors duration-150 hover:text-[#4c2e9e] underline-offset-2 hover:underline"
+            className="shrink-0 cursor-pointer text-left font-['Inter:Medium',sans-serif] font-medium leading-[16px] not-italic text-[#7b6cf5] text-[13px] whitespace-nowrap transition-colors duration-150 hover:text-[#4c2e9e] underline-offset-2 hover:underline"
           >
             View all
           </button>
         </div>
 
-        <div className="-mx-[20px] w-[calc(100%+40px)]">
+        <div className="-mx-[14px] w-[calc(100%+28px)]">
           <Table>
             <TableBody>
               {alerts.map((alert, index) => {
@@ -130,21 +130,21 @@ export function AlertsNotificationsTable({ alerts, onViewAll }: AlertsNotificati
                         type="button"
                         onClick={() => alert.detail && toggle(alert.id)}
                         aria-expanded={alert.detail ? expanded : undefined}
-                        className="flex gap-[12px] items-center pb-[11px] pt-[10px] pl-[20px] pr-[20px] relative w-full cursor-pointer text-left transition-colors duration-150 hover:bg-[#f8fafc]"
+                        className="flex gap-[12px] items-center pb-[8px] pt-[8px] pl-[14px] pr-[14px] relative w-full cursor-pointer text-left transition-colors duration-150 hover:bg-[#f8fafc]"
                       >
                         <AlertIcon type={alert.type} />
                         <div className="flex-1 min-w-0">
-                          <p className="font-['Inter:Medium',sans-serif] font-medium leading-[22px] not-italic text-[#374151] text-[16px] min-w-0 w-full">
+                          <p className="font-['Inter:Medium',sans-serif] font-medium leading-[16px] not-italic text-[#374151] text-[13px] min-w-0 w-full">
                             {alert.message}
                           </p>
                         </div>
                         <div className="flex gap-[8px] items-center shrink-0">
-                          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[22px] not-italic text-[#9ca3af] text-[16px] whitespace-nowrap">
+                          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[16px] not-italic text-[#9ca3af] text-[11px] whitespace-nowrap">
                             {alert.timestamp}
                           </p>
                           <span
                             aria-hidden="true"
-                            className={`${TYPE_STYLES[alert.type].dot} relative rounded-[3.309px] shrink-0 size-[6.618px]`}
+                            className={`${TYPE_STYLES[alert.type].dot} relative rounded-full shrink-0 size-[5px]`}
                           />
                         </div>
                       </button>

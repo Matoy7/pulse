@@ -73,13 +73,13 @@ export function DateRangeSelector({
             // text line-height. Width stays content-driven (px-3 + the
             // label) — only height is pinned, per the fixed requirement
             // that width may differ but height must be identical.
-            "inline-flex h-control items-center gap-2 rounded-md border border-border-strong bg-surface px-3 text-sm font-medium text-foreground transition-colors hover:bg-surface-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
+            "inline-flex h-control items-center gap-[6px] rounded-md border border-border-strong bg-surface px-[10px] text-[13px] font-medium text-foreground transition-colors hover:bg-surface-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
             className
           )}
         >
-          <CalendarIcon className="size-4 text-foreground-muted" aria-hidden="true" />
+          <CalendarIcon className="size-[14px] text-foreground-muted" aria-hidden="true" />
           <span>{selectedLabel}</span>
-          <ChevronDownIcon className="size-4 text-foreground-muted" aria-hidden="true" />
+          <ChevronDownIcon className="size-[14px] text-foreground-muted" aria-hidden="true" />
         </button>
       </DropdownMenuTrigger>
 

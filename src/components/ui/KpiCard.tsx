@@ -38,21 +38,21 @@ export function KpiCard({ title, value, caption, sparklineData, className = "" }
       className={`bg-white shadow-sm rounded-lg relative transition-shadow duration-150 hover:shadow-md cursor-default ${className}`}
       data-name="StatCard"
     >
-      <div className="flex flex-col gap-[12px] items-start p-[16px] relative size-full">
-        <p className="font-['Inter:Medium',sans-serif] font-medium leading-[24px] not-italic text-[#131b2e] text-[18px] whitespace-nowrap relative shrink-0">
+      <div className="flex flex-col gap-[8px] items-start p-[12px] relative size-full">
+        <p className="font-['Inter:Medium',sans-serif] font-medium leading-[16px] not-italic text-[#131b2e] text-[13px] whitespace-nowrap relative shrink-0">
           {title}
         </p>
 
-        <div className="flex flex-col gap-[4px] items-start relative shrink-0 w-full">
-          <p className="font-['Inter:Bold',sans-serif] font-bold leading-[36px] not-italic relative shrink-0 text-[#111827] text-[31px] tracking-[-0.5px] whitespace-nowrap transition-opacity duration-200">
+        <div className="flex flex-col gap-[2px] items-start relative shrink-0 w-full">
+          <p className="font-['Inter:Bold',sans-serif] font-bold leading-[28px] not-italic relative shrink-0 text-[#111827] text-[24px] tracking-[-0.4px] whitespace-nowrap transition-opacity duration-200">
             {value}
           </p>
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#1e293b] text-[15px] whitespace-nowrap">
+          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[15px] not-italic relative shrink-0 text-[#6b7280] text-[12px] whitespace-nowrap">
             {caption}
           </p>
         </div>
 
-        <div className="relative w-full h-[54px] overflow-hidden rounded-md shrink-0" data-name="Group">
+        <div className="relative w-full h-[40px] overflow-hidden rounded-md shrink-0" data-name="Group">
           <AreaSparkline data={sparklineData} className="h-full" />
         </div>
       </div>

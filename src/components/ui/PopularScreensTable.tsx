@@ -39,10 +39,10 @@ export function PopularScreensTable({ rows, onViewAll }: PopularScreensTableProp
       className="bg-white border border-[#eef0f5] shadow-sm flex-[317.333_1_0] min-w-0 relative rounded-xl transition-shadow duration-150 hover:shadow-md cursor-default"
       data-name="Popular Screens"
     >
-      <div className="flex flex-col items-start gap-[14px] px-[20px] py-[16px] relative size-full">
+      <div className="flex flex-col items-start gap-[10px] px-[14px] py-[12px] relative size-full">
         <div className="flex items-center justify-between gap-[16px] relative shrink-0 w-full">
-          <div className="flex gap-[12px] items-center shrink-0">
-            <div className="bg-[#ede9fe] relative rounded-[6.618px] shrink-0 size-[23.164px]">
+          <div className="flex gap-[8px] items-center shrink-0">
+            <div className="bg-[#ede9fe] relative rounded-[6px] shrink-0 size-[20px]">
               <div className="flex items-center justify-center relative size-full">
                 <svg className="size-[11.582px]" fill="none" viewBox="0 0 20.6822 20.6822" aria-hidden="true">
                   <path d={svgPaths.p107e3f60} stroke="#7B6CF5" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.72351" />
@@ -58,13 +58,13 @@ export function PopularScreensTable({ rows, onViewAll }: PopularScreensTableProp
           <button
             type="button"
             onClick={onViewAll}
-            className="shrink-0 cursor-pointer text-left font-['Inter:Medium',sans-serif] font-medium leading-[22px] not-italic text-[#7b6cf5] text-[16px] whitespace-nowrap transition-colors duration-150 hover:text-[#4c2e9e] underline-offset-2 hover:underline"
+            className="shrink-0 cursor-pointer text-left font-['Inter:Medium',sans-serif] font-medium leading-[16px] not-italic text-[#7b6cf5] text-[13px] whitespace-nowrap transition-colors duration-150 hover:text-[#4c2e9e] underline-offset-2 hover:underline"
           >
             View all
           </button>
         </div>
 
-        <div className="-mx-[20px] w-[calc(100%+40px)]">
+        <div className="-mx-[14px] w-[calc(100%+28px)]">
           <Table>
             <colgroup>
               <col className="w-[42%]" />
@@ -74,16 +74,16 @@ export function PopularScreensTable({ rows, onViewAll }: PopularScreensTableProp
             </colgroup>
             <TableHeader>
               <TableRow className="border-b border-[#f3f4f6]">
-                <TableHead className="pb-[10px] pl-[20px] font-['Inter:Medium',sans-serif] font-medium not-italic text-[#9ca3af] text-[16px] tracking-[0.347px] uppercase">
+                <TableHead className="pb-[8px] pl-[14px] font-['Inter:Medium',sans-serif] font-medium not-italic text-[#9ca3af] text-[11px] tracking-[0.347px] uppercase">
                   Screen
                 </TableHead>
-                <TableHead className="pb-[10px] text-right font-['Inter:Medium',sans-serif] font-medium not-italic text-[#9ca3af] text-[16px] tracking-[0.347px] uppercase">
+                <TableHead className="pb-[8px] text-right font-['Inter:Medium',sans-serif] font-medium not-italic text-[#9ca3af] text-[11px] tracking-[0.347px] uppercase">
                   Views
                 </TableHead>
-                <TableHead className="pb-[10px] text-right font-['Inter:Medium',sans-serif] font-medium not-italic text-[#9ca3af] text-[16px] tracking-[0.347px] uppercase">
+                <TableHead className="pb-[8px] text-right font-['Inter:Medium',sans-serif] font-medium not-italic text-[#9ca3af] text-[11px] tracking-[0.347px] uppercase">
                   Avg Time
                 </TableHead>
-                <TableHead className="pb-[10px] pr-[20px] text-right font-['Inter:Medium',sans-serif] font-medium not-italic text-[#9ca3af] text-[16px] tracking-[0.347px] uppercase">
+                <TableHead className="pb-[8px] pr-[14px] text-right font-['Inter:Medium',sans-serif] font-medium not-italic text-[#9ca3af] text-[11px] tracking-[0.347px] uppercase">
                   Exit Rate
                 </TableHead>
               </TableRow>
@@ -94,24 +94,24 @@ export function PopularScreensTable({ rows, onViewAll }: PopularScreensTableProp
                   key={row.screen}
                   className={`transition-colors duration-150 hover:bg-[#f8fafc] ${index < rows.length - 1 ? "border-b border-[#f3f4f6]" : ""}`}
                 >
-                  <TableCell className="py-[11px] pl-[20px]">
+                  <TableCell className="py-[8px] pl-[14px]">
                     <div className="flex gap-[10px] items-center min-w-0">
                       <div
                         aria-hidden="true"
-                        className={`h-[4.136px] opacity-85 relative rounded-[2.482px] shrink-0 w-[23.164px] ${INDICATOR_CLASS[row.indicatorColor]}`}
+                        className={`h-[3.5px] opacity-85 relative rounded-[2px] shrink-0 w-[18px] ${INDICATOR_CLASS[row.indicatorColor]}`}
                       />
-                      <p className="font-['Inter:Regular',sans-serif] font-normal leading-[22px] not-italic text-[#374151] text-[16px] whitespace-nowrap min-w-0">
+                      <p className="font-['Inter:Regular',sans-serif] font-normal leading-[16px] not-italic text-[#374151] text-[13px] whitespace-nowrap min-w-0">
                         {row.screen}
                       </p>
                     </div>
                   </TableCell>
-                  <TableCell className="py-[11px] text-right font-['Inter:Regular',sans-serif] font-normal not-italic text-[#6b7280] text-[16px] whitespace-nowrap">
+                  <TableCell className="py-[8px] text-right font-['Inter:Regular',sans-serif] font-normal not-italic text-[#6b7280] text-[13px] whitespace-nowrap">
                     {row.views}
                   </TableCell>
-                  <TableCell className="py-[11px] text-right font-['Inter:Regular',sans-serif] font-normal not-italic text-[#6b7280] text-[16px] whitespace-nowrap">
+                  <TableCell className="py-[8px] text-right font-['Inter:Regular',sans-serif] font-normal not-italic text-[#6b7280] text-[13px] whitespace-nowrap">
                     {row.avgTime}
                   </TableCell>
-                  <TableCell className="py-[11px] pr-[20px] text-right font-['Inter:Regular',sans-serif] font-normal not-italic text-[#6b7280] text-[16px] whitespace-nowrap">
+                  <TableCell className="py-[8px] pr-[14px] text-right font-['Inter:Regular',sans-serif] font-normal not-italic text-[#6b7280] text-[13px] whitespace-nowrap">
                     {row.exitRate}
                   </TableCell>
                 </TableRow>

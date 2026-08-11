@@ -130,7 +130,7 @@
    * size-control, so every component references the SAME token
    * instead of independently typing "40px" or "size-10" in more than
    * one place and risking drift between them. */
-  --spacing-control: 2.5rem; /* 40px */
+  --spacing-control: 2.125rem; /* 34px */
 
   /* ---------------------------------------------------------------------
    * 4. RADIUS
