@@ -53,7 +53,7 @@ export function KpiCard({ title, value, caption, sparklineData, className = "" }
         </div>
 
         <div className="relative w-full h-[40px] overflow-hidden rounded-md shrink-0" data-name="Group">
-          <AreaSparkline data={sparklineData} className="h-full" />
+          <AreaSparkline data={sparklineData} height={40} className="h-full" />
         </div>
       </div>
     </div>
