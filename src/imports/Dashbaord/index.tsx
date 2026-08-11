@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useId, useState } from "react";
 import svgPaths from "./svg-j8ue68fght";
 import imgImageAnthony from "./e80369b0bde9bc36bf18f9bf130673329ab18cff.png";
 import { KpiCard } from "@/components/ui/KpiCard";
@@ -1264,7 +1264,7 @@ function ContainerMargin() {
 
 function PlayerFunnelPerformance() {
   return (
-    <div className="bg-white border border-[#eef0f5] shadow-sm content-stretch flex flex-col gap-[14px] items-start px-[16px] py-[16px] relative rounded-lg flex-[289.52_1_0] min-w-0" data-name="Player Funnel Performance">
+    <div className="bg-white border border-[#eef0f5] shadow-sm content-stretch flex flex-col gap-[14px] items-start px-[16px] py-[16px] relative rounded-lg flex-[3_1_0] min-w-0" data-name="Player Funnel Performance">
       <Heading2 />
       <ContainerMargin />
     </div>
@@ -1283,18 +1283,19 @@ function Text15() {
 function Icon8() {
   const { data } = useDashboardData();
   const barHeight = data.revenueBars[0].height * 0.55;
+  const uid = useId();
   return (
     <div className="group/revbar relative shrink-0 w-[36px] transition-[height] duration-300 ease-out cursor-default" style={{ height: `${barHeight}px` }} data-name="Icon">
       <svg className="absolute block inset-0 size-full transition-[filter] duration-150 group-hover/revbar:brightness-110" fill="none" preserveAspectRatio="none" viewBox="0 0 95 300">
-        <g clipPath="url(#clip0_0_84)" id="Icon">
-          <path d={svgPaths.p2b8ed000} fill="url(#paint0_linear_0_84)" id="Vector" />
+        <g clipPath="url(#clip0_0_84-${uid})" id="Icon">
+          <path d={svgPaths.p2b8ed000} fill={`url(#paint0_linear_0_84-${uid})`} id="Vector" />
         </g>
         <defs>
-          <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_0_84" x1="0" x2="95" y1="0" y2="0">
+          <linearGradient gradientUnits="userSpaceOnUse" id={`paint0_linear_0_84-${uid}`} x1="0" x2="95" y1="0" y2="0">
             <stop stopColor="#9D8FF9" />
             <stop offset="1" stopColor="#5A4DC8" />
           </linearGradient>
-          <clipPath id="clip0_0_84">
+          <clipPath id={`clip0_0_84-${uid}`}>
             <rect fill="white" height="300" width="95" />
           </clipPath>
         </defs>
@@ -1338,18 +1339,19 @@ function Text17() {
 function Icon9() {
   const { data } = useDashboardData();
   const barHeight = data.revenueBars[1].height * 0.55;
+  const uid = useId();
   return (
     <div className="group/revbar relative shrink-0 w-[36px] transition-[height] duration-300 ease-out cursor-default" style={{ height: `${barHeight}px` }} data-name="Icon">
       <svg className="absolute block inset-0 size-full transition-[filter] duration-150 group-hover/revbar:brightness-110" fill="none" preserveAspectRatio="none" viewBox="0 0 95 264">
-        <g clipPath="url(#clip0_0_119)" id="Icon">
-          <path d={svgPaths.p380200} fill="url(#paint0_linear_0_119)" id="Vector" />
+        <g clipPath="url(#clip0_0_119-${uid})" id="Icon">
+          <path d={svgPaths.p380200} fill={`url(#paint0_linear_0_119-${uid})`} id="Vector" />
         </g>
         <defs>
-          <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_0_119" x1="0" x2="95" y1="0" y2="0">
+          <linearGradient gradientUnits="userSpaceOnUse" id={`paint0_linear_0_119-${uid}`} x1="0" x2="95" y1="0" y2="0">
             <stop stopColor="#ADA2F5" />
             <stop offset="1" stopColor="#6E64C6" />
           </linearGradient>
-          <clipPath id="clip0_0_119">
+          <clipPath id={`clip0_0_119-${uid}`}>
             <rect fill="white" height="264" width="95" />
           </clipPath>
         </defs>
@@ -1393,18 +1395,19 @@ function Text19() {
 function Icon10() {
   const { data } = useDashboardData();
   const barHeight = data.revenueBars[2].height * 0.55;
+  const uid = useId();
   return (
     <div className="group/revbar relative shrink-0 w-[36px] transition-[height] duration-300 ease-out cursor-default" style={{ height: `${barHeight}px` }} data-name="Icon">
       <svg className="absolute block inset-0 size-full transition-[filter] duration-150 group-hover/revbar:brightness-110" fill="none" preserveAspectRatio="none" viewBox="0 0 95 222">
-        <g clipPath="url(#clip0_0_129)" id="Icon">
-          <path d={svgPaths.p3fade6c0} fill="url(#paint0_linear_0_129)" id="Vector" />
+        <g clipPath="url(#clip0_0_129-${uid})" id="Icon">
+          <path d={svgPaths.p3fade6c0} fill={`url(#paint0_linear_0_129-${uid})`} id="Vector" />
         </g>
         <defs>
-          <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_0_129" x1="0" x2="95" y1="0" y2="0">
+          <linearGradient gradientUnits="userSpaceOnUse" id={`paint0_linear_0_129-${uid}`} x1="0" x2="95" y1="0" y2="0">
             <stop stopColor="#B7ACFA" />
             <stop offset="1" stopColor="#8378D9" />
           </linearGradient>
-          <clipPath id="clip0_0_129">
+          <clipPath id={`clip0_0_129-${uid}`}>
             <rect fill="white" height="222" width="95" />
           </clipPath>
         </defs>
@@ -1448,18 +1451,19 @@ function Text21() {
 function Icon11() {
   const { data } = useDashboardData();
   const barHeight = data.revenueBars[3].height * 0.55;
+  const uid = useId();
   return (
     <div className="group/revbar relative shrink-0 w-[36px] transition-[height] duration-300 ease-out cursor-default" style={{ height: `${barHeight}px` }} data-name="Icon">
       <svg className="absolute block inset-0 size-full transition-[filter] duration-150 group-hover/revbar:brightness-110" fill="none" preserveAspectRatio="none" viewBox="0 0 95 177">
-        <g clipPath="url(#clip0_0_22)" id="Icon">
-          <path d={svgPaths.p14476580} fill="url(#paint0_linear_0_22)" id="Vector" />
+        <g clipPath="url(#clip0_0_22-${uid})" id="Icon">
+          <path d={svgPaths.p14476580} fill={`url(#paint0_linear_0_22-${uid})`} id="Vector" />
         </g>
         <defs>
-          <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_0_22" x1="0" x2="95" y1="0" y2="0">
+          <linearGradient gradientUnits="userSpaceOnUse" id={`paint0_linear_0_22-${uid}`} x1="0" x2="95" y1="0" y2="0">
             <stop stopColor="#C4BDF3" />
             <stop offset="1" stopColor="#918AC9" />
           </linearGradient>
-          <clipPath id="clip0_0_22">
+          <clipPath id={`clip0_0_22-${uid}`}>
             <rect fill="white" height="177" width="95" />
           </clipPath>
         </defs>
@@ -1503,18 +1507,19 @@ function Text23() {
 function Icon12() {
   const { data } = useDashboardData();
   const barHeight = data.revenueBars[4].height * 0.55;
+  const uid = useId();
   return (
     <div className="group/revbar relative shrink-0 w-[36px] transition-[height] duration-300 ease-out cursor-default" style={{ height: `${barHeight}px` }} data-name="Icon">
       <svg className="absolute block inset-0 size-full transition-[filter] duration-150 group-hover/revbar:brightness-110" fill="none" preserveAspectRatio="none" viewBox="0 0 95 126">
-        <g clipPath="url(#clip0_0_16)" id="Icon">
-          <path d={svgPaths.p982ad00} fill="url(#paint0_linear_0_16)" id="Vector" />
+        <g clipPath="url(#clip0_0_16-${uid})" id="Icon">
+          <path d={svgPaths.p982ad00} fill={`url(#paint0_linear_0_16-${uid})`} id="Vector" />
         </g>
         <defs>
-          <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_0_16" x1="0" x2="95" y1="0" y2="0">
+          <linearGradient gradientUnits="userSpaceOnUse" id={`paint0_linear_0_16-${uid}`} x1="0" x2="95" y1="0" y2="0">
             <stop stopColor="#FAE07A" />
             <stop offset="1" stopColor="#D49A10" />
           </linearGradient>
-          <clipPath id="clip0_0_16">
+          <clipPath id={`clip0_0_16-${uid}`}>
             <rect fill="white" height="126" width="95" />
           </clipPath>
         </defs>
@@ -1548,7 +1553,7 @@ function Container59() {
 
 function FlatBarChart() {
   return (
-    <div className="flex justify-center gap-[20px] px-[8px] py-[8px] relative shrink-0 w-full items-end" data-name="FlatBarChart">
+    <div className="flex justify-start gap-[20px] pl-[16px] pr-[8px] py-[8px] relative shrink-0 w-full items-end" data-name="FlatBarChart">
       <Container55 />
       <Container56 />
       <Container57 />
@@ -1560,7 +1565,7 @@ function FlatBarChart() {
 
 function RevenueBreakdown() {
   return (
-    <div className="bg-white border border-[#eef0f5] shadow-sm content-stretch flex flex-col gap-[14px] items-start px-[16px] py-[16px] relative rounded-lg flex-[508_1_0] min-w-0" data-name="Revenue Breakdown">
+    <div className="bg-white border border-[#eef0f5] shadow-sm content-stretch flex flex-col gap-[14px] items-start px-[16px] py-[16px] relative rounded-lg flex-[4_1_0] min-w-0" data-name="Revenue Breakdown">
       <div className="[word-break:break-word] flex flex-col font-['Inter:Semi_Bold',sans-serif] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#1e293b] text-[14px] w-full">
         <p className="leading-[18px]">Revenue Breakdown</p>
       </div>
@@ -1573,6 +1578,7 @@ function MiddleSection() {
   return (
     <div className="content-stretch flex gap-[16px] items-stretch relative shrink-0 w-full" data-name="Middle Section">
       <PlayerFunnelPerformance />
+      <RevenueBreakdown />
       <RevenueBreakdown />
     </div>
   );
