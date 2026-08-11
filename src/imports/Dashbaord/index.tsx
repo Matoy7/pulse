@@ -1282,10 +1282,11 @@ function Text15() {
 
 function Icon8() {
   const { data } = useDashboardData();
-  const barHeight = data.revenueBars[0].height * 0.55;
+  const maxBarHeight = Math.max(...data.revenueBars.map((b) => b.height));
+  const barHeightPercent = (data.revenueBars[0].height / maxBarHeight) * 100;
   const uid = useId();
   return (
-    <div className="group/revbar relative shrink-0 w-[36px] transition-[height] duration-300 ease-out cursor-default" style={{ height: `${barHeight}px` }} data-name="Icon">
+    <div className="group/revbar relative shrink-0 w-[36px] transition-[height] duration-300 ease-out cursor-default" style={{ height: `${barHeightPercent}%` }} data-name="Icon">
       <svg className="absolute block inset-0 size-full transition-[filter] duration-150 group-hover/revbar:brightness-110" fill="none" preserveAspectRatio="none" viewBox="0 0 95 300">
         <g clipPath="url(#clip0_0_84-${uid})" id="Icon">
           <path d={svgPaths.p2b8ed000} fill={`url(#paint0_linear_0_84-${uid})`} id="Vector" />
@@ -1317,10 +1318,12 @@ function Text16() {
 
 function Container55() {
   return (
-    <div className="relative shrink-0" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[4px] items-center relative size-full">
+    <div className="relative shrink-0 h-full" data-name="Container">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid flex flex-col gap-[4px] items-center h-full w-full">
         <Text15 />
-        <Icon8 />
+        <div className="flex-1 min-h-0 w-full flex items-end justify-center">
+          <Icon8 />
+        </div>
         <Text16 />
       </div>
     </div>
@@ -1338,10 +1341,11 @@ function Text17() {
 
 function Icon9() {
   const { data } = useDashboardData();
-  const barHeight = data.revenueBars[1].height * 0.55;
+  const maxBarHeight = Math.max(...data.revenueBars.map((b) => b.height));
+  const barHeightPercent = (data.revenueBars[1].height / maxBarHeight) * 100;
   const uid = useId();
   return (
-    <div className="group/revbar relative shrink-0 w-[36px] transition-[height] duration-300 ease-out cursor-default" style={{ height: `${barHeight}px` }} data-name="Icon">
+    <div className="group/revbar relative shrink-0 w-[36px] transition-[height] duration-300 ease-out cursor-default" style={{ height: `${barHeightPercent}%` }} data-name="Icon">
       <svg className="absolute block inset-0 size-full transition-[filter] duration-150 group-hover/revbar:brightness-110" fill="none" preserveAspectRatio="none" viewBox="0 0 95 264">
         <g clipPath="url(#clip0_0_119-${uid})" id="Icon">
           <path d={svgPaths.p380200} fill={`url(#paint0_linear_0_119-${uid})`} id="Vector" />
@@ -1373,10 +1377,12 @@ function Text18() {
 
 function Container56() {
   return (
-    <div className="relative shrink-0" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[4px] items-center relative size-full">
+    <div className="relative shrink-0 h-full" data-name="Container">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid flex flex-col gap-[4px] items-center h-full w-full">
         <Text17 />
-        <Icon9 />
+        <div className="flex-1 min-h-0 w-full flex items-end justify-center">
+          <Icon9 />
+        </div>
         <Text18 />
       </div>
     </div>
@@ -1394,10 +1400,11 @@ function Text19() {
 
 function Icon10() {
   const { data } = useDashboardData();
-  const barHeight = data.revenueBars[2].height * 0.55;
+  const maxBarHeight = Math.max(...data.revenueBars.map((b) => b.height));
+  const barHeightPercent = (data.revenueBars[2].height / maxBarHeight) * 100;
   const uid = useId();
   return (
-    <div className="group/revbar relative shrink-0 w-[36px] transition-[height] duration-300 ease-out cursor-default" style={{ height: `${barHeight}px` }} data-name="Icon">
+    <div className="group/revbar relative shrink-0 w-[36px] transition-[height] duration-300 ease-out cursor-default" style={{ height: `${barHeightPercent}%` }} data-name="Icon">
       <svg className="absolute block inset-0 size-full transition-[filter] duration-150 group-hover/revbar:brightness-110" fill="none" preserveAspectRatio="none" viewBox="0 0 95 222">
         <g clipPath="url(#clip0_0_129-${uid})" id="Icon">
           <path d={svgPaths.p3fade6c0} fill={`url(#paint0_linear_0_129-${uid})`} id="Vector" />
@@ -1429,10 +1436,12 @@ function Text20() {
 
 function Container57() {
   return (
-    <div className="relative shrink-0" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[4px] items-center relative size-full">
+    <div className="relative shrink-0 h-full" data-name="Container">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid flex flex-col gap-[4px] items-center h-full w-full">
         <Text19 />
-        <Icon10 />
+        <div className="flex-1 min-h-0 w-full flex items-end justify-center">
+          <Icon10 />
+        </div>
         <Text20 />
       </div>
     </div>
@@ -1450,10 +1459,11 @@ function Text21() {
 
 function Icon11() {
   const { data } = useDashboardData();
-  const barHeight = data.revenueBars[3].height * 0.55;
+  const maxBarHeight = Math.max(...data.revenueBars.map((b) => b.height));
+  const barHeightPercent = (data.revenueBars[3].height / maxBarHeight) * 100;
   const uid = useId();
   return (
-    <div className="group/revbar relative shrink-0 w-[36px] transition-[height] duration-300 ease-out cursor-default" style={{ height: `${barHeight}px` }} data-name="Icon">
+    <div className="group/revbar relative shrink-0 w-[36px] transition-[height] duration-300 ease-out cursor-default" style={{ height: `${barHeightPercent}%` }} data-name="Icon">
       <svg className="absolute block inset-0 size-full transition-[filter] duration-150 group-hover/revbar:brightness-110" fill="none" preserveAspectRatio="none" viewBox="0 0 95 177">
         <g clipPath="url(#clip0_0_22-${uid})" id="Icon">
           <path d={svgPaths.p14476580} fill={`url(#paint0_linear_0_22-${uid})`} id="Vector" />
@@ -1485,10 +1495,12 @@ function Text22() {
 
 function Container58() {
   return (
-    <div className="relative shrink-0" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[4px] items-center relative size-full">
+    <div className="relative shrink-0 h-full" data-name="Container">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid flex flex-col gap-[4px] items-center h-full w-full">
         <Text21 />
-        <Icon11 />
+        <div className="flex-1 min-h-0 w-full flex items-end justify-center">
+          <Icon11 />
+        </div>
         <Text22 />
       </div>
     </div>
@@ -1506,10 +1518,11 @@ function Text23() {
 
 function Icon12() {
   const { data } = useDashboardData();
-  const barHeight = data.revenueBars[4].height * 0.55;
+  const maxBarHeight = Math.max(...data.revenueBars.map((b) => b.height));
+  const barHeightPercent = (data.revenueBars[4].height / maxBarHeight) * 100;
   const uid = useId();
   return (
-    <div className="group/revbar relative shrink-0 w-[36px] transition-[height] duration-300 ease-out cursor-default" style={{ height: `${barHeight}px` }} data-name="Icon">
+    <div className="group/revbar relative shrink-0 w-[36px] transition-[height] duration-300 ease-out cursor-default" style={{ height: `${barHeightPercent}%` }} data-name="Icon">
       <svg className="absolute block inset-0 size-full transition-[filter] duration-150 group-hover/revbar:brightness-110" fill="none" preserveAspectRatio="none" viewBox="0 0 95 126">
         <g clipPath="url(#clip0_0_16-${uid})" id="Icon">
           <path d={svgPaths.p982ad00} fill={`url(#paint0_linear_0_16-${uid})`} id="Vector" />
@@ -1541,10 +1554,12 @@ function Text24() {
 
 function Container59() {
   return (
-    <div className="relative shrink-0" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[4px] items-center relative size-full">
+    <div className="relative shrink-0 h-full" data-name="Container">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid flex flex-col gap-[4px] items-center h-full w-full">
         <Text23 />
-        <Icon12 />
+        <div className="flex-1 min-h-0 w-full flex items-end justify-center">
+          <Icon12 />
+        </div>
         <Text24 />
       </div>
     </div>
@@ -1553,7 +1568,7 @@ function Container59() {
 
 function FlatBarChart() {
   return (
-    <div className="flex justify-start gap-[20px] pl-[16px] pr-[8px] py-[8px] relative shrink-0 w-full items-end" data-name="FlatBarChart">
+    <div className="flex flex-1 justify-start gap-[20px] relative shrink-0 w-full items-stretch" data-name="FlatBarChart">
       <Container55 />
       <Container56 />
       <Container57 />
