@@ -1,4 +1,4 @@
-import { createContext, useContext, useId, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import svgPaths from "./svg-j8ue68fght";
 import imgImageAnthony from "./e80369b0bde9bc36bf18f9bf130673329ab18cff.png";
 import { KpiCard } from "@/components/ui/KpiCard";
@@ -10,6 +10,7 @@ import { PopularScreensTable, type PopularScreenRow } from "@/components/ui/Popu
 import { FeatureAdoptionTable, type FeatureAdoptionRow } from "@/components/ui/FeatureAdoptionTable";
 import { AlertsNotificationsTable, type AlertRow } from "@/components/ui/AlertsNotificationsTable";
 import { FunnelBar } from "@/components/ui/FunnelBar";
+import { RevenueBarChart } from "@/components/ui/RevenueBarChart";
 
 // ---------------------------------------------------------------------------
 // Dashboard data model: realistic mock data per date-range selection.
@@ -1163,25 +1164,16 @@ function Text15() {
 
 function Icon8() {
   const { data } = useDashboardData();
-  const maxBarHeight = Math.max(...data.revenueBars.map((b) => b.height));
-  const barHeightPercent = (data.revenueBars[0].height / maxBarHeight) * 100;
-  const uid = useId();
+  const maxValue = Math.max(...data.revenueBars.map((b) => b.height));
   return (
-    <div className="group/revbar relative shrink-0 w-[36px] transition-[height] duration-300 ease-out cursor-default" style={{ height: `${barHeightPercent}%` }} data-name="Icon">
-      <svg className="absolute block inset-0 size-full transition-[filter] duration-150 group-hover/revbar:brightness-110" fill="none" preserveAspectRatio="none" viewBox="0 0 95 300">
-        <g clipPath="url(#clip0_0_84-${uid})" id="Icon">
-          <path d={svgPaths.p2b8ed000} fill={`url(#paint0_linear_0_84-${uid})`} id="Vector" />
-        </g>
-        <defs>
-          <linearGradient gradientUnits="userSpaceOnUse" id={`paint0_linear_0_84-${uid}`} x1="0" x2="95" y1="0" y2="0">
-            <stop stopColor="#9D8FF9" />
-            <stop offset="1" stopColor="#5A4DC8" />
-          </linearGradient>
-          <clipPath id={`clip0_0_84-${uid}`}>
-            <rect fill="white" height="300" width="95" />
-          </clipPath>
-        </defs>
-      </svg>
+    <div className="group/revbar relative shrink-0 w-[36px] h-full transition-[height] duration-300 ease-out cursor-default" data-name="Icon">
+      <RevenueBarChart
+        value={data.revenueBars[0].height}
+        maxValue={maxValue}
+        gradientFrom="#7060ec"
+        gradientTo="#9487f7"
+        className="transition-[filter] duration-150 group-hover/revbar:brightness-110"
+      />
       <div className="pointer-events-none absolute -top-[36px] left-1/2 -translate-x-1/2 opacity-0 group-hover/revbar:opacity-100 transition-opacity duration-150 bg-[#1e293b] text-white text-[13px] font-medium rounded-[6px] px-[8px] py-[4px] whitespace-nowrap shadow-[0px_4px_12px_rgba(0,0,0,0.15)] z-10">
         Battle Pass: {data.revenueBars[0].value}
       </div>
@@ -1222,25 +1214,16 @@ function Text17() {
 
 function Icon9() {
   const { data } = useDashboardData();
-  const maxBarHeight = Math.max(...data.revenueBars.map((b) => b.height));
-  const barHeightPercent = (data.revenueBars[1].height / maxBarHeight) * 100;
-  const uid = useId();
+  const maxValue = Math.max(...data.revenueBars.map((b) => b.height));
   return (
-    <div className="group/revbar relative shrink-0 w-[36px] transition-[height] duration-300 ease-out cursor-default" style={{ height: `${barHeightPercent}%` }} data-name="Icon">
-      <svg className="absolute block inset-0 size-full transition-[filter] duration-150 group-hover/revbar:brightness-110" fill="none" preserveAspectRatio="none" viewBox="0 0 95 264">
-        <g clipPath="url(#clip0_0_119-${uid})" id="Icon">
-          <path d={svgPaths.p380200} fill={`url(#paint0_linear_0_119-${uid})`} id="Vector" />
-        </g>
-        <defs>
-          <linearGradient gradientUnits="userSpaceOnUse" id={`paint0_linear_0_119-${uid}`} x1="0" x2="95" y1="0" y2="0">
-            <stop stopColor="#ADA2F5" />
-            <stop offset="1" stopColor="#6E64C6" />
-          </linearGradient>
-          <clipPath id={`clip0_0_119-${uid}`}>
-            <rect fill="white" height="264" width="95" />
-          </clipPath>
-        </defs>
-      </svg>
+    <div className="group/revbar relative shrink-0 w-[36px] h-full transition-[height] duration-300 ease-out cursor-default" data-name="Icon">
+      <RevenueBarChart
+        value={data.revenueBars[1].height}
+        maxValue={maxValue}
+        gradientFrom="#7e6ff4"
+        gradientTo="#a89cf9"
+        className="transition-[filter] duration-150 group-hover/revbar:brightness-110"
+      />
       <div className="pointer-events-none absolute -top-[36px] left-1/2 -translate-x-1/2 opacity-0 group-hover/revbar:opacity-100 transition-opacity duration-150 bg-[#1e293b] text-white text-[13px] font-medium rounded-[6px] px-[8px] py-[4px] whitespace-nowrap shadow-[0px_4px_12px_rgba(0,0,0,0.15)] z-10">
         Bundles: {data.revenueBars[1].value}
       </div>
@@ -1281,25 +1264,16 @@ function Text19() {
 
 function Icon10() {
   const { data } = useDashboardData();
-  const maxBarHeight = Math.max(...data.revenueBars.map((b) => b.height));
-  const barHeightPercent = (data.revenueBars[2].height / maxBarHeight) * 100;
-  const uid = useId();
+  const maxValue = Math.max(...data.revenueBars.map((b) => b.height));
   return (
-    <div className="group/revbar relative shrink-0 w-[36px] transition-[height] duration-300 ease-out cursor-default" style={{ height: `${barHeightPercent}%` }} data-name="Icon">
-      <svg className="absolute block inset-0 size-full transition-[filter] duration-150 group-hover/revbar:brightness-110" fill="none" preserveAspectRatio="none" viewBox="0 0 95 222">
-        <g clipPath="url(#clip0_0_129-${uid})" id="Icon">
-          <path d={svgPaths.p3fade6c0} fill={`url(#paint0_linear_0_129-${uid})`} id="Vector" />
-        </g>
-        <defs>
-          <linearGradient gradientUnits="userSpaceOnUse" id={`paint0_linear_0_129-${uid}`} x1="0" x2="95" y1="0" y2="0">
-            <stop stopColor="#B7ACFA" />
-            <stop offset="1" stopColor="#8378D9" />
-          </linearGradient>
-          <clipPath id={`clip0_0_129-${uid}`}>
-            <rect fill="white" height="222" width="95" />
-          </clipPath>
-        </defs>
-      </svg>
+    <div className="group/revbar relative shrink-0 w-[36px] h-full transition-[height] duration-300 ease-out cursor-default" data-name="Icon">
+      <RevenueBarChart
+        value={data.revenueBars[2].height}
+        maxValue={maxValue}
+        gradientFrom="#9487f7"
+        gradientTo="#bcb4fb"
+        className="transition-[filter] duration-150 group-hover/revbar:brightness-110"
+      />
       <div className="pointer-events-none absolute -top-[36px] left-1/2 -translate-x-1/2 opacity-0 group-hover/revbar:opacity-100 transition-opacity duration-150 bg-[#1e293b] text-white text-[13px] font-medium rounded-[6px] px-[8px] py-[4px] whitespace-nowrap shadow-[0px_4px_12px_rgba(0,0,0,0.15)] z-10">
         Skins: {data.revenueBars[2].value}
       </div>
@@ -1340,25 +1314,16 @@ function Text21() {
 
 function Icon11() {
   const { data } = useDashboardData();
-  const maxBarHeight = Math.max(...data.revenueBars.map((b) => b.height));
-  const barHeightPercent = (data.revenueBars[3].height / maxBarHeight) * 100;
-  const uid = useId();
+  const maxValue = Math.max(...data.revenueBars.map((b) => b.height));
   return (
-    <div className="group/revbar relative shrink-0 w-[36px] transition-[height] duration-300 ease-out cursor-default" style={{ height: `${barHeightPercent}%` }} data-name="Icon">
-      <svg className="absolute block inset-0 size-full transition-[filter] duration-150 group-hover/revbar:brightness-110" fill="none" preserveAspectRatio="none" viewBox="0 0 95 177">
-        <g clipPath="url(#clip0_0_22-${uid})" id="Icon">
-          <path d={svgPaths.p14476580} fill={`url(#paint0_linear_0_22-${uid})`} id="Vector" />
-        </g>
-        <defs>
-          <linearGradient gradientUnits="userSpaceOnUse" id={`paint0_linear_0_22-${uid}`} x1="0" x2="95" y1="0" y2="0">
-            <stop stopColor="#C4BDF3" />
-            <stop offset="1" stopColor="#918AC9" />
-          </linearGradient>
-          <clipPath id={`clip0_0_22-${uid}`}>
-            <rect fill="white" height="177" width="95" />
-          </clipPath>
-        </defs>
-      </svg>
+    <div className="group/revbar relative shrink-0 w-[36px] h-full transition-[height] duration-300 ease-out cursor-default" data-name="Icon">
+      <RevenueBarChart
+        value={data.revenueBars[3].height}
+        maxValue={maxValue}
+        gradientFrom="#bcb4fb"
+        gradientTo="#d4cffd"
+        className="transition-[filter] duration-150 group-hover/revbar:brightness-110"
+      />
       <div className="pointer-events-none absolute -top-[36px] left-1/2 -translate-x-1/2 opacity-0 group-hover/revbar:opacity-100 transition-opacity duration-150 bg-[#1e293b] text-white text-[13px] font-medium rounded-[6px] px-[8px] py-[4px] whitespace-nowrap shadow-[0px_4px_12px_rgba(0,0,0,0.15)] z-10">
         Season Pass: {data.revenueBars[3].value}
       </div>
@@ -1399,25 +1364,16 @@ function Text23() {
 
 function Icon12() {
   const { data } = useDashboardData();
-  const maxBarHeight = Math.max(...data.revenueBars.map((b) => b.height));
-  const barHeightPercent = (data.revenueBars[4].height / maxBarHeight) * 100;
-  const uid = useId();
+  const maxValue = Math.max(...data.revenueBars.map((b) => b.height));
   return (
-    <div className="group/revbar relative shrink-0 w-[36px] transition-[height] duration-300 ease-out cursor-default" style={{ height: `${barHeightPercent}%` }} data-name="Icon">
-      <svg className="absolute block inset-0 size-full transition-[filter] duration-150 group-hover/revbar:brightness-110" fill="none" preserveAspectRatio="none" viewBox="0 0 95 126">
-        <g clipPath="url(#clip0_0_16-${uid})" id="Icon">
-          <path d={svgPaths.p982ad00} fill={`url(#paint0_linear_0_16-${uid})`} id="Vector" />
-        </g>
-        <defs>
-          <linearGradient gradientUnits="userSpaceOnUse" id={`paint0_linear_0_16-${uid}`} x1="0" x2="95" y1="0" y2="0">
-            <stop stopColor="#FAE07A" />
-            <stop offset="1" stopColor="#D49A10" />
-          </linearGradient>
-          <clipPath id={`clip0_0_16-${uid}`}>
-            <rect fill="white" height="126" width="95" />
-          </clipPath>
-        </defs>
-      </svg>
+    <div className="group/revbar relative shrink-0 w-[36px] h-full transition-[height] duration-300 ease-out cursor-default" data-name="Icon">
+      <RevenueBarChart
+        value={data.revenueBars[4].height}
+        maxValue={maxValue}
+        gradientFrom="#f5c53a"
+        gradientTo="#f8d96b"
+        className="transition-[filter] duration-150 group-hover/revbar:brightness-110"
+      />
       <div className="pointer-events-none absolute -top-[36px] left-1/2 -translate-x-1/2 opacity-0 group-hover/revbar:opacity-100 transition-opacity duration-150 bg-[#1e293b] text-white text-[13px] font-medium rounded-[6px] px-[8px] py-[4px] whitespace-nowrap shadow-[0px_4px_12px_rgba(0,0,0,0.15)] z-10">
         Coins: {data.revenueBars[4].value}
       </div>
