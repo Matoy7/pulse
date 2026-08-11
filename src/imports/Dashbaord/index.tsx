@@ -690,9 +690,9 @@ function Container11() {
 function Frame() {
   const { data } = useDashboardData();
   return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0">
-      <div className="[word-break:break-word] flex flex-col font-['Inter:Bold',sans-serif] font-bold h-[48px] justify-center leading-[0] not-italic relative shrink-0 text-[44px] text-white tracking-[-0.65px] w-[134px] transition-opacity duration-200">
-        <p className="leading-[19px]">{data.retention}</p>
+    <div className="content-stretch flex flex-col items-center relative shrink-0">
+      <div className="[word-break:break-word] flex flex-col font-['Inter:Bold',sans-serif] font-bold h-[68px] justify-center leading-[0] not-italic relative shrink-0 text-[64px] text-white tracking-[-1px] w-[195px] text-center transition-opacity duration-200">
+        <p className="leading-[normal]">{data.retention}</p>
       </div>
     </div>
   );
@@ -700,9 +700,9 @@ function Frame() {
 
 function Frame5() {
   return (
-    <div className="content-stretch flex flex-col gap-[3px] items-start relative shrink-0">
+    <div className="content-stretch flex flex-1 flex-col gap-[6px] items-center justify-center relative shrink-0 w-full">
       <Frame />
-      <div className="[word-break:break-word] flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center leading-[0] min-w-full not-italic relative shrink-0 text-[13px] text-white tracking-[-0.3px] w-[min-content]">
+      <div className="[word-break:break-word] flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center leading-[0] not-italic relative shrink-0 text-[16px] text-white tracking-[-0.3px] text-center">
         <p className="leading-[normal]">Retention rate</p>
       </div>
     </div>
@@ -711,7 +711,7 @@ function Frame5() {
 
 function LargeHeroCard() {
   return (
-    <div className="content-stretch flex flex-col min-h-[120px] items-start justify-between overflow-clip pb-[12px] pt-[12px] px-[14px] relative rounded-lg shadow-md flex-[5_1_0] min-w-0 transition-shadow duration-150 hover:shadow-lg cursor-default" style={{ backgroundImage: "linear-gradient(142.07828029689713deg, rgb(111, 75, 255) 0%, rgb(86, 41, 230) 100%)" }} data-name="Large Hero Card">
+    <div className="content-stretch flex flex-col min-h-[120px] items-start overflow-clip pb-[12px] pt-[12px] px-[14px] relative rounded-lg shadow-md flex-[5_1_0] min-w-0 transition-shadow duration-150 hover:shadow-lg cursor-default" style={{ backgroundImage: "linear-gradient(142.07828029689713deg, rgb(111, 75, 255) 0%, rgb(86, 41, 230) 100%)" }} data-name="Large Hero Card">
       <SparklineVisualizationPlaceholder />
       <Container11 />
       <Frame5 />
@@ -1316,7 +1316,7 @@ function Text16() {
 
 function Container55() {
   return (
-    <div className="relative shrink-0 w-full min-w-0" data-name="Container">
+    <div className="relative shrink-0" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[4px] items-center relative size-full">
         <Text15 />
         <Icon8 />
@@ -1371,7 +1371,7 @@ function Text18() {
 
 function Container56() {
   return (
-    <div className="relative shrink-0 w-full min-w-0" data-name="Container">
+    <div className="relative shrink-0" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[4px] items-center relative size-full">
         <Text17 />
         <Icon9 />
@@ -1426,7 +1426,7 @@ function Text20() {
 
 function Container57() {
   return (
-    <div className="relative shrink-0 w-full min-w-0" data-name="Container">
+    <div className="relative shrink-0" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[4px] items-center relative size-full">
         <Text19 />
         <Icon10 />
@@ -1481,7 +1481,7 @@ function Text22() {
 
 function Container58() {
   return (
-    <div className="relative shrink-0 w-full min-w-0" data-name="Container">
+    <div className="relative shrink-0" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[4px] items-center relative size-full">
         <Text21 />
         <Icon11 />
@@ -1536,7 +1536,7 @@ function Text24() {
 
 function Container59() {
   return (
-    <div className="relative shrink-0 w-full min-w-0" data-name="Container">
+    <div className="relative shrink-0" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[4px] items-center relative size-full">
         <Text23 />
         <Icon12 />
@@ -1548,7 +1548,7 @@ function Container59() {
 
 function FlatBarChart() {
   return (
-    <div className="grid grid-cols-[repeat(5,minmax(0,1fr))] gap-x-[8px] items-end px-[8px] py-[8px] relative shrink-0 w-full" data-name="FlatBarChart">
+    <div className="flex justify-center gap-[20px] px-[8px] py-[8px] relative shrink-0 w-full items-end" data-name="FlatBarChart">
       <Container55 />
       <Container56 />
       <Container57 />
@@ -1571,7 +1571,7 @@ function RevenueBreakdown() {
 
 function MiddleSection() {
   return (
-    <div className="content-stretch flex gap-[16px] items-start relative shrink-0 w-full" data-name="Middle Section">
+    <div className="content-stretch flex gap-[16px] items-stretch relative shrink-0 w-full" data-name="Middle Section">
       <PlayerFunnelPerformance />
       <RevenueBreakdown />
     </div>
@@ -1637,7 +1637,7 @@ const ALERT_ROWS: AlertRow[] = [
 
 function DashboardBottom() {
   return (
-    <div className="content-stretch flex gap-[16px] items-start relative shrink-0 w-full" data-name="DashboardBottom">
+    <div className="content-stretch flex gap-[16px] items-stretch relative shrink-0 w-full" data-name="DashboardBottom">
       <PopularScreensTable rows={POPULAR_SCREENS_ROWS} />
       <FeatureAdoptionTable rows={FEATURE_ADOPTION_ROWS} />
       <AlertsNotificationsTable alerts={ALERT_ROWS} />

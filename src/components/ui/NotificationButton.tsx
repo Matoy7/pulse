@@ -36,10 +36,8 @@ export function NotificationButton({
       {hasUnread && (
         <span
           aria-hidden="true"
-          className="absolute -top-1 -right-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-[#fae07a] px-1 text-[10px] font-bold leading-none text-[#2d2100]"
-        >
-          {displayCount}
-        </span>
+          className="absolute top-0.5 right-0.5 block size-[8px] rounded-full bg-[#fae07a] ring-2 ring-white"
+        />
       )}
     </span>
   );

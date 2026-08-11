@@ -51,7 +51,7 @@ export function PopularScreensTable({ rows, onViewAll }: PopularScreensTableProp
                 </svg>
               </div>
             </div>
-            <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[24px] not-italic text-[#111827] text-[18px] whitespace-nowrap">
+            <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[18px] not-italic text-[#111827] text-[14px] whitespace-nowrap">
               Popular Screens
             </p>
           </div>
