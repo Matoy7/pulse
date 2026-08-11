@@ -584,8 +584,8 @@ function Frame1() {
 function Frame3() {
   return (
     <div className="content-stretch flex items-center gap-[8px] relative shrink-0">
-      <IconButton icon={<Settings className="size-[14px]" />} aria-label="Settings" />
-      <IconButton icon={<Search className="size-[14px]" />} aria-label="Search" />
+      <IconButton icon={<Settings className="size-[20px]" />} aria-label="Settings" />
+      <IconButton icon={<Search className="size-[20px]" />} aria-label="Search" />
       <NotificationButton count={3} />
     </div>
   );

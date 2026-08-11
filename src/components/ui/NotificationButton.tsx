@@ -29,14 +29,14 @@ export function NotificationButton({
   return (
     <span className={cn("relative inline-flex", className)}>
       <IconButton
-        icon={<BellIcon className="size-[14px]" aria-hidden="true" />}
+        icon={<BellIcon className="size-[20px]" aria-hidden="true" />}
         aria-label={fullLabel}
         onClick={onClick}
       />
       {hasUnread && (
         <span
           aria-hidden="true"
-          className="absolute top-0.5 right-0.5 block size-[8px] rounded-full bg-[#fae07a] ring-2 ring-white"
+          className="absolute top-0.5 right-0.5 block size-[10.4px] rounded-full bg-[#fae07a] ring-2 ring-white"
         />
       )}
     </span>
