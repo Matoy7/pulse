@@ -11,6 +11,7 @@ import { FeatureAdoptionTable, type FeatureAdoptionRow } from "@/components/ui/F
 import { AlertsNotificationsTable, type AlertRow } from "@/components/ui/AlertsNotificationsTable";
 import { FunnelBar } from "@/components/ui/FunnelBar";
 import { RevenueBarChart } from "@/components/ui/RevenueBarChart";
+import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupContent, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarProvider } from "@/components/ui/sidebar";
 
 // ---------------------------------------------------------------------------
 // Dashboard data model: realistic mock data per date-range selection.
@@ -264,16 +265,12 @@ function Svg1() {
 
 function ItemLink() {
   return (
-    <button
-      type="button"
-      className="bg-[#e0d8f3] relative rounded-[10px] shrink-0 w-full h-[36px] cursor-pointer transition-colors duration-150 hover:bg-[#d5c9ef] text-left"
-      data-name="Item → Link"
-    >
-      <div className="flex flex-row items-center gap-[10px] px-[10px] py-[8px] size-full">
+    <SidebarMenuItem>
+      <SidebarMenuButton isActive data-name="Item → Link">
         <Svg1 />
-        <p className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold not-italic text-[#623ec4] text-[14px] whitespace-nowrap">Dashboard</p>
-      </div>
-    </button>
+        <p className="[word-break:break-word] font-['Inter:Semi_Bold',sans-serif] font-semibold not-italic whitespace-nowrap">Dashboard</p>
+      </SidebarMenuButton>
+    </SidebarMenuItem>
   );
 }
 
@@ -294,16 +291,12 @@ function Image9Vectorized() {
 
 function ItemLink1() {
   return (
-    <button
-      type="button"
-      className="relative rounded-[10px] shrink-0 w-full h-[36px] cursor-pointer text-left text-[#1e293b] transition-colors duration-150 hover:bg-[#f4f2fb] hover:text-[#623ec4]"
-      data-name="Item → Link"
-    >
-      <div className="flex flex-row items-center gap-[10px] px-[10px] py-[8px] size-full">
+    <SidebarMenuItem>
+      <SidebarMenuButton data-name="Item → Link">
         <Image9Vectorized />
-        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal not-italic text-[14px] whitespace-nowrap">Retentions</p>
-      </div>
-    </button>
+        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal not-italic whitespace-nowrap">Retentions</p>
+      </SidebarMenuButton>
+    </SidebarMenuItem>
   );
 }
 
@@ -329,16 +322,12 @@ function Image3Vectorized() {
 
 function ItemLink2() {
   return (
-    <button
-      type="button"
-      className="relative rounded-[10px] shrink-0 w-full h-[36px] cursor-pointer text-left text-[#1e293b] transition-colors duration-150 hover:bg-[#f4f2fb] hover:text-[#623ec4]"
-      data-name="Item → Link"
-    >
-      <div className="flex flex-row items-center gap-[10px] px-[10px] py-[8px] size-full">
+    <SidebarMenuItem>
+      <SidebarMenuButton data-name="Item → Link">
         <Image3Vectorized />
-        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal not-italic text-[14px] whitespace-nowrap">Players</p>
-      </div>
-    </button>
+        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal not-italic whitespace-nowrap">Players</p>
+      </SidebarMenuButton>
+    </SidebarMenuItem>
   );
 }
 
@@ -356,16 +345,12 @@ function Image4Vectorized() {
 
 function ItemLink3() {
   return (
-    <button
-      type="button"
-      className="relative rounded-[10px] shrink-0 w-full h-[36px] cursor-pointer text-left text-[#1e293b] transition-colors duration-150 hover:bg-[#f4f2fb] hover:text-[#623ec4]"
-      data-name="Item → Link"
-    >
-      <div className="flex flex-row items-center gap-[10px] px-[10px] py-[8px] size-full">
+    <SidebarMenuItem>
+      <SidebarMenuButton data-name="Item → Link">
         <Image4Vectorized />
-        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal not-italic text-[14px] whitespace-nowrap">Features</p>
-      </div>
-    </button>
+        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal not-italic whitespace-nowrap">Features</p>
+      </SidebarMenuButton>
+    </SidebarMenuItem>
   );
 }
 
@@ -384,16 +369,12 @@ function Image5Vectorized() {
 
 function ItemLink4() {
   return (
-    <button
-      type="button"
-      className="relative rounded-[10px] shrink-0 w-full h-[36px] cursor-pointer text-left text-[#1e293b] transition-colors duration-150 hover:bg-[#f4f2fb] hover:text-[#623ec4]"
-      data-name="Item → Link"
-    >
-      <div className="flex flex-row items-center gap-[10px] px-[10px] py-[8px] size-full">
+    <SidebarMenuItem>
+      <SidebarMenuButton data-name="Item → Link">
         <Image5Vectorized />
-        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal not-italic text-[14px] whitespace-nowrap">Revenue</p>
-      </div>
-    </button>
+        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal not-italic whitespace-nowrap">Revenue</p>
+      </SidebarMenuButton>
+    </SidebarMenuItem>
   );
 }
 
@@ -411,49 +392,43 @@ function Image6Vectorized() {
 
 function ItemLink5() {
   return (
-    <button
-      type="button"
-      className="relative rounded-[10px] shrink-0 w-full h-[36px] cursor-pointer text-left text-[#1e293b] transition-colors duration-150 hover:bg-[#f4f2fb] hover:text-[#623ec4]"
-      data-name="Item → Link"
-    >
-      <div className="flex flex-row items-center gap-[10px] px-[10px] py-[8px] size-full">
+    <SidebarMenuItem>
+      <SidebarMenuButton data-name="Item → Link">
         <Image6Vectorized />
-        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal not-italic text-[14px] whitespace-nowrap">{`Bugs & Issues`}</p>
-      </div>
-    </button>
+        <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal not-italic whitespace-nowrap">{`Bugs & Issues`}</p>
+      </SidebarMenuButton>
+    </SidebarMenuItem>
   );
 }
 
 function List() {
   return (
-    <div className="content-stretch flex flex-col gap-[6px] items-start relative shrink-0 w-full" data-name="List">
+    <SidebarMenu className="gap-[6px]">
       <ItemLink />
       <ItemLink1 />
       <ItemLink2 />
       <ItemLink3 />
       <ItemLink4 />
       <ItemLink5 />
-    </div>
+    </SidebarMenu>
   );
 }
 
 function Nav() {
   return (
-    <div className="relative shrink-0 w-full" data-name="Nav">
-      <div className="content-stretch flex flex-col items-start px-[11.162px] relative size-full">
+    <SidebarGroup className="px-[11.162px]">
+      <SidebarGroupContent>
         <List />
-      </div>
-    </div>
+      </SidebarGroupContent>
+    </SidebarGroup>
   );
 }
 
 function NavMargin() {
   return (
-    <div className="bg-white relative shrink-0 w-full" data-name="Nav:margin">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start justify-center pt-[11.162px] relative size-full">
-        <Nav />
-      </div>
-    </div>
+    <SidebarContent className="bg-white pt-[11.162px]">
+      <Nav />
+    </SidebarContent>
   );
 }
 
@@ -530,14 +505,17 @@ function Frame2() {
 
 function AsideSidebar() {
   return (
-    <div className="bg-[#fafafa] content-stretch flex flex-col items-start relative shrink-0 w-[224px] max-w-[224px] h-full overflow-y-auto overflow-x-hidden" data-name="Aside - Sidebar">
-      <Container />
-      <NavMargin />
-      <div className="flex-1 w-full" aria-hidden="true" />
-      <div className="border-t border-[#e5e7eb] w-full pt-[8px]">
-        <Frame2 />
-      </div>
-    </div>
+    <SidebarProvider className="w-auto shrink-0 h-full" data-name="Aside - Sidebar">
+      <Sidebar className="bg-[#fafafa] w-[224px] max-w-[224px] overflow-y-auto overflow-x-hidden">
+        <SidebarHeader>
+          <Container />
+        </SidebarHeader>
+        <NavMargin />
+        <SidebarFooter className="border-t border-[#e5e7eb] pt-[8px]">
+          <Frame2 />
+        </SidebarFooter>
+      </Sidebar>
+    </SidebarProvider>
   );
 }
 
