@@ -29,7 +29,7 @@ export function NotificationButton({
   return (
     <span className={cn("relative inline-flex", className)}>
       <IconButton
-        icon={<BellIcon className="size-[20px]" aria-hidden="true" />}
+        icon={<BellIcon className="size-[24px]" aria-hidden="true" />}
         aria-label={fullLabel}
         onClick={onClick}
       />

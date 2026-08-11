@@ -9,6 +9,7 @@ import { Settings, Search } from "lucide-react";
 import { PopularScreensTable, type PopularScreenRow } from "@/components/ui/PopularScreensTable";
 import { FeatureAdoptionTable, type FeatureAdoptionRow } from "@/components/ui/FeatureAdoptionTable";
 import { AlertsNotificationsTable, type AlertRow } from "@/components/ui/AlertsNotificationsTable";
+import { FunnelBar } from "@/components/ui/FunnelBar";
 
 // ---------------------------------------------------------------------------
 // Dashboard data model: realistic mock data per date-range selection.
@@ -584,8 +585,8 @@ function Frame1() {
 function Frame3() {
   return (
     <div className="content-stretch flex items-center gap-[8px] relative shrink-0">
-      <IconButton icon={<Settings className="size-[20px]" />} aria-label="Settings" />
-      <IconButton icon={<Search className="size-[20px]" />} aria-label="Search" />
+      <IconButton icon={<Settings className="size-[24px]" />} aria-label="Settings" />
+      <IconButton icon={<Search className="size-[24px]" />} aria-label="Search" />
       <NotificationButton count={3} />
     </div>
   );
@@ -816,45 +817,21 @@ function Container26() {
   );
 }
 
-function Text10() {
-  const { data } = useDashboardData();
-  return (
-    <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold not-italic text-white text-[13px] tracking-[-0.096px] whitespace-nowrap">{data.funnel[0].pct}%</p>
-  );
-}
-
-function Container28() {
-  const { data } = useDashboardData();
-  const pct = data.funnel[0].pct;
-  return (
-    <div className="group/bar bg-gradient-to-r from-[#7060ec] h-[30px] relative rounded-[8px] shrink-0 to-[#9487f7] transition-[width,filter] duration-300 ease-out hover:brightness-105 cursor-default" style={{ width: `${pct}%` }} data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-end pr-[10px] relative size-full">
-        <Text10 />
-      </div>
-      <div className="pointer-events-none absolute -top-[38px] right-0 opacity-0 group-hover/bar:opacity-100 transition-opacity duration-150 bg-[#1e293b] text-white text-[13px] font-medium rounded-[6px] px-[8px] py-[4px] whitespace-nowrap shadow-[0px_4px_12px_rgba(0,0,0,0.15)]">
-        {pct}% • Sign Up
-      </div>
-    </div>
-  );
-}
-
-function Container27() {
-  return (
-    <div className="bg-[#f3f4f6] flex-[202_0_0] h-[40px] min-w-px relative rounded-[10px]" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start overflow-clip relative rounded-[inherit] size-full">
-        <Container28 />
-      </div>
-    </div>
-  );
-}
-
 function Container24() {
+  const { data } = useDashboardData();
   return (
     <div className="h-[36px] relative shrink-0 w-full" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[16px] items-center relative size-full">
         <Container25 />
         <Container26 />
-        <Container27 />
+        <FunnelBar
+          value={data.funnel[0].pct}
+          gradientFrom="#7060ec"
+          gradientTo="#9487f7"
+          labelColor="#ffffff"
+          stageName="Sign Up"
+          className="flex-[202_0_0] h-full min-w-px"
+        />
       </div>
     </div>
   );
@@ -915,45 +892,21 @@ function Container31() {
   );
 }
 
-function Text11() {
-  const { data } = useDashboardData();
-  return (
-    <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold not-italic text-white text-[13px] tracking-[-0.096px] whitespace-nowrap">{data.funnel[1].pct}%</p>
-  );
-}
-
-function Container35() {
-  const { data } = useDashboardData();
-  const pct = data.funnel[1].pct;
-  return (
-    <div className="group/bar bg-gradient-to-r from-[#7e6ff4] h-[30px] relative rounded-[8px] shrink-0 to-[#a89cf9] transition-[width,filter] duration-300 ease-out hover:brightness-105 cursor-default" style={{ width: `${pct}%` }} data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-end pr-[10px] relative size-full">
-        <Text11 />
-      </div>
-      <div className="pointer-events-none absolute -top-[38px] right-0 opacity-0 group-hover/bar:opacity-100 transition-opacity duration-150 bg-[#1e293b] text-white text-[13px] font-medium rounded-[6px] px-[8px] py-[4px] whitespace-nowrap shadow-[0px_4px_12px_rgba(0,0,0,0.15)]">
-        {pct}% • Tutorial Completed
-      </div>
-    </div>
-  );
-}
-
-function Container34() {
-  return (
-    <div className="bg-[#f3f4f6] flex-[202_0_0] h-[40px] min-w-px relative rounded-[10px]" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start overflow-clip relative rounded-[inherit] size-full">
-        <Container35 />
-      </div>
-    </div>
-  );
-}
-
 function Container29() {
+  const { data } = useDashboardData();
   return (
     <div className="h-[36px] relative shrink-0 w-full" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[16px] items-center relative size-full">
         <Container30 />
         <Container31 />
-        <Container34 />
+        <FunnelBar
+          value={data.funnel[1].pct}
+          gradientFrom="#7e6ff4"
+          gradientTo="#a89cf9"
+          labelColor="#ffffff"
+          stageName="Tutorial Completed"
+          className="flex-[202_0_0] h-full min-w-px"
+        />
       </div>
     </div>
   );
@@ -993,45 +946,21 @@ function Container38() {
   );
 }
 
-function Text12() {
-  const { data } = useDashboardData();
-  return (
-    <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold not-italic text-white text-[13px] tracking-[-0.096px] whitespace-nowrap">{data.funnel[2].pct}%</p>
-  );
-}
-
-function Container40() {
-  const { data } = useDashboardData();
-  const pct = data.funnel[2].pct;
-  return (
-    <div className="group/bar bg-gradient-to-r from-[#9487f7] h-[30px] relative rounded-[8px] shrink-0 to-[#bcb4fb] transition-[width,filter] duration-300 ease-out hover:brightness-105 cursor-default" style={{ width: `${pct}%` }} data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-end pr-[10px] relative size-full">
-        <Text12 />
-      </div>
-      <div className="pointer-events-none absolute -top-[38px] right-0 opacity-0 group-hover/bar:opacity-100 transition-opacity duration-150 bg-[#1e293b] text-white text-[13px] font-medium rounded-[6px] px-[8px] py-[4px] whitespace-nowrap shadow-[0px_4px_12px_rgba(0,0,0,0.15)]">
-        {pct}% • First Match
-      </div>
-    </div>
-  );
-}
-
-function Container39() {
-  return (
-    <div className="bg-[#f3f4f6] flex-[202_0_0] h-[40px] min-w-px relative rounded-[10px]" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start overflow-clip relative rounded-[inherit] size-full">
-        <Container40 />
-      </div>
-    </div>
-  );
-}
-
 function Container36() {
+  const { data } = useDashboardData();
   return (
     <div className="h-[36px] relative shrink-0 w-full" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[16px] items-center relative size-full">
         <Container37 />
         <Container38 />
-        <Container39 />
+        <FunnelBar
+          value={data.funnel[2].pct}
+          gradientFrom="#9487f7"
+          gradientTo="#bcb4fb"
+          labelColor="#ffffff"
+          stageName="First Match"
+          className="flex-[202_0_0] h-full min-w-px"
+        />
       </div>
     </div>
   );
@@ -1099,45 +1028,21 @@ function Container43() {
   );
 }
 
-function Text13() {
-  const { data } = useDashboardData();
-  return (
-    <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold not-italic text-[#7060ec] text-[13px] tracking-[-0.096px] whitespace-nowrap">{data.funnel[3].pct}%</p>
-  );
-}
-
-function Container47() {
-  const { data } = useDashboardData();
-  const pct = data.funnel[3].pct;
-  return (
-    <div className="group/bar bg-gradient-to-r from-[#bcb4fb] h-[30px] relative rounded-[8px] shrink-0 to-[#d4cffd] transition-[width,filter] duration-300 ease-out hover:brightness-105 cursor-default" style={{ width: `${pct}%` }} data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-end pr-[10px] relative size-full">
-        <Text13 />
-      </div>
-      <div className="pointer-events-none absolute -top-[38px] right-0 opacity-0 group-hover/bar:opacity-100 transition-opacity duration-150 bg-[#1e293b] text-white text-[13px] font-medium rounded-[6px] px-[8px] py-[4px] whitespace-nowrap shadow-[0px_4px_12px_rgba(0,0,0,0.15)]">
-        {pct}% • Next Day Return
-      </div>
-    </div>
-  );
-}
-
-function Container46() {
-  return (
-    <div className="bg-[#f3f4f6] flex-[202_0_0] h-[40px] min-w-px relative rounded-[10px]" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start overflow-clip relative rounded-[inherit] size-full">
-        <Container47 />
-      </div>
-    </div>
-  );
-}
-
 function Container41() {
+  const { data } = useDashboardData();
   return (
     <div className="h-[36px] relative shrink-0 w-full" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[16px] items-center relative size-full">
         <Container42 />
         <Container43 />
-        <Container46 />
+        <FunnelBar
+          value={data.funnel[3].pct}
+          gradientFrom="#bcb4fb"
+          gradientTo="#d4cffd"
+          labelColor="#7060ec"
+          stageName="Next Day Return"
+          className="flex-[202_0_0] h-full min-w-px"
+        />
       </div>
     </div>
   );
@@ -1198,45 +1103,21 @@ function Container50() {
   );
 }
 
-function Text14() {
-  const { data } = useDashboardData();
-  return (
-    <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold not-italic text-[#8b6200] text-[13px] tracking-[-0.096px] whitespace-nowrap">{data.funnel[4].pct}%</p>
-  );
-}
-
-function Container54() {
-  const { data } = useDashboardData();
-  const pct = data.funnel[4].pct;
-  return (
-    <div className="group/bar bg-gradient-to-r from-[#f5c53a] h-[30px] relative rounded-[8px] shrink-0 to-[#f8d96b] transition-[width,filter] duration-300 ease-out hover:brightness-105 cursor-default" style={{ width: `${pct}%` }} data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-end pr-[10px] relative size-full">
-        <Text14 />
-      </div>
-      <div className="pointer-events-none absolute -top-[38px] right-0 opacity-0 group-hover/bar:opacity-100 transition-opacity duration-150 bg-[#1e293b] text-white text-[13px] font-medium rounded-[6px] px-[8px] py-[4px] whitespace-nowrap shadow-[0px_4px_12px_rgba(0,0,0,0.15)]">
-        {pct}% • First Purchase
-      </div>
-    </div>
-  );
-}
-
-function Container53() {
-  return (
-    <div className="bg-[#f3f4f6] flex-[202_0_0] h-[40px] min-w-px relative rounded-[10px]" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start overflow-clip relative rounded-[inherit] size-full">
-        <Container54 />
-      </div>
-    </div>
-  );
-}
-
 function Container48() {
+  const { data } = useDashboardData();
   return (
     <div className="h-[36px] relative shrink-0 w-full" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[16px] items-center relative size-full">
         <Container49 />
         <Container50 />
-        <Container53 />
+        <FunnelBar
+          value={data.funnel[4].pct}
+          gradientFrom="#f5c53a"
+          gradientTo="#f8d96b"
+          labelColor="#8b6200"
+          stageName="First Purchase"
+          className="flex-[202_0_0] h-full min-w-px"
+        />
       </div>
     </div>
   );
